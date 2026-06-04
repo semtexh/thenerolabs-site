@@ -1,215 +1,576 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MapNero — Professional GIS Mapping for iOS</title>
-<meta name="description" content="MapNero is a professional GIS mapping app for iOS. Offline maps, GPS tracking, UTM/MGRS coordinates, team sessions, Shapefile/GeoTIFF export and more.">
-<style>
-  :root { --blue:#1a6ed8;--dark:#0a0a0a;--bg:#fff;--text:#1a1a1a;--muted:#666;--border:#e8e8e8; }
-  *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
-  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;color:var(--text);background:var(--bg)}
-  nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,10,.95);backdrop-filter:blur(10px);padding:0 32px;height:60px;display:flex;align-items:center;justify-content:space-between}
-  .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
-  .nav-logo span{color:#fff;font-size:18px;font-weight:700}
-  .nav-links{display:flex;gap:28px;align-items:center}
-  .nav-links a{color:#aaa;text-decoration:none;font-size:14px}
-  .nav-links a:hover{color:#fff}
-  .nav-cta{background:var(--blue);color:#fff!important;padding:8px 18px;border-radius:8px;font-weight:600!important}
-  .hero{background:linear-gradient(160deg,#060d1a 0%,#0d2040 50%,#1a3a6e 100%);min-height:100vh;display:flex;align-items:center;padding:80px 24px 60px}
-  .hero-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
-  .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(26,110,216,.2);border:1px solid rgba(26,110,216,.4);color:#7eb3f0;font-size:13px;font-weight:600;padding:6px 14px;border-radius:100px;margin-bottom:24px}
-  .hero h1{font-size:clamp(2rem,4vw,3.2rem);font-weight:800;color:#fff;line-height:1.15;margin-bottom:20px}
-  .hero h1 span{color:#7eb3f0}
-  .hero p{font-size:1.1rem;color:#8899bb;line-height:1.7;margin-bottom:36px}
-  .hero-actions{display:flex;gap:16px;flex-wrap:wrap}
-  .btn-primary{display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:#fff;padding:14px 28px;border-radius:12px;font-size:16px;font-weight:600;text-decoration:none;transition:transform .15s,background .15s}
-  .btn-primary:hover{background:#1558b0;transform:translateY(-1px)}
-  .btn-secondary{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:#ccc;padding:14px 28px;border-radius:12px;font-size:16px;font-weight:600;text-decoration:none}
-  .hero-visual{display:flex;justify-content:center}
-  .phone-mockup{width:260px;height:520px;background:linear-gradient(145deg,#1a2a4a,#0d1a30);border-radius:36px;border:2px solid rgba(255,255,255,.12);display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;box-shadow:0 40px 80px rgba(0,0,0,.6)}
-  .phone-mockup::before{content:'';position:absolute;top:14px;width:80px;height:6px;background:rgba(255,255,255,.15);border-radius:3px}
-  .map-placeholder{width:220px;height:340px;background:linear-gradient(135deg,#0a2040,#1a4080);border-radius:16px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
-  .map-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(26,110,216,.15) 1px,transparent 1px),linear-gradient(90deg,rgba(26,110,216,.15) 1px,transparent 1px);background-size:28px 28px}
-  .map-pin{position:absolute;width:12px;height:12px;background:#ff5252;border-radius:50%;box-shadow:0 0 0 4px rgba(255,82,82,.3)}
-  .map-pin:nth-child(2){top:40%;left:50%}
-  .map-pin:nth-child(3){top:30%;left:35%;background:#1a6ed8;box-shadow:0 0 0 4px rgba(26,110,216,.3)}
-  .map-pin:nth-child(4){top:60%;left:65%;background:#4caf50;box-shadow:0 0 0 4px rgba(76,175,80,.3)}
-  .map-track{position:absolute;top:0;left:0;width:100%;height:100%}
-  .coord-tag{position:absolute;bottom:16px;left:50%;transform:translateX(-50%);background:rgba(0,0,0,.6);color:#7eb3f0;font-size:11px;font-family:monospace;padding:4px 10px;border-radius:6px;white-space:nowrap}
-  .stats{background:#f8f9fb;padding:48px 24px}
-  .stats-inner{max-width:900px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:32px;text-align:center}
-  .stat-value{font-size:2rem;font-weight:800;color:var(--blue)}
-  .stat-label{font-size:.85rem;color:var(--muted);margin-top:4px}
-  .features{padding:96px 24px}
-  .section-label{font-size:13px;font-weight:700;color:var(--blue);letter-spacing:1px;text-transform:uppercase;margin-bottom:12px}
-  .section-title{font-size:clamp(1.6rem,3vw,2.4rem);font-weight:800;margin-bottom:16px}
-  .section-sub{font-size:1.05rem;color:var(--muted);max-width:560px;line-height:1.7}
-  .features-inner{max-width:1100px;margin:0 auto}
-  .features-header{text-align:center;margin-bottom:64px}
-  .features-header .section-sub{margin:0 auto}
-  .features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
-  .feature-card{background:#f8f9fb;border-radius:16px;padding:28px;border:1px solid var(--border)}
-  .feature-card:hover{box-shadow:0 8px 32px rgba(0,0,0,.08);border-color:#c8d8f0}
-  .feature-icon{width:48px;height:48px;background:linear-gradient(135deg,#1a6ed8,#0d4a9e);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:16px}
-  .feature-card h3{font-size:1.05rem;font-weight:700;margin-bottom:8px}
-  .feature-card p{font-size:.9rem;color:var(--muted);line-height:1.6}
-  .tiers{background:#f8f9fb;padding:96px 24px}
-  .tiers-inner{max-width:1000px;margin:0 auto}
-  .tiers-header{text-align:center;margin-bottom:56px}
-  .tiers-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
-  .tier-card{background:#fff;border-radius:16px;padding:28px 24px;border:2px solid var(--border)}
-  .tier-card.featured{border-color:var(--blue);position:relative}
-  .tier-card.featured::before{content:'Most Popular';position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--blue);color:#fff;font-size:11px;font-weight:700;padding:4px 12px;border-radius:100px;white-space:nowrap}
-  .tier-name{font-size:.85rem;font-weight:700;color:var(--muted);text-transform:uppercase;margin-bottom:8px}
-  .tier-price{font-size:2rem;font-weight:800;margin-bottom:4px}
-  .tier-price sup{font-size:1rem;vertical-align:top;margin-top:8px}
-  .tier-price span{font-size:.9rem;font-weight:400;color:var(--muted)}
-  .tier-desc{font-size:.85rem;color:var(--muted);margin-bottom:20px;padding-bottom:20px;border-bottom:1px solid var(--border)}
-  .tier-features{list-style:none;display:flex;flex-direction:column;gap:10px}
-  .tier-features li{font-size:.85rem;color:#444;display:flex;align-items:flex-start;gap:8px}
-  .tier-features li::before{content:'✓';color:var(--blue);font-weight:700;flex-shrink:0}
-  .tier-features li.muted{color:#bbb}
-  .tier-features li.muted::before{color:#ddd}
-  .cta{background:linear-gradient(135deg,#0a1628,#1a3a6e);padding:96px 24px;text-align:center}
-  .cta h2{font-size:clamp(1.8rem,3vw,2.8rem);font-weight:800;color:#fff;margin-bottom:16px}
-  .cta p{font-size:1.05rem;color:#8899bb;margin-bottom:40px}
-  .appstore-btn{display:inline-flex;align-items:center;gap:12px;background:#fff;color:#000;padding:14px 28px;border-radius:14px;text-decoration:none;font-weight:700;font-size:15px}
-  footer{background:var(--dark);padding:40px 24px}
-  .footer-copy{color:#555;font-size:13px;margin-top:16px;text-align:center}
-  .footer-links a{color:#888;text-decoration:none;font-size:14px;margin-left:24px}
-  .footer-links a:hover{color:#fff}
-  @media(max-width:768px){.hero-inner{grid-template-columns:1fr;gap:48px}.hero-visual{order:-1}.features-grid{grid-template-columns:1fr 1fr}.tiers-grid{grid-template-columns:1fr 1fr}.stats-inner{grid-template-columns:1fr 1fr}}
-  @media(max-width:480px){.features-grid{grid-template-columns:1fr}.tiers-grid{grid-template-columns:1fr}}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StreamEar - Real-Time Global Intelligence</title>
+    <meta name="description" content="Real-time global news and emergency alerts delivered instantly to your device. OSINT-powered situational awareness for the modern world.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --signal-red: #ff0033;
+            --signal-amber: #ffaa00;
+            --signal-green: #00ff88;
+            --dark-bg: #0a0a0f;
+            --dark-panel: #16161f;
+            --text-primary: #ffffff;
+            --text-muted: #8888aa;
+            --grid-color: rgba(255, 255, 255, 0.03);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'IBM Plex Mono', monospace;
+            background: var(--dark-bg);
+            color: var(--text-primary);
+            overflow-x: hidden;
+        }
+
+        /* Animated grid background */
+        .grid-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                linear-gradient(90deg, var(--grid-color) 1px, transparent 1px),
+                linear-gradient(0deg, var(--grid-color) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: grid-scroll 20s linear infinite;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        @keyframes grid-scroll {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
+        }
+
+        /* Pulse signal effect */
+        .signal-pulse {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            width: 12px;
+            height: 12px;
+            background: var(--signal-red);
+            border-radius: 50%;
+            z-index: 1000;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { 
+                box-shadow: 0 0 0 0 rgba(255, 0, 51, 0.7),
+                            0 0 0 0 rgba(255, 0, 51, 0.4);
+            }
+            50% { 
+                box-shadow: 0 0 0 15px rgba(255, 0, 51, 0),
+                            0 0 0 30px rgba(255, 0, 51, 0);
+            }
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            background: linear-gradient(180deg, rgba(10, 10, 15, 0.95) 0%, rgba(10, 10, 15, 0) 100%);
+        }
+
+        .logo {
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 24px;
+            letter-spacing: -1px;
+            text-transform: uppercase;
+        }
+
+        .logo span {
+            color: var(--signal-red);
+        }
+
+        nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--text-primary);
+        }
+
+        /* Hero section */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+            z-index: 1;
+        }
+
+        h1 {
+            font-family: 'Archivo Black', sans-serif;
+            font-size: clamp(40px, 8vw, 120px);
+            line-height: 0.9;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: -3px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .accent-text {
+            background: linear-gradient(90deg, var(--signal-red), var(--signal-amber));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            font-size: clamp(14px, 2vw, 18px);
+            color: var(--text-muted);
+            margin-bottom: 40px;
+            max-width: 600px;
+            letter-spacing: 1px;
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+
+        /* CTA buttons */
+        .cta-group {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+            animation: fadeInUp 1s ease-out 0.4s both;
+        }
+
+        .btn {
+            padding: 18px 40px;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: var(--signal-red);
+            color: white;
+            box-shadow: 0 0 30px rgba(255, 0, 51, 0.3);
+        }
+
+        .btn-primary:hover {
+            box-shadow: 0 0 50px rgba(255, 0, 51, 0.5);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-primary);
+            border: 1px solid var(--text-muted);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--text-primary);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        /* Live stats ticker */
+        .stats-ticker {
+            position: absolute;
+            bottom: 60px;
+            width: 100%;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            animation: fadeInUp 1s ease-out 0.6s both;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 36px;
+            color: var(--signal-green);
+        }
+
+        .stat-label {
+            font-size: 11px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 5px;
+        }
+
+        /* Features section */
+        .features {
+            position: relative;
+            padding: 100px 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            z-index: 1;
+        }
+
+        .section-title {
+            font-family: 'Archivo Black', sans-serif;
+            font-size: clamp(32px, 5vw, 60px);
+            text-transform: uppercase;
+            letter-spacing: -2px;
+            margin-bottom: 60px;
+            text-align: center;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: var(--dark-panel);
+            padding: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.4s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--signal-red), transparent);
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+
+        .feature-card:hover {
+            border-color: rgba(255, 0, 51, 0.3);
+            transform: translateY(-5px);
+        }
+
+        .feature-card:hover::before {
+            opacity: 1;
+        }
+
+        .feature-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .feature-title {
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 20px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+        }
+
+        .feature-desc {
+            font-size: 14px;
+            line-height: 1.6;
+            color: var(--text-muted);
+        }
+
+        /* Footer */
+        footer {
+            position: relative;
+            padding: 60px 40px 40px;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            z-index: 1;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--text-primary);
+        }
+
+        .copyright {
+            font-size: 11px;
+            color: var(--text-muted);
+            letter-spacing: 1px;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav {
+                padding: 20px;
+            }
+
+            .stats-ticker {
+                flex-direction: column;
+                gap: 30px;
+                bottom: 40px;
+            }
+
+            .cta-group {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .features {
+                padding: 60px 20px;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-<nav>
-  <a href="/" class="nav-logo">
-    <svg width="28" height="28" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#1a6ed8"/><path d="M8 22L16 10l8 12H8z" fill="#fff" opacity=".9"/><circle cx="16" cy="10" r="2.5" fill="#fff"/></svg>
-    <span>MapNero</span>
-  </a>
-  <div class="nav-links">
-    <a href="#features">Features</a><a href="#pricing">Pricing</a>
-    <a href="mailto:support@thenerolabs.com">Support</a>
-    <a href="#download" class="nav-cta">Download Free</a>
-  </div>
-</nav>
-<section class="hero">
-  <div class="hero-inner">
-    <div>
-      <div class="hero-badge">
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="7" fill="#1a6ed8"/><path d="M4 7l2 2 4-4" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        Professional GIS · iOS
-      </div>
-      <h1>Field mapping<br>done <span>right</span></h1>
-      <p>Offline GeoPDF/GeoTIFF maps, GPS track recording, UTM/MGRS coordinates, real-time team sessions, and full vector export — in one powerful iOS app built for professionals.</p>
-      <div class="hero-actions">
-        <a href="#download" class="btn-primary">Download on App Store</a>
-        <a href="#features" class="btn-secondary">See Features →</a>
-      </div>
-    </div>
-    <div class="hero-visual">
-      <div class="phone-mockup">
-        <div class="map-placeholder">
-          <div class="map-grid"></div>
-          <div class="map-pin"></div><div class="map-pin"></div><div class="map-pin"></div>
-          <svg class="map-track" viewBox="0 0 220 340" fill="none"><path d="M40 280 Q80 220 110 170 Q140 130 150 90" stroke="#1a6ed8" stroke-width="2.5" stroke-dasharray="5,4" opacity=".7" fill="none"/></svg>
-          <div class="coord-tag">38°T 0567842E 4212543N</div>
+    <div class="grid-bg"></div>
+    <div class="signal-pulse"></div>
+
+    <nav>
+        <div class="logo">STREAM<span>EAR</span></div>
+        <div style="display: flex; gap: 30px;">
+            <a href="privacy.html">Privacy</a>
+            <a href="terms.html">Terms</a>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-<section class="stats">
-  <div class="stats-inner">
-    <div><div class="stat-value">175+</div><div class="stat-label">Countries supported</div></div>
-    <div><div class="stat-value">12</div><div class="stat-label">Export formats</div></div>
-    <div><div class="stat-value">100+</div><div class="stat-label">MIL-STD symbols</div></div>
-    <div><div class="stat-value">24h</div><div class="stat-label">Team session sync</div></div>
-  </div>
-</section>
-<section class="features" id="features">
-  <div class="features-inner">
-    <div class="features-header">
-      <div class="section-label">Capabilities</div>
-      <h2 class="section-title">Everything you need in the field</h2>
-      <p class="section-sub">MapNero combines professional GIS tools with a clean iOS-native interface — offline-first, no account required.</p>
-    </div>
-    <div class="features-grid">
-      <div class="feature-card"><div class="feature-icon">🗺️</div><h3>Offline Map Support</h3><p>Import GeoPDF, GeoTIFF, and XYZ tile caches. Work anywhere — no internet required.</p></div>
-      <div class="feature-card"><div class="feature-icon">📍</div><h3>GPS Track Recording</h3><p>Record tracks with elevation, speed, and accuracy. 3D playback, export to GeoJSON or Shapefile.</p></div>
-      <div class="feature-card"><div class="feature-icon">📐</div><h3>Professional Coordinates</h3><p>UTM, MGRS, WGS84 display and input. Real-time conversion, area measurement, azimuth tools.</p></div>
-      <div class="feature-card"><div class="feature-icon">📁</div><h3>Vector Layer Import/Export</h3><p>Shapefile, GeoPackage, GeoJSON, KML — import, edit, and re-export with full attribute tables.</p></div>
-      <div class="feature-card"><div class="feature-icon">👥</div><h3>Real-Time Team Sessions</h3><p>Share live positions, layers, and encrypted chat. AES-GCM encrypted, 24h auto-expiry.</p></div>
-      <div class="feature-card"><div class="feature-icon">🎯</div><h3>MIL-STD-2525 Symbols</h3><p>Full NATO military symbol library with custom sizing. Place, edit, and export map overlays.</p></div>
-      <div class="feature-card"><div class="feature-icon">⌚</div><h3>Apple Watch Integration</h3><p>Coordinates on your wrist, track start/stop, geofence alerts delivered to Watch.</p></div>
-      <div class="feature-card"><div class="feature-icon">📤</div><h3>GeoTIFF & GeoPDF Export</h3><p>Export georeferenced files compatible with QGIS, ArcGIS, and Avenza Maps.</p></div>
-      <div class="feature-card"><div class="feature-icon">🔔</div><h3>Geofence Alerts</h3><p>Polygonal or circular geofences with audio, haptic, and notification alerts.</p></div>
-    </div>
-  </div>
-</section>
-<section class="tiers" id="pricing">
-  <div class="tiers-inner">
-    <div class="tiers-header">
-      <div class="section-label">Pricing</div>
-      <h2 class="section-title">Simple yearly plans</h2>
-      <p class="section-sub" style="margin:0 auto">Download free and upgrade when you need more. All plans billed yearly through Apple.</p>
-    </div>
-    <div class="tiers-grid">
-      <div class="tier-card">
-        <div class="tier-name">Free</div><div class="tier-price">$0</div>
-        <div class="tier-desc">Forever free, no credit card</div>
-        <ul class="tier-features">
-          <li>OpenStreetMap basemap</li><li>5 saved maps &amp; tracks</li><li>1 active geofence</li>
-          <li>Decimal degree coords</li><li>Basic GIS editing</li>
-          <li class="muted">No offline tiles</li><li class="muted">No export</li>
-        </ul>
-      </div>
-      <div class="tier-card">
-        <div class="tier-name">Core</div><div class="tier-price"><sup>$</sup>39<span>.99/yr</span></div>
-        <div class="tier-desc">For individual field professionals</div>
-        <ul class="tier-features">
-          <li>Satellite, dark &amp; terrain maps</li><li>Offline tile cache</li><li>3D terrain + 3D tracks</li>
-          <li>GeoTIFF &amp; GeoPDF export</li><li>UTM coordinates</li><li>Watch app</li><li>25 maps, tracks, geofences</li>
-        </ul>
-      </div>
-      <div class="tier-card featured">
-        <div class="tier-name">Pro</div><div class="tier-price"><sup>$</sup>79<span>.99/yr</span></div>
-        <div class="tier-desc">For power users &amp; field teams</div>
-        <ul class="tier-features">
-          <li>Everything in Core</li><li>MGRS coordinates</li><li>Shapefile &amp; GeoPackage</li>
-          <li>Multipage PDF reports</li><li>MIL-STD-2525 symbols</li><li>Custom basemap URLs</li><li>Unlimited everything</li>
-        </ul>
-      </div>
-      <div class="tier-card">
-        <div class="tier-name">Team Solo</div><div class="tier-price"><sup>$</sup>99<span>.99/yr</span></div>
-        <div class="tier-desc">For team leads &amp; coordinators</div>
-        <ul class="tier-features">
-          <li>Everything in Pro</li><li>Persistent team workspaces</li><li>Shared layer sync</li>
-          <li>Admin controls</li><li>Audit log</li><li>Priority support</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-<section class="cta" id="download">
-  <h2>Ready to map smarter?</h2>
-  <p>Download MapNero free on the App Store. No account required.</p>
-  <a href="https://apps.apple.com/us/app/mapneroapp/id6758651027" class="appstore-btn">📱 &nbsp;Download on the <strong>App Store</strong></a>
-</section>
-<footer>
-  <div style="max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px">
-    <div style="display:flex;align-items:center;gap:10px">
-      <svg width="24" height="24" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#1a6ed8"/><path d="M8 22L16 10l8 12H8z" fill="#fff" opacity=".9"/><circle cx="16" cy="10" r="2.5" fill="#fff"/></svg>
-      <span style="color:#fff;font-weight:700">MapNero</span>
-    </div>
-    <div class="footer-links">
-      <a href="privacy.html">Privacy</a><a href="terms.html">Terms</a>
-      <a href="mailto:support@thenerolabs.com">Support</a>
-    </div>
-  </div>
-  <p class="footer-copy">© 2026 The Nero Labs LLC. All rights reserved.</p>
-</footer>
+    </nav>
+
+    <section class="hero">
+        <h1>
+            REAL-TIME<br>
+            <span class="accent-text">GLOBAL</span><br>
+            INTELLIGENCE
+        </h1>
+        <p class="subtitle">
+            OSINT-POWERED ALERTS • PATTERN DETECTION • INSTANT AUDIO NOTIFICATIONS
+        </p>
+        <div class="cta-group">
+            <a href="https://apps.apple.com/app/streamear" class="btn btn-primary">Download on App Store</a>
+            <a href="#features" class="btn btn-secondary">Learn More</a>
+        </div>
+
+        <div class="stats-ticker">
+            <div class="stat">
+                <div class="stat-number" id="alert-count">...</div>
+                <div class="stat-label">Total Alerts</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number" id="category-count">...</div>
+                <div class="stat-label">Event Categories</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number" id="pattern-count">...</div>
+                <div class="stat-label">Patterns Detected</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features" id="features">
+        <h2 class="section-title">Core Capabilities</h2>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <div class="feature-icon">📡</div>
+                <h3 class="feature-title">Real-Time Alerts</h3>
+                <p class="feature-desc">Multi-source aggregation from RSS feeds, social media, and emergency systems. Breaking news delivered in seconds.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🔊</div>
+                <h3 class="feature-title">Audio Intelligence</h3>
+                <p class="feature-desc">Text-to-speech notifications with severity prioritization. Never miss critical updates while on the move.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🗺️</div>
+                <h3 class="feature-title">Geographic Filtering</h3>
+                <p class="feature-desc">Select regions of interest. Get alerts that matter to your location and areas you care about.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🧠</div>
+                <h3 class="feature-title">Pattern Detection</h3>
+                <p class="feature-desc">AI-powered trend analysis identifies emerging patterns across global events in real-time.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🌐</div>
+                <h3 class="feature-title">Multi-Language</h3>
+                <p class="feature-desc">Automatic translation of alerts. Global intelligence in your preferred language.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3 class="feature-title">Zero Latency</h3>
+                <p class="feature-desc">Cloudflare Workers and APNs infrastructure for instant push notifications worldwide.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <h2 class="section-title">Event Categories</h2>
+        <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+            <p class="subtitle" style="margin-bottom: 40px;">
+                Comprehensive coverage across military conflicts, natural disasters, disease outbreaks, 
+                political events, economic sanctions, cyber attacks, and more.
+            </p>
+            <div style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; font-size: 13px; color: var(--text-muted);">
+                <span style="padding: 8px 16px; background: var(--dark-panel); border: 1px solid rgba(255,255,255,0.05);">Armed Conflict</span>
+                <span style="padding: 8px 16px; background: var(--dark-panel); border: 1px solid rgba(255,255,255,0.05);">Disease Outbreak</span>
+                <span style="padding: 8px 16px; background: var(--dark-panel); border: 1px solid rgba(255,255,255,0.05);">Earthquake</span>
+                <span style="padding: 8px 16px; background: var(--dark-panel); border: 1px solid rgba(255,255,255,0.05);">Cyber Attack</span>
+                <span style="padding: 8px 16px; background: var(--dark-panel); border: 1px solid rgba(255,255,255,0.05);">Drone Strike</span>
+                <span style="padding: 8px 16px; background: var(--dark-panel); border: 1px solid rgba(255,255,255,0.05);">Civil Unrest</span>
+                <span style="padding: 8px 16px; background: var(--dark-panel); border: 1px solid rgba(255,255,255,0.05);">Nuclear Incident</span>
+                <span style="padding: 8px 16px; background: var(--dark-panel); border: 1px solid rgba(255,255,255,0.05);">Economic Sanctions</span>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-links">
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms of Service</a>
+            <a href="mailto:support@streamear.app">Support</a>
+            <a href="mailto:legal@streamear.app">Legal</a>
+        </div>
+        <p class="copyright">© 2026 STREAMEAR. ALL RIGHTS RESERVED.</p>
+    </footer>
+
+    <script>
+        // Base values (starting point)
+        let baseAlerts = 4234;
+        let baseCategories = 32;
+        let basePatterns = 754;
+
+        // Increment rates (per second)
+        const alertIncrementRate = 0.08;  // ~5 alerts per minute
+        const patternIncrementRate = 0.02; // ~1 pattern per minute
+
+        // Animate counter with easing
+        function animateCounter(elementId, target) {
+            const element = document.getElementById(elementId);
+            if (!element) return;
+            
+            let count = 0;
+            const duration = 2000;
+            const increment = target / (duration / 16);
+
+            function updateCount() {
+                count += increment;
+                if (count < target) {
+                    element.textContent = Math.floor(count).toLocaleString();
+                    requestAnimationFrame(updateCount);
+                } else {
+                    element.textContent = Math.floor(target).toLocaleString();
+                }
+            }
+
+            updateCount();
+        }
+
+        // Initial animation on page load
+        window.addEventListener('load', () => {
+            animateCounter('alert-count', baseAlerts);
+            animateCounter('category-count', baseCategories);
+            animateCounter('pattern-count', basePatterns);
+
+            // Start live incrementing after initial animation
+            setTimeout(startLiveIncrement, 2500);
+        });
+
+        // Live incrementing simulation
+        function startLiveIncrement() {
+            setInterval(() => {
+                // Randomly increment alerts (sometimes)
+                if (Math.random() > 0.3) {
+                    baseAlerts += alertIncrementRate;
+                    document.getElementById('alert-count').textContent = 
+                        Math.floor(baseAlerts).toLocaleString();
+                }
+
+                // Randomly increment patterns (less frequent)
+                if (Math.random() > 0.7) {
+                    basePatterns += patternIncrementRate;
+                    document.getElementById('pattern-count').textContent = 
+                        Math.floor(basePatterns).toLocaleString();
+                }
+
+                // Categories stay mostly stable, occasional +1
+                if (Math.random() > 0.98) {
+                    baseCategories = Math.min(baseCategories + 1, 35);
+                    document.getElementById('category-count').textContent = baseCategories;
+                }
+            }, 1000); // Update every second
+        }
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
