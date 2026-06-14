@@ -1,635 +1,152 @@
 <!DOCTYPE html>
-<html lang="en" style="color-scheme: dark; background:#07080f;">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Terms of Use — The Nero Labs</title>
 <meta name="description" content="Terms of Use for The Nero Labs LLC and its mobile applications.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-  :root{--bg:#07080f;--surface:#0e1018;--surface2:#13151f;--border:rgba(255,255,255,0.08);--text:#e8eaf0;--muted:#8a90a0;--accent:#4f8ef7;--accent2:#7c5cfc;}
-  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth}
-  body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased}
-  body::before{content:'';position:fixed;inset:0;background:radial-gradient(600px circle at 80% -10%,rgba(37,99,235,0.12),transparent 60%),radial-gradient(500px circle at 0% 90%,rgba(124,58,237,0.10),transparent 60%);pointer-events:none;z-index:0}
-  nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.1rem 2rem;background:rgba(7,8,15,0.72);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
-  .logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.1rem;letter-spacing:-0.02em;color:var(--text);text-decoration:none;display:flex;align-items:center;gap:0.6rem}
-  .logo .mark{width:28px;height:28px;border-radius:7px;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;font-size:0.78rem;font-weight:800;color:#fff;letter-spacing:-0.5px}
-  .nav-right{display:flex;align-items:center;gap:1.2rem}
-  .nav-links{display:flex;gap:1.2rem;list-style:none}
-  .nav-links a{color:var(--muted);text-decoration:none;font-size:0.9rem;font-weight:500;transition:color .2s}
-  .nav-links a:hover{color:var(--text)}
-  .lang-selector{position:relative}
-  .lang-btn{background:var(--surface2);border:1px solid var(--border);color:var(--text);padding:0.4rem 0.8rem;border-radius:8px;cursor:pointer;font-size:0.85rem;font-family:'DM Sans',sans-serif;display:flex;align-items:center;gap:0.4rem;transition:border-color .2s}
-  .lang-btn:hover{border-color:var(--accent)}
-  .lang-dropdown{position:absolute;top:calc(100% + 8px);right:0;background:var(--surface2);border:1px solid var(--border);border-radius:12px;padding:0.5rem;min-width:180px;display:none;grid-template-columns:1fr 1fr;gap:0.2rem;z-index:200;box-shadow:0 20px 60px rgba(0,0,0,0.5)}
-  .lang-dropdown.open{display:grid}
-  .lang-option{padding:0.4rem 0.6rem;border-radius:8px;cursor:pointer;font-size:0.8rem;color:var(--muted);transition:all .15s;white-space:nowrap}
-  .lang-option:hover{background:var(--border);color:var(--text)}
-  .lang-option.active{color:var(--accent);background:rgba(79,142,247,0.1)}
-  .hero{position:relative;z-index:1;text-align:center;padding:4.5rem 1.5rem 2.5rem}
-  .hero h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(2rem,5vw,2.8rem);letter-spacing:-0.03em;margin-bottom:0.6rem}
-  .hero .meta{color:var(--muted);font-size:0.9rem}
-  main{position:relative;z-index:1;max-width:820px;margin:0 auto;padding:1rem 1.5rem 5rem}
-  .intro{color:var(--muted);font-size:1.02rem;margin-bottom:1.5rem}
-  h2{font-family:'Syne',sans-serif;font-weight:700;font-size:1.25rem;letter-spacing:-0.01em;margin:2.4rem 0 0.7rem;color:var(--text)}
-  p,li{color:#c3c8d4;margin-bottom:0.7rem}
-  ul{padding-left:1.3rem;margin-bottom:0.7rem}
-  li{margin-bottom:0.4rem}
-  a{color:var(--accent)}
-  strong{color:var(--text);font-weight:600}
-  .card{background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:12px;padding:1.1rem 1.3rem;margin:1.2rem 0;color:#c3c8d4}
-  .note{margin-top:2.5rem;padding-top:1.2rem;border-top:1px solid var(--border);color:var(--muted);font-size:0.85rem;font-style:italic}
-  footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:2rem 1.5rem;text-align:center;color:var(--muted);font-size:0.85rem}
-  footer a{color:var(--muted);text-decoration:none;margin:0 0.6rem}
-  footer a:hover{color:var(--text)}
-  html[dir=rtl] .card{border-left:none;border-right:3px solid var(--accent)}
-  html[dir=rtl] ul{padding-left:0;padding-right:1.3rem}
-  html[dir=rtl] .lang-dropdown{right:auto;left:0}
-  @media(max-width:600px){nav{padding:1rem 1.1rem}.nav-links{display:none}}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+:root {
+  --black: #08090b; --ink: #0f1014; --surface: #13151a;
+  --line: rgba(255,255,255,0.07); --gold: #b8922a; --gold2: #d4aa4a;
+  --text: #e2ddd4; --dim: #7a7468; --small: 0.72rem;
+}
+body { background: var(--black); color: var(--text); font-family: 'Inter', sans-serif; font-weight: 300; }
+nav {
+  position: sticky; top: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1.4rem 4rem;
+  background: rgba(8,9,11,0.92); backdrop-filter: blur(24px);
+  border-bottom: 1px solid var(--line);
+}
+.nav-brand { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
+.nav-brand img { width: 32px; height: 32px; border-radius: 7px; object-fit: cover; }
+.nav-brand span {
+  font-family: 'Cormorant Garamond', serif; font-size: 1.05rem;
+  font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text);
+}
+.nav-links { display: flex; gap: 2rem; list-style: none; }
+.nav-links a { color: var(--dim); text-decoration: none; font-size: var(--small); letter-spacing: 0.1em; text-transform: uppercase; transition: color 0.2s; }
+.nav-links a:hover { color: var(--gold2); }
+.content { max-width: 760px; margin: 0 auto; padding: 6rem 2rem 8rem; }
+.page-eyebrow { font-size: var(--small); letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+.page-title {
+  font-family: 'Cormorant Garamond', serif; font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 300; line-height: 1.1; margin-bottom: 0.5rem;
+}
+.page-date { font-size: 0.8rem; color: var(--dim); margin-bottom: 4rem; letter-spacing: 0.06em; }
+.page-date::before { content: ''; display: inline-block; width: 24px; height: 1px; background: var(--gold); margin-right: 0.8rem; vertical-align: middle; opacity: 0.5; }
+h2 {
+  font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 400;
+  margin: 3rem 0 1rem; color: var(--text); letter-spacing: 0.02em;
+}
+h2::before { content: '—  '; color: var(--gold); opacity: 0.6; }
+p { font-size: 0.9rem; color: var(--dim); line-height: 1.9; margin-bottom: 1rem; }
+ul { padding-left: 1.5rem; margin-bottom: 1rem; }
+li { font-size: 0.9rem; color: var(--dim); line-height: 1.9; margin-bottom: 0.3rem; }
+a { color: var(--gold2); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.divider { border: none; border-top: 1px solid var(--line); margin: 3rem 0; }
+footer {
+  border-top: 1px solid var(--line); padding: 2rem 4rem;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.footer-links { display: flex; gap: 2rem; }
+.footer-links a { color: var(--dim); text-decoration: none; font-size: var(--small); letter-spacing: 0.08em; transition: color 0.2s; }
+.footer-links a:hover { color: var(--gold2); }
+.footer-copy { font-size: 0.7rem; color: var(--dim); }
+@media (max-width: 768px) {
+  nav { padding: 1.2rem 1.5rem; }
+  .nav-links { display: none; }
+  footer { flex-direction: column; gap: 1.5rem; padding: 2rem 1.5rem; text-align: center; }
+}
 </style>
 </head>
 <body>
+
 <nav>
-  <a href="/" class="logo"><span class="mark">NL</span> The Nero Labs</a>
-  <div class="nav-right">
-    <ul class="nav-links">
-      <li><a href="/" data-i18n="nav_home">Home</a></li>
-      <li><a href="/privacy.html" data-i18n="nav_privacy">Privacy</a></li>
-    </ul>
-    <div class="lang-selector">
-      <button class="lang-btn" id="langBtn" onclick="toggleLang(event)">🌐 English ▾</button>
-      <div class="lang-dropdown" id="langDropdown">
-        <div class="lang-option active" onclick="setLang('en')">🇬🇧 English</div>
-        <div class="lang-option" onclick="setLang('tr')">🇹🇷 Türkçe</div>
-        <div class="lang-option" onclick="setLang('de')">🇩🇪 Deutsch</div>
-        <div class="lang-option" onclick="setLang('fr')">🇫🇷 Français</div>
-        <div class="lang-option" onclick="setLang('es')">🇪🇸 Español</div>
-        <div class="lang-option" onclick="setLang('pt')">🇧🇷 Português</div>
-        <div class="lang-option" onclick="setLang('ru')">🇷🇺 Русский</div>
-        <div class="lang-option" onclick="setLang('uk')">🇺🇦 Українська</div>
-        <div class="lang-option" onclick="setLang('ar')">🇸🇦 العربية</div>
-        <div class="lang-option" onclick="setLang('zh')">🇨🇳 中文</div>
-        <div class="lang-option" onclick="setLang('ja')">🇯🇵 日本語</div>
-        <div class="lang-option" onclick="setLang('hi')">🇮🇳 हिन्दी</div>
-      </div>
-    </div>
-  </div>
+  <a href="/" class="nav-brand">
+    <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAMCAgICAgMCAgIDAwMDBAYEBAQEBAgGBgUGCQgKCgkICQkKDA8MCgsOCwkJDRENDg8QEBEQCgwSExIQEw8QEBD/2wBDAQMDAwQDBAgEBAgQCwkLEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBD/wAARCAAwADADASIAAhEBAxEB/8QAHQAAAgEFAQEAAAAAAAAAAAAABAUDAAECBggHCf/EAC0QAAIBAwQCAAUCBwAAAAAAAAECAwQFEQAGEiEHMRMiQVFhCBQVMkJxcoGR/8QAGQEAAgMBAAAAAAAAAAAAAAAAAQMAAgUG/8QAJBEAAgIBAwMFAQAAAAAAAAAAAQIAESEDEjEEUYETMkFhkaH/2gAMAwEAAhEDEQA/APmagAwNExrodB3opMAZOpJJo0/7olUA6Gt2u/iHdVr2HafJFNb56mx3KlgnlnVM/tWlHyh8elYghW9Z6PeMxbR8X7k3lsveW/LQ9H/DdiwUlRdVlmKy8amUxR/DXBDHkDnJGBpK9RpOu9Wxdebqv2MbSdTtIzNSEerGPB71KMYOrP8AQA6dFxAhwdTZwh0OhJIA9nof305rNtX+3rMK+0VNMYBmQSrxK9sPr+VYf6OqlguCYQCeJ1v4h3/uW0UGwaixvba+2WXxlXT7j27c15Ud+t9PUhpaY5yEm+FKzRuQfmQKemJDlT4VsX6efOm4/DN/kqtv+Q6OyfsbXVgits01PW85qWbOcgfEXg2cke89MebbTva52RrRHNte5hbXt2WzVUcc0atMrnLlTnsFY5Mj+YcT10dEUl98cy7cq9vbE2fvq333c0KQcWuVPPRVYSXIVoSORwyHDqQykH2CRrnV6XUV7WwNwJqqI3Xnxwe381W1EK57fd3VY8/E8+5A5GqLAH76bUmy9111PS1lJYqmWCtV3p5BxAdUBLHs9Y4n3j0dIy/BuJGCDjXRK6thTcyipHMRLnr5iOwQR7B0wN4usymOrudbPGyCNkabOVBYgdg9Au2P8jpcDnWYPWDolQ3IkBI4jiO9VTOzz1lwcOoVuVQHLAMeskZHyvIAR65fbrWcd2aOkjoY5q4U6K+EWdUwzk8sHiSAQex986TqxB71KG/Gq+mvaHcY+O69xJJTvBf7ii0shmgDzhjHI3LkwPEd5Zvp/UfvpY0zPIXdiWYliSckk9k6G5fjVBsHRVFX2iAsTyZ//9k=" alt="Nero Labs">
+    <span>The Nero Labs</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="/#products">Products</a></li>
+    <li><a href="/#about">About</a></li>
+    <li><a href="mailto:hello@thenerolabs.com">Contact</a></li>
+  </ul>
 </nav>
+<div class="content">
+  <div class="page-eyebrow">Legal</div>
+  <h1 class="page-title">Terms of Use</h1>
+  <p class="page-date">Effective Date: June 1, 2026</p>
 
-<header class="hero">
-  <h1 data-i18n="doc_title">Terms of Use</h1>
-  <p class="meta" data-i18n="updated">Last updated: June 4, 2026</p>
-</header>
+  <p>These Terms of Use ("Terms") govern your use of the mobile applications and services provided by The Nero Labs LLC ("we," "our," or "us"), including MapNero, StreamEar, BallisticEdge Pro, and CarCheckUp (collectively, "the Apps"). By downloading or using the Apps, you agree to these Terms.</p>
 
-<main>
-  <p class="intro" data-i18n="intro">These Terms of Use ("Terms") govern your access to and use of the websites, mobile applications, and services provided by The Nero Labs LLC ("The Nero Labs", "we", "us", or "our"), including <strong>MapNero</strong>, <strong>BallisticEdge</strong>, <strong>CarCheckUp</strong>, and <strong>StreamEar</strong> (the "Apps" or "Services"). By downloading, installing, or using any of our Services, you agree to these Terms. If you do not agree, do not use the Services.</p>
-  <h2 data-i18n="h1">1. Eligibility</h2>
-  <p data-i18n="p1">You must be at least 13 years old (or the minimum age required in your jurisdiction) to use the Services. If you use the Services on behalf of an organization, you represent that you are authorized to accept these Terms on its behalf.</p>
-  <h2 data-i18n="h2">2. License to Use the Services</h2>
-  <p data-i18n="p2">Subject to these Terms, The Nero Labs grants you a limited, personal, non-exclusive, non-transferable, revocable license to download and use the Apps for your own lawful use. We retain all rights not expressly granted to you.</p>
-  <h2 data-i18n="h3">3. Acceptable Use</h2>
-  <p data-i18n="p3">You agree not to:<ul><li>use the Services for any unlawful purpose or in violation of applicable law;</li><li>reverse engineer, decompile, or attempt to extract source code, except where permitted by law;</li><li>copy, modify, distribute, sell, or lease any part of the Services;</li><li>interfere with, disrupt, or gain unauthorized access to the Services or related systems; or</li><li>use the Services to harm, harass, or violate the rights of others.</li></ul></p>
-  <h2 data-i18n="h4">4. Professional & Informational Use Disclaimer</h2>
-  <p data-i18n="p4">Our Apps provide professional and informational tools, including mapping, ballistic estimation, vehicle inspection checklists, and real-time alerts. Outputs are <strong>estimates and aids</strong> based on the data and parameters available. They are <strong>not</strong> a substitute for professional judgment, official guidance, certified instruments, or emergency services. You are solely responsible for verifying results and for any decisions or actions you take. Do not rely on any App as your only source of safety-critical or life-critical information.</p>
-  <h2 data-i18n="h5">5. Purchases & Subscriptions</h2>
-  <p data-i18n="p5">Some Services or features may be offered for a one-time purchase or on a subscription basis through the Apple App Store. All payments, billing, renewals, and refunds are processed and governed by Apple in accordance with its terms. Subscriptions renew automatically unless cancelled at least 24 hours before the end of the current period; you can manage or cancel a subscription in your App Store account settings.</p>
-  <h2 data-i18n="h6">6. Intellectual Property</h2>
-  <p data-i18n="p6">The Services, including all software, designs, text, graphics, logos, and the "The Nero Labs", "MapNero", "BallisticEdge", "CarCheckUp", and "StreamEar" names and marks, are owned by The Nero Labs LLC or its licensors and are protected by intellectual property laws. These Terms do not grant you any right to use our trademarks without prior written permission.</p>
-  <h2 data-i18n="h7">7. Third-Party Content & Services</h2>
-  <p data-i18n="p7">The Services may display or rely on data, map tiles, feeds, and infrastructure provided by third parties. We do not control and are not responsible for the accuracy, availability, or content of third-party data or services, and your use of them may be subject to their own terms.</p>
-  <h2 data-i18n="h8">8. Disclaimer of Warranties</h2>
-  <p data-i18n="p8">The Services are provided "as is" and "as available", without warranties of any kind, whether express or implied, including implied warranties of merchantability, fitness for a particular purpose, accuracy, and non-infringement. We do not warrant that the Services will be uninterrupted, error-free, or secure.</p>
-  <h2 data-i18n="h9">9. Limitation of Liability</h2>
-  <p data-i18n="p9">To the maximum extent permitted by law, The Nero Labs LLC and its officers, members, and contributors will not be liable for any indirect, incidental, special, consequential, or punitive damages, or any loss of data, profits, or goodwill, arising out of or related to your use of (or inability to use) the Services. Our total liability for any claim will not exceed the amount you paid us for the relevant Service in the twelve (12) months preceding the claim, or USD $50 if you paid nothing.</p>
-  <h2 data-i18n="h10">10. Indemnification</h2>
-  <p data-i18n="p10">You agree to indemnify and hold harmless The Nero Labs LLC from any claims, damages, liabilities, and expenses (including reasonable legal fees) arising out of your misuse of the Services or your violation of these Terms or applicable law.</p>
-  <h2 data-i18n="h11">11. Termination</h2>
-  <p data-i18n="p11">We may suspend or terminate your access to the Services at any time if you violate these Terms or if we discontinue a Service. You may stop using the Services at any time by uninstalling the Apps. Sections that by their nature should survive termination (including intellectual property, disclaimers, limitation of liability, and indemnification) will continue to apply.</p>
-  <h2 data-i18n="h12">12. Changes to These Terms</h2>
-  <p data-i18n="p12">We may update these Terms from time to time. When we do, we will revise the "Last updated" date above. Your continued use of the Services after changes take effect constitutes acceptance of the revised Terms.</p>
-  <h2 data-i18n="h13">13. Governing Law</h2>
-  <p data-i18n="p13">These Terms are governed by the laws of the State of Wyoming, USA, without regard to its conflict-of-law principles, to the extent permitted by applicable law. Any disputes will be subject to the exclusive jurisdiction of the courts located in Wyoming, USA, unless mandatory local consumer-protection law provides otherwise.</p>
-  <h2 data-i18n="h14">14. Contact Us</h2>
-  <p data-i18n="p14"><strong>The Nero Labs LLC</strong><br>Wyoming, USA<br>Email: <a href="mailto:support@thenerolabs.com">support@thenerolabs.com</a></p>
-  <p class="note" data-i18n="note">These Terms of Use are provided in several languages for convenience. If there is any discrepancy, the English version prevails.</p>
-</main>
+  <hr class="divider">
+
+  <h2>Acceptance of Terms</h2>
+  <p>By accessing or using our Apps, you confirm that you are at least 13 years of age and agree to be bound by these Terms and our Privacy Policy. If you do not agree, do not use the Apps.</p>
+
+  <h2>License</h2>
+  <p>We grant you a limited, non-exclusive, non-transferable, revocable license to use the Apps for personal or professional purposes in accordance with these Terms. You may not copy, modify, distribute, reverse engineer, or create derivative works from the Apps.</p>
+
+  <h2>Subscriptions & In-App Purchases</h2>
+  <ul>
+    <li>Some features require a paid subscription or one-time purchase.</li>
+    <li>Subscriptions automatically renew unless cancelled at least 24 hours before the renewal date.</li>
+    <li>Payments are processed through Apple App Store or Google Play and are subject to their respective terms.</li>
+    <li>Refunds are handled in accordance with Apple App Store or Google Play refund policies.</li>
+    <li>You may restore previous purchases using the "Restore Purchases" option in the App.</li>
+  </ul>
+
+  <h2>User Conduct</h2>
+  <p>You agree not to use the Apps to:</p>
+  <ul>
+    <li>Violate any applicable laws or regulations.</li>
+    <li>Infringe the rights of others.</li>
+    <li>Transmit harmful, unlawful, or offensive content.</li>
+    <li>Attempt to gain unauthorized access to any part of the Apps or related systems.</li>
+    <li>Use the Apps for any purpose that could damage or impair their functionality.</li>
+  </ul>
+
+  <h2>Professional Use Disclaimer</h2>
+  <p>Our Apps are designed to assist professional workflows. They are tools to support — not replace — professional judgment. The Nero Labs LLC is not responsible for decisions made based on data or calculations provided by the Apps. Always verify critical information through official sources and established procedures.</p>
+
+  <h2>Intellectual Property</h2>
+  <p>All content, features, and functionality of the Apps are owned by The Nero Labs LLC and are protected by applicable intellectual property laws. Our name, logos, and trademarks may not be used without prior written consent.</p>
+
+  <h2>Disclaimer of Warranties</h2>
+  <p>The Apps are provided "as is" without warranties of any kind, express or implied. We do not warrant that the Apps will be uninterrupted, error-free, or free of viruses or other harmful components.</p>
+
+  <h2>Limitation of Liability</h2>
+  <p>To the maximum extent permitted by law, The Nero Labs LLC shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of the Apps.</p>
+
+  <h2>Termination</h2>
+  <p>We reserve the right to suspend or terminate your access to the Apps at any time, without notice, for conduct that violates these Terms or is harmful to other users, us, or third parties.</p>
+
+  <h2>Governing Law</h2>
+  <p>These Terms are governed by the laws of the State of Wyoming, USA, without regard to conflict of law provisions.</p>
+
+  <h2>Changes to Terms</h2>
+  <p>We may revise these Terms at any time. Continued use of the Apps after changes constitutes acceptance of the revised Terms.</p>
+
+  <h2>Contact Us</h2>
+  <p>For questions about these Terms:<br>
+  The Nero Labs LLC<br>
+  Email: <a href="mailto:hello@thenerolabs.com">hello@thenerolabs.com</a><br>
+  Wyoming, USA</p>
+</div>
 
 <footer>
-  <div>
-    <a href="/" data-i18n="nav_home">Home</a>
-    <a href="/privacy.html" data-i18n="nav_privacy">Privacy</a>
-    <a href="/terms.html" data-i18n="nav_terms">Terms</a>
-    <a href="mailto:support@thenerolabs.com" data-i18n="nav_support">Support</a>
+  <div class="footer-links">
+    <a href="/privacy.html">Privacy Policy</a>
+    <a href="/terms.html">Terms of Use</a>
+    <a href="mailto:hello@thenerolabs.com">Contact</a>
   </div>
-  <p style="margin-top:0.8rem">© 2026 The Nero Labs LLC. Wyoming, USA.</p>
+  <div class="footer-copy">© 2026 The Nero Labs LLC · Wyoming, USA</div>
 </footer>
-
-<script>
-const i18n = {
- "en": {
-  "lang_name": "English",
-  "nav_home": "Home",
-  "nav_privacy": "Privacy",
-  "nav_terms": "Terms",
-  "nav_support": "Support",
-  "doc_title": "Terms of Use",
-  "updated": "Last updated: June 4, 2026",
-  "intro": "These Terms of Use (\"Terms\") govern your access to and use of the websites, mobile applications, and services provided by The Nero Labs LLC (\"The Nero Labs\", \"we\", \"us\", or \"our\"), including <strong>MapNero</strong>, <strong>BallisticEdge</strong>, <strong>CarCheckUp</strong>, and <strong>StreamEar</strong> (the \"Apps\" or \"Services\"). By downloading, installing, or using any of our Services, you agree to these Terms. If you do not agree, do not use the Services.",
-  "h1": "1. Eligibility",
-  "p1": "You must be at least 13 years old (or the minimum age required in your jurisdiction) to use the Services. If you use the Services on behalf of an organization, you represent that you are authorized to accept these Terms on its behalf.",
-  "h2": "2. License to Use the Services",
-  "p2": "Subject to these Terms, The Nero Labs grants you a limited, personal, non-exclusive, non-transferable, revocable license to download and use the Apps for your own lawful use. We retain all rights not expressly granted to you.",
-  "h3": "3. Acceptable Use",
-  "p3": "You agree not to:<ul><li>use the Services for any unlawful purpose or in violation of applicable law;</li><li>reverse engineer, decompile, or attempt to extract source code, except where permitted by law;</li><li>copy, modify, distribute, sell, or lease any part of the Services;</li><li>interfere with, disrupt, or gain unauthorized access to the Services or related systems; or</li><li>use the Services to harm, harass, or violate the rights of others.</li></ul>",
-  "h4": "4. Professional & Informational Use Disclaimer",
-  "p4": "Our Apps provide professional and informational tools, including mapping, ballistic estimation, vehicle inspection checklists, and real-time alerts. Outputs are <strong>estimates and aids</strong> based on the data and parameters available. They are <strong>not</strong> a substitute for professional judgment, official guidance, certified instruments, or emergency services. You are solely responsible for verifying results and for any decisions or actions you take. Do not rely on any App as your only source of safety-critical or life-critical information.",
-  "h5": "5. Purchases & Subscriptions",
-  "p5": "Some Services or features may be offered for a one-time purchase or on a subscription basis through the Apple App Store. All payments, billing, renewals, and refunds are processed and governed by Apple in accordance with its terms. Subscriptions renew automatically unless cancelled at least 24 hours before the end of the current period; you can manage or cancel a subscription in your App Store account settings.",
-  "h6": "6. Intellectual Property",
-  "p6": "The Services, including all software, designs, text, graphics, logos, and the \"The Nero Labs\", \"MapNero\", \"BallisticEdge\", \"CarCheckUp\", and \"StreamEar\" names and marks, are owned by The Nero Labs LLC or its licensors and are protected by intellectual property laws. These Terms do not grant you any right to use our trademarks without prior written permission.",
-  "h7": "7. Third-Party Content & Services",
-  "p7": "The Services may display or rely on data, map tiles, feeds, and infrastructure provided by third parties. We do not control and are not responsible for the accuracy, availability, or content of third-party data or services, and your use of them may be subject to their own terms.",
-  "h8": "8. Disclaimer of Warranties",
-  "p8": "The Services are provided \"as is\" and \"as available\", without warranties of any kind, whether express or implied, including implied warranties of merchantability, fitness for a particular purpose, accuracy, and non-infringement. We do not warrant that the Services will be uninterrupted, error-free, or secure.",
-  "h9": "9. Limitation of Liability",
-  "p9": "To the maximum extent permitted by law, The Nero Labs LLC and its officers, members, and contributors will not be liable for any indirect, incidental, special, consequential, or punitive damages, or any loss of data, profits, or goodwill, arising out of or related to your use of (or inability to use) the Services. Our total liability for any claim will not exceed the amount you paid us for the relevant Service in the twelve (12) months preceding the claim, or USD $50 if you paid nothing.",
-  "h10": "10. Indemnification",
-  "p10": "You agree to indemnify and hold harmless The Nero Labs LLC from any claims, damages, liabilities, and expenses (including reasonable legal fees) arising out of your misuse of the Services or your violation of these Terms or applicable law.",
-  "h11": "11. Termination",
-  "p11": "We may suspend or terminate your access to the Services at any time if you violate these Terms or if we discontinue a Service. You may stop using the Services at any time by uninstalling the Apps. Sections that by their nature should survive termination (including intellectual property, disclaimers, limitation of liability, and indemnification) will continue to apply.",
-  "h12": "12. Changes to These Terms",
-  "p12": "We may update these Terms from time to time. When we do, we will revise the \"Last updated\" date above. Your continued use of the Services after changes take effect constitutes acceptance of the revised Terms.",
-  "h13": "13. Governing Law",
-  "p13": "These Terms are governed by the laws of the State of Wyoming, USA, without regard to its conflict-of-law principles, to the extent permitted by applicable law. Any disputes will be subject to the exclusive jurisdiction of the courts located in Wyoming, USA, unless mandatory local consumer-protection law provides otherwise.",
-  "h14": "14. Contact Us",
-  "p14": "<strong>The Nero Labs LLC</strong><br>Wyoming, USA<br>Email: <a href=\"mailto:support@thenerolabs.com\">support@thenerolabs.com</a>",
-  "note": "These Terms of Use are provided in several languages for convenience. If there is any discrepancy, the English version prevails."
- },
- "tr": {
-  "lang_name": "Türkçe",
-  "nav_home": "Ana Sayfa",
-  "nav_privacy": "Gizlilik",
-  "nav_terms": "Koşullar",
-  "nav_support": "Destek",
-  "doc_title": "Kullanım Koşulları",
-  "updated": "Son güncelleme: 4 Haziran 2026",
-  "intro": "Bu Kullanım Koşulları (\"Koşullar\"), The Nero Labs LLC (\"The Nero Labs\", \"biz\" veya \"bize\") tarafından sağlanan web sitelerine, mobil uygulamalara ve hizmetlere — <strong>MapNero</strong>, <strong>BallisticEdge</strong>, <strong>CarCheckUp</strong> ve <strong>StreamEar</strong> dahil (\"Uygulamalar\" veya \"Hizmetler\") — erişiminizi ve bunları kullanımınızı düzenler. Hizmetlerimizden herhangi birini indirerek, kurarak veya kullanarak bu Koşulları kabul edersiniz. Kabul etmiyorsanız Hizmetleri kullanmayın.",
-  "h1": "1. Uygunluk",
-  "p1": "Hizmetleri kullanmak için en az 13 yaşında (veya yargı bölgenizde gerekli asgari yaşta) olmalısınız. Hizmetleri bir kuruluş adına kullanıyorsanız, bu Koşulları onun adına kabul etmeye yetkili olduğunuzu beyan edersiniz.",
-  "h2": "2. Hizmetleri Kullanma Lisansı",
-  "p2": "Bu Koşullara tabi olarak, The Nero Labs size Uygulamaları kendi yasal kullanımınız için indirip kullanmanız için sınırlı, kişisel, münhasır olmayan, devredilemez ve iptal edilebilir bir lisans verir. Size açıkça verilmeyen tüm hakları saklı tutarız.",
-  "h3": "3. Kabul Edilebilir Kullanım",
-  "p3": "Şunları yapmamayı kabul edersiniz:<ul><li>Hizmetleri herhangi bir yasa dışı amaçla veya yürürlükteki yasaları ihlal edecek şekilde kullanmak;</li><li>yasaların izin verdiği durumlar dışında tersine mühendislik yapmak, kaynak kodu çıkarmaya çalışmak;</li><li>Hizmetlerin herhangi bir bölümünü kopyalamak, değiştirmek, dağıtmak, satmak veya kiralamak;</li><li>Hizmetlere veya ilgili sistemlere müdahale etmek, bunları bozmak veya yetkisiz erişim sağlamak; ya da</li><li>Hizmetleri başkalarına zarar vermek, taciz etmek veya haklarını ihlal etmek için kullanmak.</li></ul>",
-  "h4": "4. Profesyonel ve Bilgilendirme Amaçlı Kullanım Feragatnamesi",
-  "p4": "Uygulamalarımız harita, balistik tahmin, araç muayene kontrol listeleri ve gerçek zamanlı uyarılar dahil profesyonel ve bilgilendirme amaçlı araçlar sağlar. Çıktılar, mevcut verilere ve parametrelere dayalı <strong>tahminler ve yardımcı araçlardır</strong>. Bunlar profesyonel muhakeme, resmi rehberlik, sertifikalı cihazlar veya acil servislerin <strong>yerini tutmaz</strong>. Sonuçları doğrulamaktan ve aldığınız her türlü karardan veya eylemden yalnızca siz sorumlusunuz. Hiçbir Uygulamaya güvenlik açısından kritik veya yaşamsal bilgiler için tek kaynağınız olarak güvenmeyin.",
-  "h5": "5. Satın Alımlar ve Abonelikler",
-  "p5": "Bazı Hizmetler veya özellikler, Apple App Store aracılığıyla tek seferlik satın alma veya abonelik bazında sunulabilir. Tüm ödemeler, faturalandırma, yenilemeler ve iadeler, kendi koşullarına uygun olarak Apple tarafından işlenir ve yönetilir. Abonelikler, mevcut dönemin bitiminden en az 24 saat önce iptal edilmedikçe otomatik olarak yenilenir; aboneliği App Store hesap ayarlarınızdan yönetebilir veya iptal edebilirsiniz.",
-  "h6": "6. Fikri Mülkiyet",
-  "p6": "Tüm yazılım, tasarım, metin, grafik, logolar ve \"The Nero Labs\", \"MapNero\", \"BallisticEdge\", \"CarCheckUp\" ve \"StreamEar\" adları ve markaları dahil Hizmetler, The Nero Labs LLC veya lisans verenlerine aittir ve fikri mülkiyet yasalarıyla korunur. Bu Koşullar, önceden yazılı izin olmadan markalarımızı kullanma hakkı vermez.",
-  "h7": "7. Üçüncü Taraf İçerik ve Hizmetleri",
-  "p7": "Hizmetler, üçüncü taraflarca sağlanan verileri, harita döşemelerini, akışları ve altyapıyı görüntüleyebilir veya bunlara dayanabilir. Üçüncü taraf verilerinin veya hizmetlerinin doğruluğunu, kullanılabilirliğini veya içeriğini kontrol etmiyoruz ve bunlardan sorumlu değiliz; bunları kullanımınız kendi koşullarına tabi olabilir.",
-  "h8": "8. Garanti Reddi",
-  "p8": "Hizmetler, ticari elverişlilik, belirli bir amaca uygunluk, doğruluk ve ihlal etmeme dahil açık veya zımni hiçbir garanti olmaksızın \"olduğu gibi\" ve \"mevcut olduğu şekilde\" sağlanır. Hizmetlerin kesintisiz, hatasız veya güvenli olacağını garanti etmiyoruz.",
-  "h9": "9. Sorumluluğun Sınırlandırılması",
-  "p9": "Yasaların izin verdiği azami ölçüde, The Nero Labs LLC ile yetkilileri, üyeleri ve katkıda bulunanları; Hizmetleri kullanımınızdan (veya kullanamamanızdan) kaynaklanan dolaylı, arızi, özel, sonuçsal veya cezai zararlardan ya da veri, kâr veya itibar kaybından sorumlu olmayacaktır. Herhangi bir talebe ilişkin toplam sorumluluğumuz, talepten önceki on iki (12) ay içinde ilgili Hizmet için bize ödediğiniz tutarı veya hiçbir şey ödemediyseniz 50 ABD dolarını aşmayacaktır.",
-  "h10": "10. Tazminat",
-  "p10": "Hizmetleri kötüye kullanmanızdan veya bu Koşulları ya da yürürlükteki yasaları ihlal etmenizden kaynaklanan her türlü talep, zarar, yükümlülük ve masraftan (makul yasal ücretler dahil) The Nero Labs LLC'yi tazmin etmeyi ve zararsız tutmayı kabul edersiniz.",
-  "h11": "11. Fesih",
-  "p11": "Bu Koşulları ihlal etmeniz veya bir Hizmeti durdurmamız halinde, Hizmetlere erişiminizi istediğimiz zaman askıya alabilir veya sonlandırabiliriz. Uygulamaları kaldırarak Hizmetleri kullanmayı istediğiniz zaman bırakabilirsiniz. Niteliği gereği fesihten sonra da geçerli olması gereken bölümler (fikri mülkiyet, feragatnameler, sorumluluğun sınırlandırılması ve tazminat dahil) geçerliliğini korur.",
-  "h12": "12. Bu Koşullardaki Değişiklikler",
-  "p12": "Bu Koşulları zaman zaman güncelleyebiliriz. Bunu yaptığımızda, yukarıdaki \"Son güncelleme\" tarihini revize ederiz. Değişiklikler yürürlüğe girdikten sonra Hizmetleri kullanmaya devam etmeniz, revize edilmiş Koşulları kabul ettiğiniz anlamına gelir.",
-  "h13": "13. Geçerli Hukuk",
-  "p13": "Bu Koşullar, yürürlükteki yasaların izin verdiği ölçüde, kanunlar ihtilafı ilkeleri dikkate alınmaksızın ABD'nin Wyoming Eyaleti yasalarına tabidir. Zorunlu yerel tüketici koruma yasaları aksini öngörmedikçe, her türlü uyuşmazlık ABD'nin Wyoming eyaletindeki mahkemelerin münhasır yargı yetkisine tabi olacaktır.",
-  "h14": "14. Bize Ulaşın",
-  "p14": "<strong>The Nero Labs LLC</strong><br>Wyoming, ABD<br>E-posta: <a href=\"mailto:support@thenerolabs.com\">support@thenerolabs.com</a>",
-  "note": "Bu Kullanım Koşulları kolaylık sağlamak için birkaç dilde sunulmaktadır. Herhangi bir tutarsızlık olması durumunda İngilizce sürüm geçerlidir."
- },
- "de": {
-  "lang_name": "Deutsch",
-  "nav_home": "Start",
-  "nav_privacy": "Datenschutz",
-  "nav_terms": "Nutzungsbedingungen",
-  "nav_support": "Support",
-  "doc_title": "Nutzungsbedingungen",
-  "updated": "Zuletzt aktualisiert: 4. Juni 2026",
-  "intro": "Diese Nutzungsbedingungen („Bedingungen\") regeln Ihren Zugriff auf und Ihre Nutzung der Websites, mobilen Anwendungen und Dienste der The Nero Labs LLC („The Nero Labs\", „wir\" oder „uns\"), einschließlich <strong>MapNero</strong>, <strong>BallisticEdge</strong>, <strong>CarCheckUp</strong> und <strong>StreamEar</strong> (die „Apps\" oder „Dienste\"). Durch das Herunterladen, Installieren oder Nutzen unserer Dienste stimmen Sie diesen Bedingungen zu. Wenn Sie nicht einverstanden sind, nutzen Sie die Dienste nicht.",
-  "h1": "1. Voraussetzungen",
-  "p1": "Sie müssen mindestens 13 Jahre alt sein (oder das in Ihrem Rechtsgebiet erforderliche Mindestalter erreicht haben), um die Dienste zu nutzen. Wenn Sie die Dienste im Namen einer Organisation nutzen, sichern Sie zu, dass Sie befugt sind, diese Bedingungen in deren Namen anzunehmen.",
-  "h2": "2. Lizenz zur Nutzung der Dienste",
-  "p2": "Vorbehaltlich dieser Bedingungen gewährt Ihnen The Nero Labs eine beschränkte, persönliche, nicht ausschließliche, nicht übertragbare und widerrufliche Lizenz zum Herunterladen und Nutzen der Apps für Ihre eigene rechtmäßige Verwendung. Alle nicht ausdrücklich gewährten Rechte behalten wir uns vor.",
-  "h3": "3. Zulässige Nutzung",
-  "p3": "Sie verpflichten sich, Folgendes zu unterlassen:<ul><li>die Dienste für rechtswidrige Zwecke oder unter Verstoß gegen geltendes Recht zu nutzen;</li><li>Reverse Engineering, Dekompilierung oder den Versuch, Quellcode zu extrahieren, außer wo gesetzlich zulässig;</li><li>Teile der Dienste zu kopieren, zu ändern, zu verbreiten, zu verkaufen oder zu vermieten;</li><li>die Dienste oder zugehörige Systeme zu stören oder sich unbefugten Zugang zu verschaffen; oder</li><li>die Dienste zu nutzen, um anderen zu schaden, sie zu belästigen oder ihre Rechte zu verletzen.</li></ul>",
-  "h4": "4. Haftungsausschluss für professionelle und informative Nutzung",
-  "p4": "Unsere Apps bieten professionelle und informative Werkzeuge, darunter Kartierung, ballistische Schätzung, Fahrzeuginspektions-Checklisten und Echtzeitwarnungen. Die Ergebnisse sind <strong>Schätzungen und Hilfsmittel</strong> auf Basis der verfügbaren Daten und Parameter. Sie sind <strong>kein</strong> Ersatz für fachliches Urteilsvermögen, offizielle Anweisungen, zertifizierte Instrumente oder Notdienste. Sie sind allein dafür verantwortlich, Ergebnisse zu überprüfen und für Ihre Entscheidungen und Handlungen. Verlassen Sie sich bei sicherheits- oder lebenskritischen Informationen nicht allein auf eine App.",
-  "h5": "5. Käufe und Abonnements",
-  "p5": "Einige Dienste oder Funktionen können als Einmalkauf oder im Abonnement über den Apple App Store angeboten werden. Alle Zahlungen, Abrechnungen, Verlängerungen und Erstattungen werden von Apple gemäß dessen Bedingungen abgewickelt. Abonnements verlängern sich automatisch, sofern sie nicht mindestens 24 Stunden vor Ablauf des aktuellen Zeitraums gekündigt werden; Sie können ein Abonnement in den Einstellungen Ihres App-Store-Kontos verwalten oder kündigen.",
-  "h6": "6. Geistiges Eigentum",
-  "p6": "Die Dienste, einschließlich aller Software, Designs, Texte, Grafiken, Logos sowie der Namen und Marken „The Nero Labs\", „MapNero\", „BallisticEdge\", „CarCheckUp\" und „StreamEar\", sind Eigentum der The Nero Labs LLC oder ihrer Lizenzgeber und durch Gesetze zum geistigen Eigentum geschützt. Diese Bedingungen gewähren Ihnen kein Recht, unsere Marken ohne vorherige schriftliche Genehmigung zu verwenden.",
-  "h7": "7. Inhalte und Dienste Dritter",
-  "p7": "Die Dienste können Daten, Kartenkacheln, Feeds und Infrastruktur von Dritten anzeigen oder darauf zurückgreifen. Wir kontrollieren weder die Richtigkeit, Verfügbarkeit oder Inhalte von Daten oder Diensten Dritter, noch sind wir dafür verantwortlich; Ihre Nutzung kann deren eigenen Bedingungen unterliegen.",
-  "h8": "8. Gewährleistungsausschluss",
-  "p8": "Die Dienste werden „wie besehen\" und „wie verfügbar\" bereitgestellt, ohne jegliche ausdrückliche oder stillschweigende Gewährleistung, einschließlich stillschweigender Gewährleistungen der Marktgängigkeit, der Eignung für einen bestimmten Zweck, der Richtigkeit und der Nichtverletzung von Rechten. Wir gewährleisten nicht, dass die Dienste ununterbrochen, fehlerfrei oder sicher sind.",
-  "h9": "9. Haftungsbeschränkung",
-  "p9": "Soweit gesetzlich zulässig, haften die The Nero Labs LLC und ihre Führungskräfte, Mitglieder und Mitwirkenden nicht für indirekte, zufällige, besondere, Folge- oder Strafschäden oder für Verluste von Daten, Gewinnen oder Goodwill, die sich aus Ihrer Nutzung (oder der Unfähigkeit zur Nutzung) der Dienste ergeben. Unsere Gesamthaftung für einen Anspruch übersteigt nicht den Betrag, den Sie uns für den betreffenden Dienst in den zwölf (12) Monaten vor dem Anspruch gezahlt haben, oder 50 USD, falls Sie nichts gezahlt haben.",
-  "h10": "10. Freistellung",
-  "p10": "Sie verpflichten sich, die The Nero Labs LLC von allen Ansprüchen, Schäden, Verbindlichkeiten und Kosten (einschließlich angemessener Anwaltskosten) freizustellen, die aus Ihrem Missbrauch der Dienste oder Ihrem Verstoß gegen diese Bedingungen oder geltendes Recht entstehen.",
-  "h11": "11. Kündigung",
-  "p11": "Wir können Ihren Zugang zu den Diensten jederzeit aussetzen oder beenden, wenn Sie gegen diese Bedingungen verstoßen oder wir einen Dienst einstellen. Sie können die Nutzung der Dienste jederzeit beenden, indem Sie die Apps deinstallieren. Bestimmungen, die ihrem Wesen nach die Kündigung überdauern sollten (einschließlich geistiges Eigentum, Haftungsausschlüsse, Haftungsbeschränkung und Freistellung), bleiben weiterhin gültig.",
-  "h12": "12. Änderungen dieser Bedingungen",
-  "p12": "Wir können diese Bedingungen von Zeit zu Zeit aktualisieren. In diesem Fall passen wir das Datum „Zuletzt aktualisiert\" oben an. Ihre fortgesetzte Nutzung der Dienste nach Inkrafttreten der Änderungen gilt als Annahme der geänderten Bedingungen.",
-  "h13": "13. Anwendbares Recht",
-  "p13": "Diese Bedingungen unterliegen den Gesetzen des US-Bundesstaates Wyoming, ohne Rücksicht auf dessen kollisionsrechtliche Bestimmungen, soweit nach geltendem Recht zulässig. Alle Streitigkeiten unterliegen der ausschließlichen Zuständigkeit der Gerichte in Wyoming, USA, sofern zwingendes lokales Verbraucherschutzrecht nichts anderes vorsieht.",
-  "h14": "14. Kontakt",
-  "p14": "<strong>The Nero Labs LLC</strong><br>Wyoming, USA<br>E-Mail: <a href=\"mailto:support@thenerolabs.com\">support@thenerolabs.com</a>",
-  "note": "Diese Nutzungsbedingungen werden der Einfachheit halber in mehreren Sprachen bereitgestellt. Bei Abweichungen ist die englische Fassung maßgeblich."
- },
- "fr": {
-  "lang_name": "Français",
-  "nav_home": "Accueil",
-  "nav_privacy": "Confidentialité",
-  "nav_terms": "Conditions",
-  "nav_support": "Support",
-  "doc_title": "Conditions d'utilisation",
-  "updated": "Dernière mise à jour : 4 juin 2026",
-  "intro": "Les présentes Conditions d'utilisation (« Conditions ») régissent votre accès aux sites web, applications mobiles et services fournis par The Nero Labs LLC (« The Nero Labs », « nous ») et leur utilisation, notamment <strong>MapNero</strong>, <strong>BallisticEdge</strong>, <strong>CarCheckUp</strong> et <strong>StreamEar</strong> (les « Applications » ou « Services »). En téléchargeant, installant ou utilisant nos Services, vous acceptez ces Conditions. Si vous n'êtes pas d'accord, n'utilisez pas les Services.",
-  "h1": "1. Admissibilité",
-  "p1": "Vous devez avoir au moins 13 ans (ou l'âge minimum requis dans votre juridiction) pour utiliser les Services. Si vous utilisez les Services au nom d'une organisation, vous déclarez être autorisé à accepter ces Conditions en son nom.",
-  "h2": "2. Licence d'utilisation des Services",
-  "p2": "Sous réserve des présentes Conditions, The Nero Labs vous accorde une licence limitée, personnelle, non exclusive, non transférable et révocable pour télécharger et utiliser les Applications dans le cadre de votre propre usage licite. Nous conservons tous les droits qui ne vous sont pas expressément accordés.",
-  "h3": "3. Utilisation acceptable",
-  "p3": "Vous vous engagez à ne pas :<ul><li>utiliser les Services à des fins illicites ou en violation de la loi applicable ;</li><li>procéder à de l'ingénierie inverse, décompiler ou tenter d'extraire le code source, sauf si la loi l'autorise ;</li><li>copier, modifier, distribuer, vendre ou louer une partie des Services ;</li><li>perturber les Services ou les systèmes associés, ou y accéder sans autorisation ; ou</li><li>utiliser les Services pour nuire à autrui, le harceler ou violer ses droits.</li></ul>",
-  "h4": "4. Avertissement sur l'usage professionnel et informatif",
-  "p4": "Nos Applications fournissent des outils professionnels et informatifs, notamment la cartographie, l'estimation balistique, les listes de contrôle d'inspection de véhicules et les alertes en temps réel. Les résultats sont des <strong>estimations et des aides</strong> fondées sur les données et paramètres disponibles. Ils ne remplacent <strong>pas</strong> le jugement professionnel, les instructions officielles, les instruments certifiés ou les services d'urgence. Vous êtes seul responsable de la vérification des résultats et de toute décision ou action. Ne vous fiez à aucune Application comme unique source d'informations critiques pour la sécurité ou la vie.",
-  "h5": "5. Achats et abonnements",
-  "p5": "Certains Services ou fonctionnalités peuvent être proposés à l'achat unique ou par abonnement via l'Apple App Store. Tous les paiements, la facturation, les renouvellements et les remboursements sont traités et régis par Apple conformément à ses conditions. Les abonnements se renouvellent automatiquement sauf annulation au moins 24 heures avant la fin de la période en cours ; vous pouvez gérer ou annuler un abonnement dans les réglages de votre compte App Store.",
-  "h6": "6. Propriété intellectuelle",
-  "p6": "Les Services, y compris l'ensemble des logiciels, conceptions, textes, graphiques, logos ainsi que les noms et marques « The Nero Labs », « MapNero », « BallisticEdge », « CarCheckUp » et « StreamEar », appartiennent à The Nero Labs LLC ou à ses concédants et sont protégés par les lois sur la propriété intellectuelle. Ces Conditions ne vous confèrent aucun droit d'utiliser nos marques sans autorisation écrite préalable.",
-  "h7": "7. Contenus et services tiers",
-  "p7": "Les Services peuvent afficher des données, tuiles cartographiques, flux et infrastructures fournis par des tiers, ou s'appuyer sur ceux-ci. Nous ne contrôlons pas et ne sommes pas responsables de l'exactitude, de la disponibilité ou du contenu des données ou services tiers, et votre utilisation peut être soumise à leurs propres conditions.",
-  "h8": "8. Exclusion de garanties",
-  "p8": "Les Services sont fournis « en l'état » et « selon disponibilité », sans garantie d'aucune sorte, expresse ou implicite, y compris les garanties implicites de qualité marchande, d'adéquation à un usage particulier, d'exactitude et d'absence de contrefaçon. Nous ne garantissons pas que les Services seront ininterrompus, exempts d'erreurs ou sécurisés.",
-  "h9": "9. Limitation de responsabilité",
-  "p9": "Dans toute la mesure permise par la loi, The Nero Labs LLC ainsi que ses dirigeants, membres et contributeurs ne sauraient être tenus responsables de tout dommage indirect, accessoire, spécial, consécutif ou punitif, ni de toute perte de données, de bénéfices ou de clientèle, découlant de votre utilisation (ou de l'impossibilité d'utiliser) les Services. Notre responsabilité totale pour toute réclamation n'excédera pas le montant que vous nous avez payé pour le Service concerné au cours des douze (12) mois précédant la réclamation, ou 50 USD si vous n'avez rien payé.",
-  "h10": "10. Indemnisation",
-  "p10": "Vous acceptez d'indemniser et de dégager de toute responsabilité The Nero Labs LLC pour toute réclamation, tout dommage, toute responsabilité et toute dépense (y compris les frais juridiques raisonnables) découlant de votre usage abusif des Services ou de votre violation des présentes Conditions ou de la loi applicable.",
-  "h11": "11. Résiliation",
-  "p11": "Nous pouvons suspendre ou résilier votre accès aux Services à tout moment si vous enfreignez ces Conditions ou si nous interrompons un Service. Vous pouvez cesser d'utiliser les Services à tout moment en désinstallant les Applications. Les dispositions qui, par leur nature, doivent survivre à la résiliation (notamment la propriété intellectuelle, les avertissements, la limitation de responsabilité et l'indemnisation) continuent de s'appliquer.",
-  "h12": "12. Modifications des présentes Conditions",
-  "p12": "Nous pouvons mettre à jour ces Conditions de temps à autre. Le cas échéant, nous réviserons la date de « Dernière mise à jour » ci-dessus. Votre utilisation continue des Services après l'entrée en vigueur des modifications vaut acceptation des Conditions révisées.",
-  "h13": "13. Droit applicable",
-  "p13": "Les présentes Conditions sont régies par les lois de l'État du Wyoming (États-Unis), sans égard à ses règles de conflit de lois, dans la mesure permise par la loi applicable. Tout litige relève de la compétence exclusive des tribunaux situés dans le Wyoming, aux États-Unis, sauf disposition contraire d'une loi impérative de protection des consommateurs.",
-  "h14": "14. Nous contacter",
-  "p14": "<strong>The Nero Labs LLC</strong><br>Wyoming, États-Unis<br>E-mail : <a href=\"mailto:support@thenerolabs.com\">support@thenerolabs.com</a>",
-  "note": "Ces Conditions d'utilisation sont fournies en plusieurs langues à titre de commodité. En cas de divergence, la version anglaise prévaut."
- },
- "es": {
-  "lang_name": "Español",
-  "nav_home": "Inicio",
-  "nav_privacy": "Privacidad",
-  "nav_terms": "Términos",
-  "nav_support": "Soporte",
-  "doc_title": "Términos de Uso",
-  "updated": "Última actualización: 4 de junio de 2026",
-  "intro": "Estos Términos de Uso («Términos») rigen su acceso y uso de los sitios web, aplicaciones móviles y servicios proporcionados por The Nero Labs LLC («The Nero Labs», «nosotros»), incluidos <strong>MapNero</strong>, <strong>BallisticEdge</strong>, <strong>CarCheckUp</strong> y <strong>StreamEar</strong> (las «Apps» o «Servicios»). Al descargar, instalar o usar cualquiera de nuestros Servicios, usted acepta estos Términos. Si no está de acuerdo, no use los Servicios.",
-  "h1": "1. Elegibilidad",
-  "p1": "Debe tener al menos 13 años (o la edad mínima exigida en su jurisdicción) para usar los Servicios. Si usa los Servicios en nombre de una organización, declara estar autorizado para aceptar estos Términos en su nombre.",
-  "h2": "2. Licencia de uso de los Servicios",
-  "p2": "Sujeto a estos Términos, The Nero Labs le concede una licencia limitada, personal, no exclusiva, intransferible y revocable para descargar y usar las Apps para su propio uso lícito. Nos reservamos todos los derechos no concedidos expresamente.",
-  "h3": "3. Uso aceptable",
-  "p3": "Usted acepta no:<ul><li>usar los Servicios con fines ilícitos o en violación de la ley aplicable;</li><li>realizar ingeniería inversa, descompilar o intentar extraer el código fuente, salvo cuando la ley lo permita;</li><li>copiar, modificar, distribuir, vender o arrendar cualquier parte de los Servicios;</li><li>interferir, perturbar u obtener acceso no autorizado a los Servicios o sistemas relacionados; o</li><li>usar los Servicios para dañar, acosar o vulnerar los derechos de terceros.</li></ul>",
-  "h4": "4. Aviso sobre uso profesional e informativo",
-  "p4": "Nuestras Apps proporcionan herramientas profesionales e informativas, incluidas cartografía, estimación balística, listas de inspección de vehículos y alertas en tiempo real. Los resultados son <strong>estimaciones y ayudas</strong> basadas en los datos y parámetros disponibles. <strong>No</strong> sustituyen el criterio profesional, las directrices oficiales, los instrumentos certificados ni los servicios de emergencia. Usted es el único responsable de verificar los resultados y de cualquier decisión o acción que tome. No dependa de ninguna App como su única fuente de información crítica para la seguridad o la vida.",
-  "h5": "5. Compras y suscripciones",
-  "p5": "Algunos Servicios o funciones pueden ofrecerse como compra única o por suscripción a través de la App Store de Apple. Todos los pagos, la facturación, las renovaciones y los reembolsos los procesa y rige Apple conforme a sus condiciones. Las suscripciones se renuevan automáticamente salvo que se cancelen al menos 24 horas antes del fin del período actual; puede gestionar o cancelar una suscripción en los ajustes de su cuenta de App Store.",
-  "h6": "6. Propiedad intelectual",
-  "p6": "Los Servicios, incluidos todo el software, diseños, textos, gráficos, logotipos y los nombres y marcas «The Nero Labs», «MapNero», «BallisticEdge», «CarCheckUp» y «StreamEar», son propiedad de The Nero Labs LLC o de sus licenciantes y están protegidos por las leyes de propiedad intelectual. Estos Términos no le otorgan derecho alguno a usar nuestras marcas sin autorización previa por escrito.",
-  "h7": "7. Contenido y servicios de terceros",
-  "p7": "Los Servicios pueden mostrar o depender de datos, mosaicos de mapas, fuentes e infraestructura proporcionados por terceros. No controlamos ni somos responsables de la exactitud, disponibilidad o contenido de los datos o servicios de terceros, y su uso puede estar sujeto a sus propias condiciones.",
-  "h8": "8. Exención de garantías",
-  "p8": "Los Servicios se proporcionan «tal cual» y «según disponibilidad», sin garantías de ningún tipo, expresas o implícitas, incluidas las garantías implícitas de comerciabilidad, idoneidad para un fin determinado, exactitud y no infracción. No garantizamos que los Servicios sean ininterrumpidos, libres de errores o seguros.",
-  "h9": "9. Limitación de responsabilidad",
-  "p9": "En la máxima medida permitida por la ley, The Nero Labs LLC y sus directivos, miembros y colaboradores no serán responsables de daños indirectos, incidentales, especiales, consecuentes o punitivos, ni de pérdida de datos, beneficios o fondo de comercio, derivados de su uso (o imposibilidad de uso) de los Servicios. Nuestra responsabilidad total por cualquier reclamación no excederá el importe que usted nos haya pagado por el Servicio correspondiente en los doce (12) meses anteriores a la reclamación, o 50 USD si no pagó nada.",
-  "h10": "10. Indemnización",
-  "p10": "Usted acepta indemnizar y eximir de responsabilidad a The Nero Labs LLC frente a cualquier reclamación, daño, responsabilidad y gasto (incluidos honorarios legales razonables) derivados de su uso indebido de los Servicios o de su incumplimiento de estos Términos o de la ley aplicable.",
-  "h11": "11. Terminación",
-  "p11": "Podemos suspender o cancelar su acceso a los Servicios en cualquier momento si incumple estos Términos o si descontinuamos un Servicio. Puede dejar de usar los Servicios en cualquier momento desinstalando las Apps. Las secciones que por su naturaleza deban sobrevivir a la terminación (incluidas propiedad intelectual, exenciones, limitación de responsabilidad e indemnización) seguirán vigentes.",
-  "h12": "12. Cambios en estos Términos",
-  "p12": "Podemos actualizar estos Términos de vez en cuando. Cuando lo hagamos, revisaremos la fecha de «Última actualización» indicada arriba. Su uso continuado de los Servicios tras la entrada en vigor de los cambios constituye la aceptación de los Términos revisados.",
-  "h13": "13. Ley aplicable",
-  "p13": "Estos Términos se rigen por las leyes del Estado de Wyoming (EE. UU.), sin considerar sus normas de conflicto de leyes, en la medida permitida por la ley aplicable. Cualquier disputa estará sujeta a la jurisdicción exclusiva de los tribunales ubicados en Wyoming, EE. UU., salvo que una ley imperativa de protección al consumidor disponga lo contrario.",
-  "h14": "14. Contáctenos",
-  "p14": "<strong>The Nero Labs LLC</strong><br>Wyoming, EE. UU.<br>Correo: <a href=\"mailto:support@thenerolabs.com\">support@thenerolabs.com</a>",
-  "note": "Estos Términos de Uso se ofrecen en varios idiomas por comodidad. En caso de discrepancia, prevalecerá la versión en inglés."
- },
- "pt": {
-  "lang_name": "Português",
-  "nav_home": "Início",
-  "nav_privacy": "Privacidade",
-  "nav_terms": "Termos",
-  "nav_support": "Suporte",
-  "doc_title": "Termos de Uso",
-  "updated": "Última atualização: 4 de junho de 2026",
-  "intro": "Estes Termos de Uso (\"Termos\") regem seu acesso e uso dos sites, aplicativos móveis e serviços fornecidos pela The Nero Labs LLC (\"The Nero Labs\", \"nós\"), incluindo <strong>MapNero</strong>, <strong>BallisticEdge</strong>, <strong>CarCheckUp</strong> e <strong>StreamEar</strong> (os \"Apps\" ou \"Serviços\"). Ao baixar, instalar ou usar qualquer um dos nossos Serviços, você concorda com estes Termos. Se não concordar, não use os Serviços.",
-  "h1": "1. Elegibilidade",
-  "p1": "Você deve ter pelo menos 13 anos (ou a idade mínima exigida na sua jurisdição) para usar os Serviços. Se você usar os Serviços em nome de uma organização, declara estar autorizado a aceitar estes Termos em nome dela.",
-  "h2": "2. Licença de uso dos Serviços",
-  "p2": "Sujeito a estes Termos, a The Nero Labs concede a você uma licença limitada, pessoal, não exclusiva, intransferível e revogável para baixar e usar os Apps para seu próprio uso lícito. Reservamos todos os direitos não concedidos expressamente.",
-  "h3": "3. Uso aceitável",
-  "p3": "Você concorda em não:<ul><li>usar os Serviços para qualquer finalidade ilícita ou em violação da lei aplicável;</li><li>fazer engenharia reversa, descompilar ou tentar extrair o código-fonte, exceto quando permitido por lei;</li><li>copiar, modificar, distribuir, vender ou alugar qualquer parte dos Serviços;</li><li>interferir, perturbar ou obter acesso não autorizado aos Serviços ou sistemas relacionados; ou</li><li>usar os Serviços para prejudicar, assediar ou violar os direitos de terceiros.</li></ul>",
-  "h4": "4. Aviso sobre uso profissional e informativo",
-  "p4": "Nossos Apps fornecem ferramentas profissionais e informativas, incluindo mapeamento, estimativa balística, listas de inspeção de veículos e alertas em tempo real. Os resultados são <strong>estimativas e auxílios</strong> baseados nos dados e parâmetros disponíveis. Eles <strong>não</strong> substituem o julgamento profissional, orientações oficiais, instrumentos certificados ou serviços de emergência. Você é o único responsável por verificar os resultados e por quaisquer decisões ou ações que tomar. Não confie em nenhum App como sua única fonte de informações críticas para segurança ou vida.",
-  "h5": "5. Compras e assinaturas",
-  "p5": "Alguns Serviços ou recursos podem ser oferecidos como compra única ou por assinatura através da Apple App Store. Todos os pagamentos, faturamento, renovações e reembolsos são processados e regidos pela Apple de acordo com seus termos. As assinaturas são renovadas automaticamente, a menos que canceladas pelo menos 24 horas antes do fim do período atual; você pode gerenciar ou cancelar uma assinatura nas configurações da sua conta da App Store.",
-  "h6": "6. Propriedade intelectual",
-  "p6": "Os Serviços, incluindo todo o software, designs, textos, gráficos, logotipos e os nomes e marcas \"The Nero Labs\", \"MapNero\", \"BallisticEdge\", \"CarCheckUp\" e \"StreamEar\", pertencem à The Nero Labs LLC ou a seus licenciadores e são protegidos pelas leis de propriedade intelectual. Estes Termos não concedem a você qualquer direito de usar nossas marcas sem autorização prévia por escrito.",
-  "h7": "7. Conteúdo e serviços de terceiros",
-  "p7": "Os Serviços podem exibir ou depender de dados, blocos de mapa, feeds e infraestrutura fornecidos por terceiros. Não controlamos nem somos responsáveis pela exatidão, disponibilidade ou conteúdo de dados ou serviços de terceiros, e seu uso pode estar sujeito aos termos deles.",
-  "h8": "8. Isenção de garantias",
-  "p8": "Os Serviços são fornecidos \"no estado em que se encontram\" e \"conforme disponíveis\", sem garantias de qualquer tipo, expressas ou implícitas, incluindo garantias implícitas de comercialização, adequação a uma finalidade específica, exatidão e não violação. Não garantimos que os Serviços serão ininterruptos, livres de erros ou seguros.",
-  "h9": "9. Limitação de responsabilidade",
-  "p9": "Na extensão máxima permitida por lei, a The Nero Labs LLC e seus diretores, membros e colaboradores não serão responsáveis por quaisquer danos indiretos, incidentais, especiais, consequenciais ou punitivos, nem por qualquer perda de dados, lucros ou reputação, decorrentes do seu uso (ou incapacidade de usar) os Serviços. Nossa responsabilidade total por qualquer reclamação não excederá o valor que você nos pagou pelo Serviço relevante nos doze (12) meses anteriores à reclamação, ou US$ 50 se você não tiver pago nada.",
-  "h10": "10. Indenização",
-  "p10": "Você concorda em indenizar e isentar a The Nero Labs LLC de quaisquer reclamações, danos, responsabilidades e despesas (incluindo honorários advocatícios razoáveis) decorrentes do seu uso indevido dos Serviços ou da sua violação destes Termos ou da lei aplicável.",
-  "h11": "11. Rescisão",
-  "p11": "Podemos suspender ou encerrar seu acesso aos Serviços a qualquer momento se você violar estes Termos ou se descontinuarmos um Serviço. Você pode parar de usar os Serviços a qualquer momento desinstalando os Apps. As seções que por sua natureza devam sobreviver à rescisão (incluindo propriedade intelectual, isenções, limitação de responsabilidade e indenização) continuarão em vigor.",
-  "h12": "12. Alterações destes Termos",
-  "p12": "Podemos atualizar estes Termos de tempos em tempos. Quando o fizermos, revisaremos a data de \"Última atualização\" acima. O uso continuado dos Serviços após as alterações entrarem em vigor constitui aceitação dos Termos revisados.",
-  "h13": "13. Lei aplicável",
-  "p13": "Estes Termos são regidos pelas leis do Estado de Wyoming, EUA, sem considerar suas regras de conflito de leis, na medida permitida pela lei aplicável. Quaisquer disputas estarão sujeitas à jurisdição exclusiva dos tribunais localizados em Wyoming, EUA, salvo se uma lei imperativa de proteção ao consumidor dispuser de outra forma.",
-  "h14": "14. Fale conosco",
-  "p14": "<strong>The Nero Labs LLC</strong><br>Wyoming, EUA<br>E-mail: <a href=\"mailto:support@thenerolabs.com\">support@thenerolabs.com</a>",
-  "note": "Estes Termos de Uso são fornecidos em vários idiomas por conveniência. Em caso de divergência, prevalece a versão em inglês."
- },
- "ru": {
-  "lang_name": "Русский",
-  "nav_home": "Главная",
-  "nav_privacy": "Конфиденциальность",
-  "nav_terms": "Условия",
-  "nav_support": "Поддержка",
-  "doc_title": "Условия использования",
-  "updated": "Последнее обновление: 4 июня 2026 г.",
-  "intro": "Настоящие Условия использования («Условия») регулируют ваш доступ к веб-сайтам, мобильным приложениям и сервисам, предоставляемым The Nero Labs LLC («The Nero Labs», «мы»), и их использование, включая <strong>MapNero</strong>, <strong>BallisticEdge</strong>, <strong>CarCheckUp</strong> и <strong>StreamEar</strong> («Приложения» или «Сервисы»). Загружая, устанавливая или используя любой из наших Сервисов, вы соглашаетесь с настоящими Условиями. Если вы не согласны, не используйте Сервисы.",
-  "h1": "1. Право на использование",
-  "p1": "Вам должно быть не менее 13 лет (или минимальный возраст, требуемый в вашей юрисдикции), чтобы использовать Сервисы. Если вы используете Сервисы от имени организации, вы подтверждаете, что уполномочены принять настоящие Условия от её имени.",
-  "h2": "2. Лицензия на использование Сервисов",
-  "p2": "С учётом настоящих Условий The Nero Labs предоставляет вам ограниченную, личную, неисключительную, непередаваемую и отзывную лицензию на загрузку и использование Приложений для вашего собственного законного использования. Все права, прямо не предоставленные вам, мы сохраняем за собой.",
-  "h3": "3. Допустимое использование",
-  "p3": "Вы обязуетесь не:<ul><li>использовать Сервисы в незаконных целях или в нарушение применимого законодательства;</li><li>осуществлять обратную разработку, декомпиляцию или попытки извлечь исходный код, кроме случаев, разрешённых законом;</li><li>копировать, изменять, распространять, продавать или сдавать в аренду любую часть Сервисов;</li><li>вмешиваться в работу Сервисов или связанных систем, нарушать её или получать несанкционированный доступ; либо</li><li>использовать Сервисы для причинения вреда, преследования или нарушения прав других лиц.</li></ul>",
-  "h4": "4. Оговорка о профессиональном и информационном использовании",
-  "p4": "Наши Приложения предоставляют профессиональные и информационные инструменты, включая картографию, баллистические расчёты, контрольные списки осмотра транспортных средств и оповещения в реальном времени. Результаты являются <strong>оценками и вспомогательными средствами</strong> на основе доступных данных и параметров. Они <strong>не</strong> заменяют профессиональное суждение, официальные указания, сертифицированные приборы или экстренные службы. Вы несёте единоличную ответственность за проверку результатов и за любые принимаемые вами решения или действия. Не полагайтесь ни на одно Приложение как на единственный источник критически важной для безопасности или жизни информации.",
-  "h5": "5. Покупки и подписки",
-  "p5": "Некоторые Сервисы или функции могут предлагаться как разовая покупка или по подписке через Apple App Store. Все платежи, выставление счетов, продления и возвраты обрабатываются и регулируются компанией Apple в соответствии с её условиями. Подписки продлеваются автоматически, если не отменены не менее чем за 24 часа до окончания текущего периода; вы можете управлять подпиской или отменить её в настройках вашей учётной записи App Store.",
-  "h6": "6. Интеллектуальная собственность",
-  "p6": "Сервисы, включая всё программное обеспечение, дизайн, тексты, графику, логотипы, а также названия и знаки «The Nero Labs», «MapNero», «BallisticEdge», «CarCheckUp» и «StreamEar», принадлежат The Nero Labs LLC или её лицензиарам и защищены законами об интеллектуальной собственности. Настоящие Условия не предоставляют вам права использовать наши товарные знаки без предварительного письменного разрешения.",
-  "h7": "7. Сторонний контент и сервисы",
-  "p7": "Сервисы могут отображать или использовать данные, картографические тайлы, ленты и инфраструктуру, предоставляемые третьими сторонами. Мы не контролируем и не несём ответственности за точность, доступность или содержание сторонних данных или сервисов, и их использование может регулироваться их собственными условиями.",
-  "h8": "8. Отказ от гарантий",
-  "p8": "Сервисы предоставляются «как есть» и «по мере доступности», без каких-либо гарантий, явных или подразумеваемых, включая подразумеваемые гарантии товарной пригодности, пригодности для определённой цели, точности и ненарушения прав. Мы не гарантируем, что Сервисы будут бесперебойными, безошибочными или безопасными.",
-  "h9": "9. Ограничение ответственности",
-  "p9": "В максимально допустимой законом степени The Nero Labs LLC, а также её должностные лица, участники и подрядчики не несут ответственности за любые косвенные, случайные, специальные, последующие или штрафные убытки, а также за любую потерю данных, прибыли или деловой репутации, возникающие в связи с использованием (или невозможностью использования) Сервисов. Наша совокупная ответственность по любому требованию не превысит сумму, уплаченную вами нам за соответствующий Сервис в течение двенадцати (12) месяцев, предшествующих требованию, или 50 долларов США, если вы ничего не платили.",
-  "h10": "10. Возмещение убытков",
-  "p10": "Вы соглашаетесь возмещать убытки и ограждать The Nero Labs LLC от любых претензий, убытков, обязательств и расходов (включая разумные юридические издержки), возникающих в результате вашего ненадлежащего использования Сервисов или нарушения вами настоящих Условий или применимого законодательства.",
-  "h11": "11. Прекращение",
-  "p11": "Мы можем приостановить или прекратить ваш доступ к Сервисам в любое время, если вы нарушите настоящие Условия или если мы прекратим предоставление Сервиса. Вы можете прекратить использование Сервисов в любое время, удалив Приложения. Положения, которые по своей природе должны действовать после прекращения (включая интеллектуальную собственность, отказы от гарантий, ограничение ответственности и возмещение убытков), продолжают применяться.",
-  "h12": "12. Изменения настоящих Условий",
-  "p12": "Мы можем время от времени обновлять настоящие Условия. В этом случае мы изменим дату «Последнее обновление» выше. Продолжение использования Сервисов после вступления изменений в силу означает принятие изменённых Условий.",
-  "h13": "13. Применимое право",
-  "p13": "Настоящие Условия регулируются законодательством штата Вайоминг, США, без учёта его коллизионных норм, в степени, допустимой применимым правом. Любые споры подлежат исключительной юрисдикции судов, расположенных в штате Вайоминг, США, если иное не предусмотрено императивным местным законодательством о защите прав потребителей.",
-  "h14": "14. Свяжитесь с нами",
-  "p14": "<strong>The Nero Labs LLC</strong><br>Вайоминг, США<br>Эл. почта: <a href=\"mailto:support@thenerolabs.com\">support@thenerolabs.com</a>",
-  "note": "Настоящие Условия использования предоставляются на нескольких языках для удобства. В случае расхождений преимущественную силу имеет английская версия."
- },
- "uk": {
-  "lang_name": "Українська",
-  "nav_home": "Головна",
-  "nav_privacy": "Конфіденційність",
-  "nav_terms": "Умови",
-  "nav_support": "Підтримка",
-  "doc_title": "Умови використання",
-  "updated": "Останнє оновлення: 4 червня 2026 р.",
-  "intro": "Ці Умови використання («Умови») регулюють ваш доступ до вебсайтів, мобільних застосунків і сервісів, що надаються The Nero Labs LLC («The Nero Labs», «ми»), та їх використання, зокрема <strong>MapNero</strong>, <strong>BallisticEdge</strong>, <strong>CarCheckUp</strong> та <strong>StreamEar</strong> («Застосунки» або «Сервіси»). Завантажуючи, встановлюючи або використовуючи будь-який із наших Сервісів, ви погоджуєтеся з цими Умовами. Якщо ви не згодні, не використовуйте Сервіси.",
-  "h1": "1. Право на використання",
-  "p1": "Вам має бути щонайменше 13 років (або мінімальний вік, що вимагається у вашій юрисдикції), щоб користуватися Сервісами. Якщо ви користуєтеся Сервісами від імені організації, ви підтверджуєте, що уповноважені прийняти ці Умови від її імені.",
-  "h2": "2. Ліцензія на використання Сервісів",
-  "p2": "З урахуванням цих Умов The Nero Labs надає вам обмежену, особисту, невиключну, без права передавання та відкличну ліцензію на завантаження й використання Застосунків для вашого власного законного використання. Усі права, прямо не надані вам, ми залишаємо за собою.",
-  "h3": "3. Допустиме використання",
-  "p3": "Ви зобов'язуєтеся не:<ul><li>використовувати Сервіси з будь-якою незаконною метою або з порушенням чинного законодавства;</li><li>здійснювати зворотну розробку, декомпіляцію чи спроби витягти вихідний код, крім випадків, дозволених законом;</li><li>копіювати, змінювати, поширювати, продавати чи здавати в оренду будь-яку частину Сервісів;</li><li>втручатися в роботу Сервісів чи пов'язаних систем, порушувати її або отримувати несанкціонований доступ; або</li><li>використовувати Сервіси для заподіяння шкоди, переслідування чи порушення прав інших осіб.</li></ul>",
-  "h4": "4. Застереження щодо професійного та інформаційного використання",
-  "p4": "Наші Застосунки надають професійні та інформаційні інструменти, зокрема картографію, балістичні оцінки, контрольні списки огляду транспортних засобів і сповіщення в реальному часі. Результати є <strong>оцінками та допоміжними засобами</strong> на основі доступних даних і параметрів. Вони <strong>не</strong> замінюють професійне судження, офіційні вказівки, сертифіковані прилади чи екстрені служби. Ви несете одноосібну відповідальність за перевірку результатів і за будь-які рішення чи дії. Не покладайтеся на жоден Застосунок як на єдине джерело критично важливої для безпеки чи життя інформації.",
-  "h5": "5. Покупки та підписки",
-  "p5": "Деякі Сервіси чи функції можуть пропонуватися як разова покупка або за підпискою через Apple App Store. Усі платежі, виставлення рахунків, поновлення та повернення коштів обробляються й регулюються компанією Apple відповідно до її умов. Підписки поновлюються автоматично, якщо їх не скасовано щонайменше за 24 години до завершення поточного періоду; ви можете керувати підпискою або скасувати її в налаштуваннях вашого облікового запису App Store.",
-  "h6": "6. Інтелектуальна власність",
-  "p6": "Сервіси, включно з усім програмним забезпеченням, дизайном, текстами, графікою, логотипами, а також назвами й знаками «The Nero Labs», «MapNero», «BallisticEdge», «CarCheckUp» і «StreamEar», належать The Nero Labs LLC або її ліцензіарам і захищені законами про інтелектуальну власність. Ці Умови не надають вам жодного права використовувати наші торговельні марки без попереднього письмового дозволу.",
-  "h7": "7. Сторонній контент і сервіси",
-  "p7": "Сервіси можуть відображати або використовувати дані, картографічні тайли, стрічки та інфраструктуру, надані третіми сторонами. Ми не контролюємо й не несемо відповідальності за точність, доступність чи зміст сторонніх даних або сервісів, і їх використання може регулюватися їхніми власними умовами.",
-  "h8": "8. Відмова від гарантій",
-  "p8": "Сервіси надаються «як є» та «у міру доступності», без будь-яких гарантій, явних чи неявних, включно з неявними гарантіями придатності для продажу, придатності для певної мети, точності та невпорушення прав. Ми не гарантуємо, що Сервіси будуть безперебійними, без помилок чи безпечними.",
-  "h9": "9. Обмеження відповідальності",
-  "p9": "У максимально дозволеній законом мірі The Nero Labs LLC та її посадові особи, учасники й співвиконавці не несуть відповідальності за будь-які непрямі, випадкові, особливі, побічні чи штрафні збитки, а також за будь-яку втрату даних, прибутку чи репутації, що виникають у зв'язку з використанням (або неможливістю використання) Сервісів. Наша сукупна відповідальність за будь-якою вимогою не перевищить суму, сплачену вами нам за відповідний Сервіс протягом дванадцяти (12) місяців, що передували вимозі, або 50 доларів США, якщо ви нічого не платили.",
-  "h10": "10. Відшкодування",
-  "p10": "Ви погоджуєтеся відшкодовувати збитки та захищати The Nero Labs LLC від будь-яких претензій, збитків, зобов'язань і витрат (включно з розумними юридичними витратами), що виникають унаслідок вашого неналежного використання Сервісів або порушення вами цих Умов чи чинного законодавства.",
-  "h11": "11. Припинення",
-  "p11": "Ми можемо призупинити або припинити ваш доступ до Сервісів у будь-який час, якщо ви порушите ці Умови або якщо ми припинимо надання Сервісу. Ви можете припинити використання Сервісів у будь-який час, видаливши Застосунки. Положення, які за своєю природою мають діяти після припинення (включно з інтелектуальною власністю, відмовами від гарантій, обмеженням відповідальності та відшкодуванням), продовжують застосовуватися.",
-  "h12": "12. Зміни цих Умов",
-  "p12": "Ми можемо час від часу оновлювати ці Умови. У такому разі ми змінимо дату «Останнє оновлення» вище. Продовження використання Сервісів після набрання змінами чинності означає прийняття змінених Умов.",
-  "h13": "13. Застосовне право",
-  "p13": "Ці Умови регулюються законодавством штату Вайомінг, США, без урахування його колізійних норм, у мірі, дозволеній чинним правом. Будь-які спори підлягають винятковій юрисдикції судів, розташованих у штаті Вайомінг, США, якщо інше не передбачено імперативним місцевим законодавством про захист прав споживачів.",
-  "h14": "14. Зв'яжіться з нами",
-  "p14": "<strong>The Nero Labs LLC</strong><br>Вайомінг, США<br>Ел. пошта: <a href=\"mailto:support@thenerolabs.com\">support@thenerolabs.com</a>",
-  "note": "Ці Умови використання надаються кількома мовами для зручності. У разі розбіжностей переважну силу має англійська версія."
- },
- "ar": {
-  "lang_name": "العربية",
-  "nav_home": "الرئيسية",
-  "nav_privacy": "الخصوصية",
-  "nav_terms": "الشروط",
-  "nav_support": "الدعم",
-  "doc_title": "شروط الاستخدام",
-  "updated": "آخر تحديث: 4 يونيو 2026",
-  "intro": "تحكم شروط الاستخدام هذه («الشروط») وصولك إلى المواقع الإلكترونية والتطبيقات المحمولة والخدمات التي تقدّمها The Nero Labs LLC («The Nero Labs» أو «نحن») واستخدامك لها، بما في ذلك <strong>MapNero</strong> و<strong>BallisticEdge</strong> و<strong>CarCheckUp</strong> و<strong>StreamEar</strong> («التطبيقات» أو «الخدمات»). بتنزيل أي من خدماتنا أو تثبيتها أو استخدامها، فإنك توافق على هذه الشروط. وإذا لم توافق، فلا تستخدم الخدمات.",
-  "h1": "1. الأهلية",
-  "p1": "يجب أن يكون عمرك 13 عامًا على الأقل (أو الحد الأدنى للسن المطلوب في ولايتك القضائية) لاستخدام الخدمات. وإذا كنت تستخدم الخدمات نيابةً عن مؤسسة، فإنك تقرّ بأنك مخوَّل بقبول هذه الشروط نيابةً عنها.",
-  "h2": "2. ترخيص استخدام الخدمات",
-  "p2": "مع مراعاة هذه الشروط، تمنحك The Nero Labs ترخيصًا محدودًا وشخصيًا وغير حصري وغير قابل للتحويل وقابلًا للإلغاء لتنزيل التطبيقات واستخدامها لأغراضك المشروعة الخاصة. ونحتفظ بجميع الحقوق التي لم تُمنح لك صراحةً.",
-  "h3": "3. الاستخدام المقبول",
-  "p3": "توافق على ألّا:<ul><li>تستخدم الخدمات لأي غرض غير قانوني أو بما يخالف القانون المعمول به؛</li><li>تقوم بالهندسة العكسية أو فك التجميع أو محاولة استخراج الكود المصدري، إلا حيثما يسمح القانون؛</li><li>تنسخ أو تعدّل أو توزّع أو تبيع أو تؤجّر أي جزء من الخدمات؛</li><li>تتداخل مع الخدمات أو الأنظمة المرتبطة بها أو تعطّلها أو تصل إليها دون إذن؛ أو</li><li>تستخدم الخدمات لإيذاء الآخرين أو مضايقتهم أو انتهاك حقوقهم.</li></ul>",
-  "h4": "4. إخلاء مسؤولية الاستخدام المهني والمعلوماتي",
-  "p4": "تقدّم تطبيقاتنا أدوات مهنية ومعلوماتية، بما في ذلك رسم الخرائط والتقديرات الباليستية وقوائم فحص المركبات والتنبيهات الفورية. والمخرجات هي <strong>تقديرات وأدوات مساعدة</strong> بناءً على البيانات والمعطيات المتاحة. وهي <strong>ليست</strong> بديلاً عن الحكم المهني أو الإرشادات الرسمية أو الأدوات المعتمدة أو خدمات الطوارئ. وأنت وحدك المسؤول عن التحقق من النتائج وعن أي قرارات أو إجراءات تتخذها. لا تعتمد على أي تطبيق بوصفه مصدرك الوحيد للمعلومات الحرجة للسلامة أو الحياة.",
-  "h5": "5. المشتريات والاشتراكات",
-  "p5": "قد تُقدَّم بعض الخدمات أو الميزات كعملية شراء لمرة واحدة أو على أساس اشتراك عبر متجر Apple App Store. وتُعالَج جميع المدفوعات والفوترة والتجديدات والمستردات وتُحكَم من قِبل Apple وفقًا لشروطها. وتتجدّد الاشتراكات تلقائيًا ما لم تُلغَ قبل 24 ساعة على الأقل من نهاية الفترة الحالية؛ ويمكنك إدارة الاشتراك أو إلغاؤه من إعدادات حساب App Store الخاص بك.",
-  "h6": "6. الملكية الفكرية",
-  "p6": "الخدمات، بما في ذلك جميع البرمجيات والتصاميم والنصوص والرسومات والشعارات وأسماء وعلامات «The Nero Labs» و«MapNero» و«BallisticEdge» و«CarCheckUp» و«StreamEar»، مملوكة لشركة The Nero Labs LLC أو للمرخِّصين لها ومحمية بقوانين الملكية الفكرية. ولا تمنحك هذه الشروط أي حق في استخدام علاماتنا التجارية دون إذن خطي مسبق.",
-  "h7": "7. محتوى وخدمات الأطراف الثالثة",
-  "p7": "قد تعرض الخدمات بيانات وبلاطات خرائط وموجزات وبنية تحتية مقدَّمة من أطراف ثالثة أو تعتمد عليها. ولا نتحكم في دقة بيانات أو خدمات الأطراف الثالثة أو توافرها أو محتواها ولسنا مسؤولين عنها، وقد يخضع استخدامك لها لشروطها الخاصة.",
-  "h8": "8. إخلاء الضمانات",
-  "p8": "تُقدَّم الخدمات «كما هي» و«حسب توافرها»، دون أي ضمانات من أي نوع، صريحة أو ضمنية، بما في ذلك الضمانات الضمنية للرواج التجاري والملاءمة لغرض معيّن والدقة وعدم الانتهاك. ولا نضمن أن تكون الخدمات متواصلة أو خالية من الأخطاء أو آمنة.",
-  "h9": "9. تحديد المسؤولية",
-  "p9": "إلى أقصى حد يسمح به القانون، لن تكون The Nero Labs LLC ولا مسؤولوها وأعضاؤها والمساهمون فيها مسؤولين عن أي أضرار غير مباشرة أو عرضية أو خاصة أو تبعية أو عقابية، أو عن أي فقدان للبيانات أو الأرباح أو السمعة، تنشأ عن استخدامك (أو عدم قدرتك على استخدام) الخدمات. ولن تتجاوز مسؤوليتنا الإجمالية عن أي مطالبة المبلغ الذي دفعته لنا مقابل الخدمة المعنية خلال الاثني عشر (12) شهرًا السابقة للمطالبة، أو 50 دولارًا أمريكيًا إذا لم تدفع شيئًا.",
-  "h10": "10. التعويض",
-  "p10": "توافق على تعويض The Nero Labs LLC وحمايتها من أي مطالبات أو أضرار أو التزامات أو نفقات (بما في ذلك أتعاب قانونية معقولة) تنشأ عن سوء استخدامك للخدمات أو مخالفتك لهذه الشروط أو للقانون المعمول به.",
-  "h11": "11. الإنهاء",
-  "p11": "يجوز لنا تعليق وصولك إلى الخدمات أو إنهاؤه في أي وقت إذا خالفت هذه الشروط أو إذا أوقفنا خدمة. ويمكنك التوقف عن استخدام الخدمات في أي وقت بإزالة تثبيت التطبيقات. وتظل البنود التي ينبغي بطبيعتها أن تبقى بعد الإنهاء (بما في ذلك الملكية الفكرية وإخلاء المسؤولية وتحديد المسؤولية والتعويض) سارية.",
-  "h12": "12. التغييرات على هذه الشروط",
-  "p12": "قد نحدّث هذه الشروط من وقت لآخر. وعند ذلك، سنراجع تاريخ «آخر تحديث» أعلاه. ويُعدّ استمرارك في استخدام الخدمات بعد سريان التغييرات قبولًا للشروط المعدَّلة.",
-  "h13": "13. القانون الحاكم",
-  "p13": "تخضع هذه الشروط لقوانين ولاية وايومنغ بالولايات المتحدة، دون اعتبار لقواعد تنازع القوانين فيها، إلى الحد الذي يسمح به القانون المعمول به. وتخضع أي نزاعات للاختصاص القضائي الحصري للمحاكم الواقعة في ولاية وايومنغ بالولايات المتحدة، ما لم ينص قانون محلي إلزامي لحماية المستهلك على خلاف ذلك.",
-  "h14": "14. اتصل بنا",
-  "p14": "<strong>The Nero Labs LLC</strong><br>وايومنغ، الولايات المتحدة<br>البريد الإلكتروني: <a href=\"mailto:support@thenerolabs.com\">support@thenerolabs.com</a>",
-  "note": "تُقدَّم شروط الاستخدام هذه بعدة لغات لأغراض التيسير. وفي حال وجود أي تعارض، تكون النسخة الإنجليزية هي المعتمدة."
- },
- "zh": {
-  "lang_name": "中文",
-  "nav_home": "首页",
-  "nav_privacy": "隐私",
-  "nav_terms": "条款",
-  "nav_support": "支持",
-  "doc_title": "使用条款",
-  "updated": "最后更新：2026年6月4日",
-  "intro": "本使用条款（“条款”）规范您对 The Nero Labs LLC（“The Nero Labs”、“我们”）提供的网站、移动应用程序和服务的访问与使用，包括 <strong>MapNero</strong>、<strong>BallisticEdge</strong>、<strong>CarCheckUp</strong> 和 <strong>StreamEar</strong>（“应用”或“服务”）。下载、安装或使用我们的任何服务，即表示您同意本条款。如不同意，请勿使用服务。",
-  "h1": "1. 资格",
-  "p1": "您必须年满 13 岁（或您所在司法辖区要求的最低年龄）方可使用服务。如果您代表某组织使用服务，即表示您已获授权代表该组织接受本条款。",
-  "h2": "2. 服务使用许可",
-  "p2": "在遵守本条款的前提下，The Nero Labs 授予您有限的、个人的、非独占的、不可转让的、可撤销的许可，供您下载和使用应用以用于您自身的合法用途。我们保留未明确授予您的一切权利。",
-  "h3": "3. 可接受的使用",
-  "p3": "您同意不会：<ul><li>将服务用于任何非法目的或违反适用法律；</li><li>进行逆向工程、反编译或试图提取源代码，法律允许的除外；</li><li>复制、修改、分发、出售或出租服务的任何部分；</li><li>干扰、破坏服务或相关系统，或未经授权进行访问；或</li><li>利用服务损害、骚扰他人或侵犯他人权利。</li></ul>",
-  "h4": "4. 专业与信息用途免责声明",
-  "p4": "我们的应用提供专业和信息性工具，包括地图、弹道估算、车辆检查清单和实时提醒。输出结果是基于可用数据和参数的<strong>估算和辅助</strong>。它们<strong>不能</strong>替代专业判断、官方指南、经认证的仪器或紧急服务。您须自行负责核实结果以及您所作的任何决定或行动。请勿将任何应用作为您获取安全关键或生命攸关信息的唯一来源。",
-  "h5": "5. 购买与订阅",
-  "p5": "部分服务或功能可能通过 Apple App Store 以一次性购买或订阅方式提供。所有付款、计费、续订和退款均由 Apple 按其条款处理和管理。除非在当前周期结束前至少 24 小时取消，否则订阅将自动续订；您可以在 App Store 账户设置中管理或取消订阅。",
-  "h6": "6. 知识产权",
-  "p6": "服务，包括所有软件、设计、文本、图形、徽标以及“The Nero Labs”“MapNero”“BallisticEdge”“CarCheckUp”和“StreamEar”名称及标志，均归 The Nero Labs LLC 或其许可方所有，并受知识产权法保护。本条款未授予您在未经事先书面许可的情况下使用我们商标的任何权利。",
-  "h7": "7. 第三方内容与服务",
-  "p7": "服务可能显示或依赖由第三方提供的数据、地图瓦片、数据源和基础设施。我们不控制第三方数据或服务的准确性、可用性或内容，亦不对此负责，您对它们的使用可能受其自身条款约束。",
-  "h8": "8. 免责声明",
-  "p8": "服务按“现状”和“现有”提供，不附带任何明示或默示的保证，包括对适销性、特定用途适用性、准确性和不侵权的默示保证。我们不保证服务不中断、无错误或安全。",
-  "h9": "9. 责任限制",
-  "p9": "在法律允许的最大范围内，The Nero Labs LLC 及其高管、成员和贡献者对因您使用（或无法使用）服务而产生的任何间接、附带、特殊、后果性或惩罚性损害，或任何数据、利润或商誉损失，概不负责。我们对任何索赔的总责任不超过您在索赔前十二（12）个月内就相关服务向我们支付的金额；如您未支付任何费用，则不超过 50 美元。",
-  "h10": "10. 赔偿",
-  "p10": "您同意就因您滥用服务或违反本条款或适用法律而引起的任何索赔、损害、责任和费用（包括合理的律师费）对 The Nero Labs LLC 进行赔偿并使其免受损害。",
-  "h11": "11. 终止",
-  "p11": "如果您违反本条款，或我们停止提供某项服务，我们可随时暂停或终止您对服务的访问。您可随时通过卸载应用停止使用服务。依其性质应在终止后继续有效的条款（包括知识产权、免责声明、责任限制和赔偿）将继续适用。",
-  "h12": "12. 本条款的变更",
-  "p12": "我们可能不时更新本条款。届时，我们将修改上方的“最后更新”日期。在变更生效后您继续使用服务，即表示接受修订后的条款。",
-  "h13": "13. 适用法律",
-  "p13": "在适用法律允许的范围内，本条款受美国怀俄明州法律管辖，不考虑其法律冲突原则。除非强制性的当地消费者保护法另有规定，任何争议均受位于美国怀俄明州法院的专属管辖。",
-  "h14": "14. 联系我们",
-  "p14": "<strong>The Nero Labs LLC</strong><br>美国怀俄明州<br>电子邮件：<a href=\"mailto:support@thenerolabs.com\">support@thenerolabs.com</a>",
-  "note": "为方便起见，本使用条款以多种语言提供。如有任何不一致，以英文版本为准。"
- },
- "ja": {
-  "lang_name": "日本語",
-  "nav_home": "ホーム",
-  "nav_privacy": "プライバシー",
-  "nav_terms": "利用規約",
-  "nav_support": "サポート",
-  "doc_title": "利用規約",
-  "updated": "最終更新日：2026年6月4日",
-  "intro": "本利用規約（「本規約」）は、The Nero Labs LLC（「The Nero Labs」「当社」）が提供するウェブサイト、モバイルアプリケーションおよびサービス（<strong>MapNero</strong>、<strong>BallisticEdge</strong>、<strong>CarCheckUp</strong>、<strong>StreamEar</strong>（「本アプリ」または「本サービス」）を含む）へのアクセスおよびその利用を規律します。当社のサービスをダウンロード、インストール、または使用することにより、お客様は本規約に同意したものとみなされます。同意されない場合は、本サービスを使用しないでください。",
-  "h1": "1. 利用資格",
-  "p1": "本サービスを使用するには、13歳以上（またはお客様の管轄区域で必要とされる最低年齢以上）である必要があります。組織を代表して本サービスを使用する場合、お客様は当該組織を代表して本規約に同意する権限を有することを表明するものとします。",
-  "h2": "2. 本サービスの使用許諾",
-  "p2": "本規約に従うことを条件として、The Nero Labs は、お客様自身の適法な使用のために本アプリをダウンロードし使用するための、限定的、個人的、非独占的、譲渡不可かつ取消可能なライセンスを付与します。当社は、明示的に付与されていないすべての権利を留保します。",
-  "h3": "3. 許容される使用",
-  "p3": "お客様は、次の行為を行わないことに同意します：<ul><li>違法な目的または適用法に違反して本サービスを使用すること；</li><li>法律で認められる場合を除き、リバースエンジニアリング、逆コンパイル、またはソースコードの抽出を試みること；</li><li>本サービスのいかなる部分も複製、改変、配布、販売、または貸与すること；</li><li>本サービスまたは関連システムを妨害、混乱させ、または不正にアクセスすること；あるいは</li><li>本サービスを利用して他者に危害を加え、嫌がらせをし、またはその権利を侵害すること。</li></ul>",
-  "h4": "4. 専門的・情報的利用に関する免責",
-  "p4": "当社のアプリは、地図作成、弾道推定、車両点検チェックリスト、リアルタイムアラートなどの専門的・情報的ツールを提供します。出力結果は、利用可能なデータおよびパラメータに基づく<strong>推定および補助</strong>です。これらは専門的判断、公式な指針、認証済み機器、または緊急サービスに代わるものでは<strong>ありません</strong>。結果の検証およびお客様が行ういかなる決定・行動についても、お客様が単独で責任を負います。安全上または生命に関わる重要な情報の唯一の情報源として、いかなるアプリにも依拠しないでください。",
-  "h5": "5. 購入とサブスクリプション",
-  "p5": "一部のサービスまたは機能は、Apple App Store を通じて一回限りの購入またはサブスクリプション方式で提供される場合があります。すべての支払い、請求、更新、返金は、Apple の規約に従って Apple により処理・管理されます。サブスクリプションは、現在の期間終了の少なくとも24時間前に解約されない限り自動的に更新されます。サブスクリプションの管理または解約は、App Store アカウント設定で行えます。",
-  "h6": "6. 知的財産権",
-  "p6": "本サービス（すべてのソフトウェア、デザイン、テキスト、グラフィック、ロゴ、ならびに「The Nero Labs」「MapNero」「BallisticEdge」「CarCheckUp」「StreamEar」の名称および標章を含む）は、The Nero Labs LLC またはそのライセンサーに帰属し、知的財産権法により保護されています。本規約は、事前の書面による許可なく当社の商標を使用する権利をお客様に付与するものではありません。",
-  "h7": "7. 第三者のコンテンツおよびサービス",
-  "p7": "本サービスは、第三者が提供するデータ、地図タイル、フィード、インフラを表示し、またはこれらに依拠する場合があります。当社は、第三者のデータまたはサービスの正確性、可用性、内容を管理せず、これらについて責任を負いません。お客様による利用は、当該第三者の規約に従う場合があります。",
-  "h8": "8. 保証の否認",
-  "p8": "本サービスは「現状有姿」かつ「提供可能な範囲」で提供され、商品性、特定目的への適合性、正確性、非侵害の黙示の保証を含め、明示または黙示を問わずいかなる保証も伴いません。当社は、本サービスが中断しないこと、エラーがないこと、または安全であることを保証しません。",
-  "h9": "9. 責任の制限",
-  "p9": "適用法で認められる最大限の範囲において、The Nero Labs LLC ならびにその役員、構成員および貢献者は、お客様による本サービスの使用（または使用不能）に起因または関連する間接的、付随的、特別、結果的または懲罰的損害、ならびにデータ、利益、信用の損失について一切責任を負いません。いかなる請求に対する当社の総責任も、請求前の12か月間に当該サービスについてお客様が当社に支払った金額を上限とし、支払いがない場合は50米ドルを上限とします。",
-  "h10": "10. 補償",
-  "p10": "お客様は、本サービスの不正使用、または本規約もしくは適用法の違反に起因するあらゆる請求、損害、責任および費用（合理的な弁護士費用を含む）について、The Nero Labs LLC を補償し、損害を与えないことに同意します。",
-  "h11": "11. 終了",
-  "p11": "お客様が本規約に違反した場合、または当社がサービスを終了する場合、当社はいつでもお客様の本サービスへのアクセスを停止または終了することができます。お客様は、本アプリをアンインストールすることでいつでも本サービスの使用を中止できます。その性質上終了後も存続すべき条項（知的財産権、免責、責任の制限、補償を含む）は、引き続き適用されます。",
-  "h12": "12. 本規約の変更",
-  "p12": "当社は、本規約を随時更新することがあります。その場合、上記の「最終更新日」を改訂します。変更の発効後にお客様が本サービスの使用を継続した場合、改訂後の規約に同意したものとみなされます。",
-  "h13": "13. 準拠法",
-  "p13": "本規約は、適用法で認められる範囲において、抵触法の原則にかかわらず、米国ワイオミング州法に準拠します。強行的な現地の消費者保護法が別段の定めをする場合を除き、いかなる紛争も米国ワイオミング州所在の裁判所の専属的管轄に服します。",
-  "h14": "14. お問い合わせ",
-  "p14": "<strong>The Nero Labs LLC</strong><br>米国ワイオミング州<br>メール：<a href=\"mailto:support@thenerolabs.com\">support@thenerolabs.com</a>",
-  "note": "本利用規約は利便性のため複数の言語で提供されています。相違がある場合は、英語版が優先されます。"
- },
- "hi": {
-  "lang_name": "हिन्दी",
-  "nav_home": "होम",
-  "nav_privacy": "गोपनीयता",
-  "nav_terms": "शर्तें",
-  "nav_support": "सहायता",
-  "doc_title": "उपयोग की शर्तें",
-  "updated": "अंतिम अद्यतन: 4 जून 2026",
-  "intro": "ये उपयोग की शर्तें (\"शर्तें\") The Nero Labs LLC (\"The Nero Labs\", \"हम\") द्वारा प्रदान की जाने वाली वेबसाइटों, मोबाइल एप्लिकेशनों और सेवाओं — जिनमें <strong>MapNero</strong>, <strong>BallisticEdge</strong>, <strong>CarCheckUp</strong> और <strong>StreamEar</strong> (\"ऐप्स\" या \"सेवाएँ\") शामिल हैं — तक आपकी पहुँच और उपयोग को नियंत्रित करती हैं। हमारी किसी भी सेवा को डाउनलोड, इंस्टॉल या उपयोग करके आप इन शर्तों से सहमत होते हैं। यदि आप सहमत नहीं हैं, तो सेवाओं का उपयोग न करें।",
-  "h1": "1. पात्रता",
-  "p1": "सेवाओं का उपयोग करने के लिए आपकी आयु कम से कम 13 वर्ष (या आपके क्षेत्राधिकार में आवश्यक न्यूनतम आयु) होनी चाहिए। यदि आप किसी संगठन की ओर से सेवाओं का उपयोग करते हैं, तो आप यह प्रमाणित करते हैं कि आप उसकी ओर से इन शर्तों को स्वीकार करने के लिए अधिकृत हैं।",
-  "h2": "2. सेवाओं के उपयोग का लाइसेंस",
-  "p2": "इन शर्तों के अधीन, The Nero Labs आपको अपने स्वयं के वैध उपयोग के लिए ऐप्स डाउनलोड और उपयोग करने हेतु एक सीमित, व्यक्तिगत, गैर-अनन्य, गैर-हस्तांतरणीय और प्रतिसंहरणीय लाइसेंस प्रदान करती है। जो अधिकार आपको स्पष्ट रूप से नहीं दिए गए हैं, उन सभी को हम सुरक्षित रखते हैं।",
-  "h3": "3. स्वीकार्य उपयोग",
-  "p3": "आप सहमत होते हैं कि आप:<ul><li>सेवाओं का उपयोग किसी अवैध उद्देश्य के लिए या लागू कानून के उल्लंघन में नहीं करेंगे;</li><li>कानून द्वारा अनुमत स्थितियों को छोड़कर, रिवर्स इंजीनियरिंग, डिकंपाइल या स्रोत कोड निकालने का प्रयास नहीं करेंगे;</li><li>सेवाओं के किसी भी भाग की प्रतिलिपि, संशोधन, वितरण, बिक्री या किराये पर नहीं देंगे;</li><li>सेवाओं या संबंधित प्रणालियों में हस्तक्षेप, बाधा या अनधिकृत पहुँच नहीं करेंगे; अथवा</li><li>सेवाओं का उपयोग दूसरों को नुकसान पहुँचाने, परेशान करने या उनके अधिकारों का उल्लंघन करने के लिए नहीं करेंगे।</li></ul>",
-  "h4": "4. पेशेवर एवं सूचनात्मक उपयोग अस्वीकरण",
-  "p4": "हमारे ऐप्स पेशेवर और सूचनात्मक उपकरण प्रदान करते हैं, जिनमें मानचित्रण, बैलिस्टिक अनुमान, वाहन निरीक्षण जाँच-सूची और रीयल-टाइम अलर्ट शामिल हैं। परिणाम उपलब्ध डेटा और मापदंडों पर आधारित <strong>अनुमान और सहायक साधन</strong> हैं। ये पेशेवर निर्णय, आधिकारिक मार्गदर्शन, प्रमाणित उपकरणों या आपातकालीन सेवाओं का <strong>विकल्प नहीं</strong> हैं। परिणामों की पुष्टि करने तथा आपके द्वारा लिए गए किसी भी निर्णय या कार्रवाई के लिए आप अकेले उत्तरदायी हैं। सुरक्षा-महत्वपूर्ण या जीवन-महत्वपूर्ण जानकारी के एकमात्र स्रोत के रूप में किसी भी ऐप पर निर्भर न रहें।",
-  "h5": "5. खरीद और सदस्यता",
-  "p5": "कुछ सेवाएँ या सुविधाएँ Apple App Store के माध्यम से एकमुश्त खरीद या सदस्यता के आधार पर प्रदान की जा सकती हैं। सभी भुगतान, बिलिंग, नवीनीकरण और रिफंड Apple द्वारा उसकी शर्तों के अनुसार संसाधित और शासित होते हैं। वर्तमान अवधि की समाप्ति से कम से कम 24 घंटे पहले रद्द न किए जाने पर सदस्यता स्वतः नवीनीकृत हो जाती है; आप अपनी App Store खाता सेटिंग्स में सदस्यता प्रबंधित या रद्द कर सकते हैं।",
-  "h6": "6. बौद्धिक संपदा",
-  "p6": "सेवाएँ, जिनमें सभी सॉफ़्टवेयर, डिज़ाइन, पाठ, ग्राफ़िक्स, लोगो तथा \"The Nero Labs\", \"MapNero\", \"BallisticEdge\", \"CarCheckUp\" और \"StreamEar\" नाम एवं चिह्न शामिल हैं, The Nero Labs LLC या उसके लाइसेंसदाताओं के स्वामित्व में हैं और बौद्धिक संपदा कानूनों द्वारा संरक्षित हैं। ये शर्तें आपको पूर्व लिखित अनुमति के बिना हमारे ट्रेडमार्क का उपयोग करने का कोई अधिकार नहीं देतीं।",
-  "h7": "7. तृतीय-पक्ष सामग्री और सेवाएँ",
-  "p7": "सेवाएँ तृतीय पक्षों द्वारा प्रदान किए गए डेटा, मानचित्र टाइलों, फ़ीड और इंफ्रास्ट्रक्चर को प्रदर्शित कर सकती हैं या उन पर निर्भर हो सकती हैं। हम तृतीय-पक्ष डेटा या सेवाओं की सटीकता, उपलब्धता या सामग्री को न तो नियंत्रित करते हैं और न ही उसके लिए उत्तरदायी हैं, और उनका आपका उपयोग उनकी अपनी शर्तों के अधीन हो सकता है।",
-  "h8": "8. वारंटियों का अस्वीकरण",
-  "p8": "सेवाएँ \"जैसी हैं\" और \"जैसी उपलब्ध हैं\" के आधार पर प्रदान की जाती हैं, बिना किसी प्रकार की स्पष्ट या निहित वारंटी के, जिसमें व्यापारिकता, किसी विशेष उद्देश्य के लिए उपयुक्तता, सटीकता और गैर-उल्लंघन की निहित वारंटियाँ शामिल हैं। हम यह वारंटी नहीं देते कि सेवाएँ निर्बाध, त्रुटि-रहित या सुरक्षित होंगी।",
-  "h9": "9. दायित्व की सीमा",
-  "p9": "कानून द्वारा अनुमत अधिकतम सीमा तक, The Nero Labs LLC तथा उसके अधिकारी, सदस्य और योगदानकर्ता आपके द्वारा सेवाओं के उपयोग (या उपयोग में असमर्थता) से उत्पन्न किसी भी अप्रत्यक्ष, आकस्मिक, विशेष, परिणामी या दंडात्मक क्षति, या डेटा, लाभ या सद्भावना की किसी हानि के लिए उत्तरदायी नहीं होंगे। किसी भी दावे के लिए हमारा कुल दायित्व दावे से पूर्व बारह (12) महीनों में संबंधित सेवा के लिए आपके द्वारा हमें भुगतान की गई राशि से अधिक नहीं होगा, या यदि आपने कुछ भी भुगतान नहीं किया है तो 50 अमेरिकी डॉलर से अधिक नहीं होगा।",
-  "h10": "10. क्षतिपूर्ति",
-  "p10": "आप सहमत होते हैं कि सेवाओं के आपके दुरुपयोग या इन शर्तों अथवा लागू कानून के आपके उल्लंघन से उत्पन्न किसी भी दावे, क्षति, दायित्व और व्यय (उचित कानूनी शुल्क सहित) के लिए आप The Nero Labs LLC की क्षतिपूर्ति करेंगे और उसे हानिरहित रखेंगे।",
-  "h11": "11. समाप्ति",
-  "p11": "यदि आप इन शर्तों का उल्लंघन करते हैं या यदि हम किसी सेवा को बंद करते हैं, तो हम किसी भी समय सेवाओं तक आपकी पहुँच को निलंबित या समाप्त कर सकते हैं। आप ऐप्स अनइंस्टॉल करके किसी भी समय सेवाओं का उपयोग बंद कर सकते हैं। वे खंड जिन्हें अपनी प्रकृति के अनुसार समाप्ति के बाद भी बने रहना चाहिए (बौद्धिक संपदा, अस्वीकरण, दायित्व की सीमा और क्षतिपूर्ति सहित) लागू रहेंगे।",
-  "h12": "12. इन शर्तों में परिवर्तन",
-  "p12": "हम समय-समय पर इन शर्तों को अद्यतन कर सकते हैं। ऐसा करने पर, हम ऊपर दी गई \"अंतिम अद्यतन\" तिथि को संशोधित करेंगे। परिवर्तन प्रभावी होने के बाद सेवाओं का आपका निरंतर उपयोग संशोधित शर्तों की स्वीकृति माना जाएगा।",
-  "h13": "13. शासी कानून",
-  "p13": "ये शर्तें, लागू कानून द्वारा अनुमत सीमा तक, इसके विधि-संघर्ष सिद्धांतों पर ध्यान दिए बिना, वायोमिंग राज्य, अमेरिका के कानूनों द्वारा शासित होंगी। जब तक कोई अनिवार्य स्थानीय उपभोक्ता-संरक्षण कानून अन्यथा प्रावधान न करे, कोई भी विवाद वायोमिंग, अमेरिका में स्थित न्यायालयों के अनन्य क्षेत्राधिकार के अधीन होगा।",
-  "h14": "14. हमसे संपर्क करें",
-  "p14": "<strong>The Nero Labs LLC</strong><br>वायोमिंग, अमेरिका<br>ईमेल: <a href=\"mailto:support@thenerolabs.com\">support@thenerolabs.com</a>",
-  "note": "ये उपयोग की शर्तें सुविधा के लिए कई भाषाओं में प्रदान की गई हैं। किसी भी विसंगति की स्थिति में, अंग्रेज़ी संस्करण मान्य होगा।"
- }
-};
-let currentLang = 'en';
-function applyLang(lang){
-  const t = i18n[lang] || i18n.en;
-  document.querySelectorAll('[data-i18n]').forEach(el=>{
-    const k = el.getAttribute('data-i18n');
-    if(t[k]!==undefined) el.innerHTML = t[k];
-  });
-  document.title = (t.doc_title||'') + ' — The Nero Labs';
-  document.getElementById('langBtn').textContent = '🌐 ' + (t.lang_name||lang) + ' ▾';
-  document.documentElement.lang = lang;
-  document.documentElement.dir = (lang==='ar') ? 'rtl' : 'ltr';
-  document.querySelectorAll('.lang-option').forEach(o=>{
-    o.classList.toggle('active', o.getAttribute('onclick').includes("'"+lang+"'"));
-  });
-}
-function setLang(lang){
-  currentLang = lang;
-  try{ localStorage.setItem('nl_lang', lang); }catch(e){}
-  applyLang(lang);
-  document.getElementById('langDropdown').classList.remove('open');
-}
-function toggleLang(e){
-  e.stopPropagation();
-  document.getElementById('langDropdown').classList.toggle('open');
-}
-document.addEventListener('click', ()=>document.getElementById('langDropdown').classList.remove('open'));
-(function(){
-  let saved='en';
-  try{ saved = localStorage.getItem('nl_lang') || (navigator.language||'en').slice(0,2); }catch(e){}
-  if(!i18n[saved]) saved='en';
-  setLang(saved);
-})();
-</script>
 </body>
 </html>

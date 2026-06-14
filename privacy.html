@@ -1,544 +1,143 @@
 <!DOCTYPE html>
-<html lang="en" style="color-scheme: dark; background:#07080f;">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Privacy Policy — The Nero Labs</title>
 <meta name="description" content="Privacy Policy for The Nero Labs LLC and its mobile applications.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-  :root{--bg:#07080f;--surface:#0e1018;--surface2:#13151f;--border:rgba(255,255,255,0.08);--text:#e8eaf0;--muted:#8a90a0;--accent:#4f8ef7;--accent2:#7c5cfc;}
-  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth}
-  body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased}
-  body::before{content:'';position:fixed;inset:0;background:radial-gradient(600px circle at 80% -10%,rgba(37,99,235,0.12),transparent 60%),radial-gradient(500px circle at 0% 90%,rgba(124,58,237,0.10),transparent 60%);pointer-events:none;z-index:0}
-  nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.1rem 2rem;background:rgba(7,8,15,0.72);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
-  .logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.1rem;letter-spacing:-0.02em;color:var(--text);text-decoration:none;display:flex;align-items:center;gap:0.6rem}
-  .logo .mark{width:28px;height:28px;border-radius:7px;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;font-size:0.78rem;font-weight:800;color:#fff;letter-spacing:-0.5px}
-  .nav-right{display:flex;align-items:center;gap:1.2rem}
-  .nav-links{display:flex;gap:1.2rem;list-style:none}
-  .nav-links a{color:var(--muted);text-decoration:none;font-size:0.9rem;font-weight:500;transition:color .2s}
-  .nav-links a:hover{color:var(--text)}
-  .lang-selector{position:relative}
-  .lang-btn{background:var(--surface2);border:1px solid var(--border);color:var(--text);padding:0.4rem 0.8rem;border-radius:8px;cursor:pointer;font-size:0.85rem;font-family:'DM Sans',sans-serif;display:flex;align-items:center;gap:0.4rem;transition:border-color .2s}
-  .lang-btn:hover{border-color:var(--accent)}
-  .lang-dropdown{position:absolute;top:calc(100% + 8px);right:0;background:var(--surface2);border:1px solid var(--border);border-radius:12px;padding:0.5rem;min-width:180px;display:none;grid-template-columns:1fr 1fr;gap:0.2rem;z-index:200;box-shadow:0 20px 60px rgba(0,0,0,0.5)}
-  .lang-dropdown.open{display:grid}
-  .lang-option{padding:0.4rem 0.6rem;border-radius:8px;cursor:pointer;font-size:0.8rem;color:var(--muted);transition:all .15s;white-space:nowrap}
-  .lang-option:hover{background:var(--border);color:var(--text)}
-  .lang-option.active{color:var(--accent);background:rgba(79,142,247,0.1)}
-  .hero{position:relative;z-index:1;text-align:center;padding:4.5rem 1.5rem 2.5rem}
-  .hero h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(2rem,5vw,2.8rem);letter-spacing:-0.03em;margin-bottom:0.6rem}
-  .hero .meta{color:var(--muted);font-size:0.9rem}
-  main{position:relative;z-index:1;max-width:820px;margin:0 auto;padding:1rem 1.5rem 5rem}
-  .intro{color:var(--muted);font-size:1.02rem;margin-bottom:1.5rem}
-  h2{font-family:'Syne',sans-serif;font-weight:700;font-size:1.25rem;letter-spacing:-0.01em;margin:2.4rem 0 0.7rem;color:var(--text)}
-  p,li{color:#c3c8d4;margin-bottom:0.7rem}
-  ul{padding-left:1.3rem;margin-bottom:0.7rem}
-  li{margin-bottom:0.4rem}
-  a{color:var(--accent)}
-  strong{color:var(--text);font-weight:600}
-  .card{background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:12px;padding:1.1rem 1.3rem;margin:1.2rem 0;color:#c3c8d4}
-  .note{margin-top:2.5rem;padding-top:1.2rem;border-top:1px solid var(--border);color:var(--muted);font-size:0.85rem;font-style:italic}
-  footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:2rem 1.5rem;text-align:center;color:var(--muted);font-size:0.85rem}
-  footer a{color:var(--muted);text-decoration:none;margin:0 0.6rem}
-  footer a:hover{color:var(--text)}
-  html[dir=rtl] .card{border-left:none;border-right:3px solid var(--accent)}
-  html[dir=rtl] ul{padding-left:0;padding-right:1.3rem}
-  html[dir=rtl] .lang-dropdown{right:auto;left:0}
-  @media(max-width:600px){nav{padding:1rem 1.1rem}.nav-links{display:none}}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+:root {
+  --black: #08090b; --ink: #0f1014; --surface: #13151a;
+  --line: rgba(255,255,255,0.07); --gold: #b8922a; --gold2: #d4aa4a;
+  --text: #e2ddd4; --dim: #7a7468; --small: 0.72rem;
+}
+body { background: var(--black); color: var(--text); font-family: 'Inter', sans-serif; font-weight: 300; }
+nav {
+  position: sticky; top: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1.4rem 4rem;
+  background: rgba(8,9,11,0.92); backdrop-filter: blur(24px);
+  border-bottom: 1px solid var(--line);
+}
+.nav-brand { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
+.nav-brand img { width: 32px; height: 32px; border-radius: 7px; object-fit: cover; }
+.nav-brand span {
+  font-family: 'Cormorant Garamond', serif; font-size: 1.05rem;
+  font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text);
+}
+.nav-links { display: flex; gap: 2rem; list-style: none; }
+.nav-links a { color: var(--dim); text-decoration: none; font-size: var(--small); letter-spacing: 0.1em; text-transform: uppercase; transition: color 0.2s; }
+.nav-links a:hover { color: var(--gold2); }
+.content { max-width: 760px; margin: 0 auto; padding: 6rem 2rem 8rem; }
+.page-eyebrow { font-size: var(--small); letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+.page-title {
+  font-family: 'Cormorant Garamond', serif; font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 300; line-height: 1.1; margin-bottom: 0.5rem;
+}
+.page-date { font-size: 0.8rem; color: var(--dim); margin-bottom: 4rem; letter-spacing: 0.06em; }
+.page-date::before { content: ''; display: inline-block; width: 24px; height: 1px; background: var(--gold); margin-right: 0.8rem; vertical-align: middle; opacity: 0.5; }
+h2 {
+  font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 400;
+  margin: 3rem 0 1rem; color: var(--text); letter-spacing: 0.02em;
+}
+h2::before { content: '—  '; color: var(--gold); opacity: 0.6; }
+p { font-size: 0.9rem; color: var(--dim); line-height: 1.9; margin-bottom: 1rem; }
+ul { padding-left: 1.5rem; margin-bottom: 1rem; }
+li { font-size: 0.9rem; color: var(--dim); line-height: 1.9; margin-bottom: 0.3rem; }
+a { color: var(--gold2); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.divider { border: none; border-top: 1px solid var(--line); margin: 3rem 0; }
+footer {
+  border-top: 1px solid var(--line); padding: 2rem 4rem;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.footer-links { display: flex; gap: 2rem; }
+.footer-links a { color: var(--dim); text-decoration: none; font-size: var(--small); letter-spacing: 0.08em; transition: color 0.2s; }
+.footer-links a:hover { color: var(--gold2); }
+.footer-copy { font-size: 0.7rem; color: var(--dim); }
+@media (max-width: 768px) {
+  nav { padding: 1.2rem 1.5rem; }
+  .nav-links { display: none; }
+  footer { flex-direction: column; gap: 1.5rem; padding: 2rem 1.5rem; text-align: center; }
+}
 </style>
 </head>
 <body>
+
 <nav>
-  <a href="/" class="logo"><span class="mark">NL</span> The Nero Labs</a>
-  <div class="nav-right">
-    <ul class="nav-links">
-      <li><a href="/" data-i18n="nav_home">Home</a></li>
-      <li><a href="/terms.html" data-i18n="nav_terms">Terms</a></li>
-    </ul>
-    <div class="lang-selector">
-      <button class="lang-btn" id="langBtn" onclick="toggleLang(event)">🌐 English ▾</button>
-      <div class="lang-dropdown" id="langDropdown">
-        <div class="lang-option active" onclick="setLang('en')">🇬🇧 English</div>
-        <div class="lang-option" onclick="setLang('tr')">🇹🇷 Türkçe</div>
-        <div class="lang-option" onclick="setLang('de')">🇩🇪 Deutsch</div>
-        <div class="lang-option" onclick="setLang('fr')">🇫🇷 Français</div>
-        <div class="lang-option" onclick="setLang('es')">🇪🇸 Español</div>
-        <div class="lang-option" onclick="setLang('pt')">🇧🇷 Português</div>
-        <div class="lang-option" onclick="setLang('ru')">🇷🇺 Русский</div>
-        <div class="lang-option" onclick="setLang('uk')">🇺🇦 Українська</div>
-        <div class="lang-option" onclick="setLang('ar')">🇸🇦 العربية</div>
-        <div class="lang-option" onclick="setLang('zh')">🇨🇳 中文</div>
-        <div class="lang-option" onclick="setLang('ja')">🇯🇵 日本語</div>
-        <div class="lang-option" onclick="setLang('hi')">🇮🇳 हिन्दी</div>
-      </div>
-    </div>
-  </div>
+  <a href="/" class="nav-brand">
+    <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAMCAgICAgMCAgIDAwMDBAYEBAQEBAgGBgUGCQgKCgkICQkKDA8MCgsOCwkJDRENDg8QEBEQCgwSExIQEw8QEBD/2wBDAQMDAwQDBAgEBAgQCwkLEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBD/wAARCAAwADADASIAAhEBAxEB/8QAHQAAAgEFAQEAAAAAAAAAAAAABAUDAAECBggHCf/EAC0QAAIBAwQCAAUCBwAAAAAAAAECAwQFEQAGEiEHMRMiQVFhCBQVMkJxcoGR/8QAGQEAAgMBAAAAAAAAAAAAAAAAAQMAAgUG/8QAJBEAAgIBAwMFAQAAAAAAAAAAAQIAESEDEjEEUYETMkFhkaH/2gAMAwEAAhEDEQA/APmagAwNExrodB3opMAZOpJJo0/7olUA6Gt2u/iHdVr2HafJFNb56mx3KlgnlnVM/tWlHyh8elYghW9Z6PeMxbR8X7k3lsveW/LQ9H/DdiwUlRdVlmKy8amUxR/DXBDHkDnJGBpK9RpOu9Wxdebqv2MbSdTtIzNSEerGPB71KMYOrP8AQA6dFxAhwdTZwh0OhJIA9nof305rNtX+3rMK+0VNMYBmQSrxK9sPr+VYf6OqlguCYQCeJ1v4h3/uW0UGwaixvba+2WXxlXT7j27c15Ud+t9PUhpaY5yEm+FKzRuQfmQKemJDlT4VsX6efOm4/DN/kqtv+Q6OyfsbXVgits01PW85qWbOcgfEXg2cke89MebbTva52RrRHNte5hbXt2WzVUcc0atMrnLlTnsFY5Mj+YcT10dEUl98cy7cq9vbE2fvq333c0KQcWuVPPRVYSXIVoSORwyHDqQykH2CRrnV6XUV7WwNwJqqI3Xnxwe381W1EK57fd3VY8/E8+5A5GqLAH76bUmy9111PS1lJYqmWCtV3p5BxAdUBLHs9Y4n3j0dIy/BuJGCDjXRK6thTcyipHMRLnr5iOwQR7B0wN4usymOrudbPGyCNkabOVBYgdg9Au2P8jpcDnWYPWDolQ3IkBI4jiO9VTOzz1lwcOoVuVQHLAMeskZHyvIAR65fbrWcd2aOkjoY5q4U6K+EWdUwzk8sHiSAQex986TqxB71KG/Gq+mvaHcY+O69xJJTvBf7ii0shmgDzhjHI3LkwPEd5Zvp/UfvpY0zPIXdiWYliSckk9k6G5fjVBsHRVFX2iAsTyZ//9k=" alt="Nero Labs">
+    <span>The Nero Labs</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="/#products">Products</a></li>
+    <li><a href="/#about">About</a></li>
+    <li><a href="mailto:hello@thenerolabs.com">Contact</a></li>
+  </ul>
 </nav>
+<div class="content">
+  <div class="page-eyebrow">Legal</div>
+  <h1 class="page-title">Privacy Policy</h1>
+  <p class="page-date">Effective Date: June 1, 2026</p>
 
-<header class="hero">
-  <h1 data-i18n="doc_title">Privacy Policy</h1>
-  <p class="meta" data-i18n="updated">Last updated: June 4, 2026</p>
-</header>
+  <p>The Nero Labs LLC ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard information when you use our mobile applications: MapNero, StreamEar, BallisticEdge Pro, and CarCheckUp (collectively, "the Apps").</p>
 
-<main>
-  <p class="intro" data-i18n="intro">The Nero Labs LLC ("The Nero Labs", "we", "us", or "our") builds professional mobile applications for demanding environments — including <strong>MapNero</strong>, <strong>BallisticEdge</strong>, <strong>CarCheckUp</strong>, and <strong>StreamEar</strong> (the "Apps"). This Privacy Policy explains what our Apps and website collect, how we use it, and the choices you have. We keep data collection to the minimum needed to make our products work.</p>
-  <div class="card" data-i18n="short"><strong>The short version.</strong> Most of our Apps work on your device and need no account. We do not sell your personal information and we do not use your data for advertising. Where an App needs a permission (such as location or camera), it is used only to deliver the feature you requested.</div>
-  <h2 data-i18n="h1">1. Information We Collect</h2>
-  <p data-i18n="p1">What we collect depends on which App or service you use.<br><br><strong>Information you provide:</strong> if you email support@thenerolabs.com we receive your email address and message. Data you enter to use a feature — map markers in MapNero, ballistic parameters in BallisticEdge, vehicle checklists in CarCheckUp, alert preferences in StreamEar — is generally stored locally on your device unless a feature explicitly syncs it.<br><br><strong>Information collected automatically:</strong> if you opt in, Apple may share anonymized crash and performance data; where enabled, we may collect aggregated, non-identifying usage metrics to improve our products.</p>
-  <h2 data-i18n="h2">2. Permissions Some Apps May Request</h2>
-  <p data-i18n="p2"><ul><li><strong>Location</strong> — to show your position and provide location-relevant features (MapNero, StreamEar). Used only while you use the feature.</li><li><strong>Camera / Photos</strong> — to capture or import images for overlays, checklists, or reports.</li><li><strong>Notifications</strong> — to deliver alerts and reminders you chose to receive.</li><li><strong>Local storage</strong> — to save your work and settings on your device.</li></ul>You can review and change these permissions at any time in your device Settings.</p>
-  <h2 data-i18n="h3">3. How We Use Information</h2>
-  <p data-i18n="p3">We use information only to provide, operate, and maintain our Apps and website; diagnose and fix crashes and bugs; understand in aggregate how features are used; respond to your support requests; and comply with legal obligations.</p>
-  <h2 data-i18n="h4">4. What We Do Not Do</h2>
-  <p data-i18n="p4"><ul><li>We do <strong>not</strong> sell, rent, or trade your personal information.</li><li>We do <strong>not</strong> use your data for third-party advertising or build advertising profiles.</li><li>We do <strong>not</strong> require an account or collect more data than a feature needs.</li></ul></p>
-  <h2 data-i18n="h5">5. Data Storage & Security</h2>
-  <p data-i18n="p5">Most data created in our Apps is stored locally on your device. Where a feature transmits data (for example, alert feeds in StreamEar), it is sent over encrypted connections (HTTPS/TLS). We apply reasonable technical and organizational safeguards, but no method of transmission or storage is completely secure.</p>
-  <h2 data-i18n="h6">6. Third-Party Services</h2>
-  <p data-i18n="p6">Our Apps may rely on third-party services governed by their own privacy policies: <strong>Apple</strong> (App Store distribution, push notifications, optional diagnostics); <strong>mapping and data providers</strong> (map tiles and public data feeds); and <strong>infrastructure providers</strong> such as Cloudflare (content delivery and notifications).</p>
-  <h2 data-i18n="h7">7. Children's Privacy</h2>
-  <p data-i18n="p7">Our Apps are not directed to children under 13 (or the minimum age in your jurisdiction), and we do not knowingly collect their personal information. If you believe a child has provided us personal information, contact us and we will delete it.</p>
-  <h2 data-i18n="h8">8. Your Rights</h2>
-  <p data-i18n="p8">Depending on where you live, you may have rights under laws such as the EU/UK GDPR and the California CCPA/CPRA — including access, correction, deletion, portability, and objection. Because most data stays on your device, you can exercise many of these rights directly by editing or deleting data in the App or uninstalling it. For anything else, contact us and we will respond as required by applicable law. We will not discriminate against you for exercising your rights.</p>
-  <h2 data-i18n="h9">9. International Users</h2>
-  <p data-i18n="p9">The Nero Labs LLC is based in Wyoming, USA. If you access our Apps or website from outside the United States, any transmitted information may be processed in the United States, where data-protection laws may differ from those in your country.</p>
-  <h2 data-i18n="h10">10. Contact Us</h2>
-  <p data-i18n="p10"><strong>The Nero Labs LLC</strong><br>Wyoming, USA<br>Email: <a href="mailto:support@thenerolabs.com">support@thenerolabs.com</a></p>
-  <p class="note" data-i18n="note">This Privacy Policy is provided in several languages for convenience. If there is any discrepancy, the English version prevails.</p>
-</main>
+  <hr class="divider">
+
+  <h2>Information We Collect</h2>
+  <p>We collect only the information necessary to provide and improve our services:</p>
+  <ul>
+    <li><strong>Account Information:</strong> Email address when you create an account or sign in.</li>
+    <li><strong>Location Data:</strong> GPS coordinates when you use mapping or field features (only with your permission).</li>
+    <li><strong>Usage Data:</strong> Anonymized app usage statistics to improve performance.</li>
+    <li><strong>Device Information:</strong> Device type, OS version, and app version for technical support.</li>
+    <li><strong>Payment Information:</strong> Processed securely through Apple App Store or Google Play. We do not store payment details.</li>
+  </ul>
+
+  <h2>How We Use Your Information</h2>
+  <ul>
+    <li>To provide and maintain our Apps and their features.</li>
+    <li>To process subscriptions and in-app purchases.</li>
+    <li>To send important service notifications and updates.</li>
+    <li>To improve app performance and fix bugs.</li>
+    <li>To comply with legal obligations.</li>
+  </ul>
+
+  <h2>Data Sharing</h2>
+  <p>We do not sell, trade, or rent your personal information to third parties. We may share data with trusted service providers (Supabase, RevenueCat, Apple, Google) solely to operate our Apps, under strict confidentiality agreements.</p>
+
+  <h2>Data Storage & Security</h2>
+  <p>Your data is stored on secure servers (Supabase) with encryption in transit and at rest. Team collaboration data in MapNero uses AES-GCM end-to-end encryption. We retain your data only as long as necessary to provide our services.</p>
+
+  <h2>Location Data</h2>
+  <p>Location access is requested only when needed for core app features (mapping, field tracking). You can revoke location permissions at any time through your device settings. Location data is not shared with third parties.</p>
+
+  <h2>Your Rights</h2>
+  <p>Depending on your jurisdiction, you may have the right to access, correct, or delete your personal data. To exercise these rights, contact us at <a href="mailto:privacy@thenerolabs.com">privacy@thenerolabs.com</a>.</p>
+
+  <h2>Children's Privacy</h2>
+  <p>Our Apps are not directed to children under 13. We do not knowingly collect personal information from children.</p>
+
+  <h2>Changes to This Policy</h2>
+  <p>We may update this Privacy Policy from time to time. We will notify you of significant changes through the App or by email. Continued use of the Apps after changes constitutes acceptance.</p>
+
+  <h2>Contact Us</h2>
+  <p>For privacy-related questions or requests:<br>
+  The Nero Labs LLC<br>
+  Email: <a href="mailto:privacy@thenerolabs.com">privacy@thenerolabs.com</a><br>
+  Wyoming, USA</p>
+</div>
 
 <footer>
-  <div>
-    <a href="/" data-i18n="nav_home">Home</a>
-    <a href="/privacy.html" data-i18n="nav_privacy">Privacy</a>
-    <a href="/terms.html" data-i18n="nav_terms">Terms</a>
-    <a href="mailto:support@thenerolabs.com" data-i18n="nav_support">Support</a>
+  <div class="footer-links">
+    <a href="/privacy.html">Privacy Policy</a>
+    <a href="/terms.html">Terms of Use</a>
+    <a href="mailto:hello@thenerolabs.com">Contact</a>
   </div>
-  <p style="margin-top:0.8rem">© 2026 The Nero Labs LLC. Wyoming, USA.</p>
+  <div class="footer-copy">© 2026 The Nero Labs LLC · Wyoming, USA</div>
 </footer>
-
-<script>
-const i18n = {
- "en": {
-  "lang_name": "English",
-  "nav_home": "Home",
-  "nav_privacy": "Privacy",
-  "nav_terms": "Terms",
-  "nav_support": "Support",
-  "doc_title": "Privacy Policy",
-  "updated": "Last updated: June 4, 2026",
-  "intro": "The Nero Labs LLC (\"The Nero Labs\", \"we\", \"us\", or \"our\") builds professional mobile applications for demanding environments — including <strong>MapNero</strong>, <strong>BallisticEdge</strong>, <strong>CarCheckUp</strong>, and <strong>StreamEar</strong> (the \"Apps\"). This Privacy Policy explains what our Apps and website collect, how we use it, and the choices you have. We keep data collection to the minimum needed to make our products work.",
-  "short": "<strong>The short version.</strong> Most of our Apps work on your device and need no account. We do not sell your personal information and we do not use your data for advertising. Where an App needs a permission (such as location or camera), it is used only to deliver the feature you requested.",
-  "h1": "1. Information We Collect",
-  "p1": "What we collect depends on which App or service you use.<br><br><strong>Information you provide:</strong> if you email support@thenerolabs.com we receive your email address and message. Data you enter to use a feature — map markers in MapNero, ballistic parameters in BallisticEdge, vehicle checklists in CarCheckUp, alert preferences in StreamEar — is generally stored locally on your device unless a feature explicitly syncs it.<br><br><strong>Information collected automatically:</strong> if you opt in, Apple may share anonymized crash and performance data; where enabled, we may collect aggregated, non-identifying usage metrics to improve our products.",
-  "h2": "2. Permissions Some Apps May Request",
-  "p2": "<ul><li><strong>Location</strong> — to show your position and provide location-relevant features (MapNero, StreamEar). Used only while you use the feature.</li><li><strong>Camera / Photos</strong> — to capture or import images for overlays, checklists, or reports.</li><li><strong>Notifications</strong> — to deliver alerts and reminders you chose to receive.</li><li><strong>Local storage</strong> — to save your work and settings on your device.</li></ul>You can review and change these permissions at any time in your device Settings.",
-  "h3": "3. How We Use Information",
-  "p3": "We use information only to provide, operate, and maintain our Apps and website; diagnose and fix crashes and bugs; understand in aggregate how features are used; respond to your support requests; and comply with legal obligations.",
-  "h4": "4. What We Do Not Do",
-  "p4": "<ul><li>We do <strong>not</strong> sell, rent, or trade your personal information.</li><li>We do <strong>not</strong> use your data for third-party advertising or build advertising profiles.</li><li>We do <strong>not</strong> require an account or collect more data than a feature needs.</li></ul>",
-  "h5": "5. Data Storage & Security",
-  "p5": "Most data created in our Apps is stored locally on your device. Where a feature transmits data (for example, alert feeds in StreamEar), it is sent over encrypted connections (HTTPS/TLS). We apply reasonable technical and organizational safeguards, but no method of transmission or storage is completely secure.",
-  "h6": "6. Third-Party Services",
-  "p6": "Our Apps may rely on third-party services governed by their own privacy policies: <strong>Apple</strong> (App Store distribution, push notifications, optional diagnostics); <strong>mapping and data providers</strong> (map tiles and public data feeds); and <strong>infrastructure providers</strong> such as Cloudflare (content delivery and notifications).",
-  "h7": "7. Children's Privacy",
-  "p7": "Our Apps are not directed to children under 13 (or the minimum age in your jurisdiction), and we do not knowingly collect their personal information. If you believe a child has provided us personal information, contact us and we will delete it.",
-  "h8": "8. Your Rights",
-  "p8": "Depending on where you live, you may have rights under laws such as the EU/UK GDPR and the California CCPA/CPRA — including access, correction, deletion, portability, and objection. Because most data stays on your device, you can exercise many of these rights directly by editing or deleting data in the App or uninstalling it. For anything else, contact us and we will respond as required by applicable law. We will not discriminate against you for exercising your rights.",
-  "h9": "9. International Users",
-  "p9": "The Nero Labs LLC is based in Wyoming, USA. If you access our Apps or website from outside the United States, any transmitted information may be processed in the United States, where data-protection laws may differ from those in your country.",
-  "h10": "10. Contact Us",
-  "p10": "<strong>The Nero Labs LLC</strong><br>Wyoming, USA<br>Email: <a href=\"mailto:support@thenerolabs.com\">support@thenerolabs.com</a>",
-  "note": "This Privacy Policy is provided in several languages for convenience. If there is any discrepancy, the English version prevails."
- },
- "tr": {
-  "lang_name": "Türkçe",
-  "nav_home": "Ana Sayfa",
-  "nav_privacy": "Gizlilik",
-  "nav_terms": "Koşullar",
-  "nav_support": "Destek",
-  "doc_title": "Gizlilik Politikası",
-  "updated": "Son güncelleme: 4 Haziran 2026",
-  "intro": "The Nero Labs LLC (\"The Nero Labs\", \"biz\" veya \"bize\"), zorlu ortamlar için profesyonel mobil uygulamalar geliştirir — <strong>MapNero</strong>, <strong>BallisticEdge</strong>, <strong>CarCheckUp</strong> ve <strong>StreamEar</strong> dahil (\"Uygulamalar\"). Bu Gizlilik Politikası, Uygulamalarımızın ve web sitemizin hangi bilgileri topladığını, bunları nasıl kullandığımızı ve sahip olduğunuz seçenekleri açıklar. Veri toplamayı, ürünlerimizin çalışması için gereken asgari düzeyde tutarız.",
-  "short": "<strong>Kısa özet.</strong> Uygulamalarımızın çoğu cihazınızda çalışır ve hesap gerektirmez. Kişisel bilgilerinizi satmıyoruz ve verilerinizi reklam için kullanmıyoruz. Bir uygulama bir izne (konum veya kamera gibi) ihtiyaç duyduğunda, bu izin yalnızca talep ettiğiniz özelliği sunmak için kullanılır.",
-  "h1": "1. Topladığımız Bilgiler",
-  "p1": "Topladığımız bilgiler, kullandığınız Uygulama veya hizmete bağlıdır.<br><br><strong>Sizin sağladığınız bilgiler:</strong> support@thenerolabs.com adresine e-posta gönderirseniz, e-posta adresinizi ve mesajınızı alırız. Bir özelliği kullanmak için girdiğiniz veriler — MapNero'daki harita işaretleri, BallisticEdge'deki balistik parametreler, CarCheckUp'taki araç kontrol listeleri, StreamEar'daki uyarı tercihleri — bir özellik açıkça eşitleme yapmadıkça genellikle cihazınızda yerel olarak saklanır.<br><br><strong>Otomatik olarak toplanan bilgiler:</strong> izin verirseniz, Apple anonimleştirilmiş çökme ve performans verilerini paylaşabilir; etkinleştirildiğinde, ürünlerimizi geliştirmek için toplu, kimliği belirlenemeyen kullanım ölçümleri toplayabiliriz.",
-  "h2": "2. Bazı Uygulamaların İsteyebileceği İzinler",
-  "p2": "<ul><li><strong>Konum</strong> — konumunuzu göstermek ve konuma dayalı özellikler sunmak için (MapNero, StreamEar). Yalnızca özelliği kullanırken kullanılır.</li><li><strong>Kamera / Fotoğraflar</strong> — bindirmeler, kontrol listeleri veya raporlar için görüntü yakalamak veya içe aktarmak için.</li><li><strong>Bildirimler</strong> — almayı seçtiğiniz uyarıları ve hatırlatıcıları iletmek için.</li><li><strong>Yerel depolama</strong> — çalışmanızı ve ayarlarınızı cihazınızda kaydetmek için.</li></ul>Bu izinleri istediğiniz zaman cihaz Ayarlarınızdan inceleyip değiştirebilirsiniz.",
-  "h3": "3. Bilgileri Nasıl Kullanırız",
-  "p3": "Bilgileri yalnızca Uygulamalarımızı ve web sitemizi sağlamak, işletmek ve sürdürmek; çökmeleri ve hataları teşhis edip düzeltmek; özelliklerin nasıl kullanıldığını toplu olarak anlamak; destek taleplerinize yanıt vermek; ve yasal yükümlülüklere uymak için kullanırız.",
-  "h4": "4. Yapmadıklarımız",
-  "p4": "<ul><li>Kişisel bilgilerinizi <strong>satmıyor</strong>, kiralamıyor veya takas etmiyoruz.</li><li>Verilerinizi üçüncü taraf reklamcılığı için <strong>kullanmıyor</strong> veya reklam profilleri oluşturmuyoruz.</li><li>Hesap <strong>gerektirmiyor</strong> veya bir özelliğin ihtiyaç duyduğundan fazla veri toplamıyoruz.</li></ul>",
-  "h5": "5. Veri Saklama ve Güvenlik",
-  "p5": "Uygulamalarımızda oluşturulan verilerin çoğu cihazınızda yerel olarak saklanır. Bir özelliğin veri ilettiği durumlarda (örneğin StreamEar'daki uyarı akışları), bu veriler şifreli bağlantılar (HTTPS/TLS) üzerinden gönderilir. Makul teknik ve idari önlemler uygularız, ancak hiçbir iletim veya saklama yöntemi tamamen güvenli değildir.",
-  "h6": "6. Üçüncü Taraf Hizmetleri",
-  "p6": "Uygulamalarımız, kendi gizlilik politikalarıyla yönetilen üçüncü taraf hizmetlerine dayanabilir: <strong>Apple</strong> (App Store dağıtımı, anlık bildirimler, isteğe bağlı tanılama); <strong>harita ve veri sağlayıcıları</strong> (harita döşemeleri ve kamuya açık veri akışları); ve içerik dağıtımı ile bildirimler için Cloudflare gibi <strong>altyapı sağlayıcıları</strong>.",
-  "h7": "7. Çocukların Gizliliği",
-  "p7": "Uygulamalarımız 13 yaşın altındaki çocuklara (veya bulunduğunuz yargı bölgesindeki asgari yaşa) yönelik değildir ve bilerek onların kişisel bilgilerini toplamayız. Bir çocuğun bize bilgi sağladığını düşünüyorsanız, bizimle iletişime geçin; bilgiyi sileceğiz.",
-  "h8": "8. Haklarınız",
-  "p8": "Yaşadığınız yere bağlı olarak, AB/Birleşik Krallık GDPR ve Kaliforniya CCPA/CPRA gibi yasalar kapsamında haklarınız olabilir — erişim, düzeltme, silme, taşınabilirlik ve itiraz dahil. Verilerin çoğu cihazınızda kaldığından, bu hakların çoğunu Uygulamadaki verileri düzenleyerek veya silerek ya da uygulamayı kaldırarak doğrudan kullanabilirsiniz. Diğer her şey için bizimle iletişime geçin; yürürlükteki yasaların gerektirdiği şekilde yanıt vereceğiz. Haklarınızı kullandığınız için sizi ayrımcılığa uğratmayız.",
-  "h9": "9. Uluslararası Kullanıcılar",
-  "p9": "The Nero Labs LLC, ABD'nin Wyoming eyaletinde bulunur. Uygulamalarımıza veya web sitemize Amerika Birleşik Devletleri dışından erişirseniz, iletilen bilgiler, veri koruma yasalarının kendi ülkenizdekinden farklı olabileceği ABD'de işlenebilir.",
-  "h10": "10. Bize Ulaşın",
-  "p10": "<strong>The Nero Labs LLC</strong><br>Wyoming, ABD<br>E-posta: <a href=\"mailto:support@thenerolabs.com\">support@thenerolabs.com</a>",
-  "note": "Bu Gizlilik Politikası kolaylık sağlamak için birkaç dilde sunulmaktadır. Herhangi bir tutarsızlık olması durumunda İngilizce sürüm geçerlidir."
- },
- "de": {
-  "lang_name": "Deutsch",
-  "nav_home": "Start",
-  "nav_privacy": "Datenschutz",
-  "nav_terms": "Nutzungsbedingungen",
-  "nav_support": "Support",
-  "doc_title": "Datenschutzerklärung",
-  "updated": "Zuletzt aktualisiert: 4. Juni 2026",
-  "intro": "Die The Nero Labs LLC („The Nero Labs\", „wir\" oder „uns\") entwickelt professionelle mobile Anwendungen für anspruchsvolle Umgebungen – darunter <strong>MapNero</strong>, <strong>BallisticEdge</strong>, <strong>CarCheckUp</strong> und <strong>StreamEar</strong> (die „Apps\"). Diese Datenschutzerklärung erläutert, welche Daten unsere Apps und Website erfassen, wie wir sie verwenden und welche Wahlmöglichkeiten Sie haben. Wir beschränken die Datenerfassung auf das für den Betrieb unserer Produkte notwendige Minimum.",
-  "short": "<strong>Kurz gesagt.</strong> Die meisten unserer Apps funktionieren auf Ihrem Gerät und benötigen kein Konto. Wir verkaufen Ihre personenbezogenen Daten nicht und nutzen Ihre Daten nicht für Werbung. Wenn eine App eine Berechtigung benötigt (z. B. Standort oder Kamera), wird diese nur zur Bereitstellung der von Ihnen angeforderten Funktion verwendet.",
-  "h1": "1. Welche Daten wir erfassen",
-  "p1": "Was wir erfassen, hängt davon ab, welche App oder welchen Dienst Sie nutzen.<br><br><strong>Von Ihnen bereitgestellte Daten:</strong> Wenn Sie eine E-Mail an support@thenerolabs.com senden, erhalten wir Ihre E-Mail-Adresse und Ihre Nachricht. Daten, die Sie zur Nutzung einer Funktion eingeben – Kartenmarkierungen in MapNero, ballistische Parameter in BallisticEdge, Fahrzeug-Checklisten in CarCheckUp, Benachrichtigungseinstellungen in StreamEar – werden in der Regel lokal auf Ihrem Gerät gespeichert, sofern eine Funktion sie nicht ausdrücklich synchronisiert.<br><br><strong>Automatisch erfasste Daten:</strong> Wenn Sie zustimmen, kann Apple anonymisierte Absturz- und Leistungsdaten weitergeben; sofern aktiviert, erfassen wir möglicherweise aggregierte, nicht identifizierende Nutzungskennzahlen zur Verbesserung unserer Produkte.",
-  "h2": "2. Berechtigungen, die einige Apps anfordern können",
-  "p2": "<ul><li><strong>Standort</strong> – um Ihre Position anzuzeigen und standortbezogene Funktionen bereitzustellen (MapNero, StreamEar). Nur während der Nutzung der Funktion.</li><li><strong>Kamera / Fotos</strong> – um Bilder für Overlays, Checklisten oder Berichte aufzunehmen oder zu importieren.</li><li><strong>Benachrichtigungen</strong> – um Warnungen und Erinnerungen zu senden, die Sie erhalten möchten.</li><li><strong>Lokaler Speicher</strong> – um Ihre Arbeit und Einstellungen auf Ihrem Gerät zu speichern.</li></ul>Sie können diese Berechtigungen jederzeit in den Einstellungen Ihres Geräts überprüfen und ändern.",
-  "h3": "3. Wie wir Daten verwenden",
-  "p3": "Wir verwenden Daten ausschließlich, um unsere Apps und Website bereitzustellen, zu betreiben und zu warten; Abstürze und Fehler zu diagnostizieren und zu beheben; aggregiert zu verstehen, wie Funktionen genutzt werden; auf Ihre Support-Anfragen zu reagieren; und gesetzliche Pflichten zu erfüllen.",
-  "h4": "4. Was wir nicht tun",
-  "p4": "<ul><li>Wir verkaufen, vermieten oder handeln <strong>nicht</strong> mit Ihren personenbezogenen Daten.</li><li>Wir verwenden Ihre Daten <strong>nicht</strong> für Drittanbieter-Werbung oder zur Erstellung von Werbeprofilen.</li><li>Wir verlangen <strong>kein</strong> Konto und erfassen nicht mehr Daten, als eine Funktion benötigt.</li></ul>",
-  "h5": "5. Datenspeicherung und Sicherheit",
-  "p5": "Die meisten in unseren Apps erstellten Daten werden lokal auf Ihrem Gerät gespeichert. Wo eine Funktion Daten überträgt (z. B. Warnungs-Feeds in StreamEar), erfolgt dies über verschlüsselte Verbindungen (HTTPS/TLS). Wir treffen angemessene technische und organisatorische Schutzmaßnahmen, doch keine Übertragungs- oder Speichermethode ist vollständig sicher.",
-  "h6": "6. Dienste von Drittanbietern",
-  "p6": "Unsere Apps können auf Dienste von Drittanbietern zurückgreifen, die deren eigenen Datenschutzrichtlinien unterliegen: <strong>Apple</strong> (App-Store-Vertrieb, Push-Benachrichtigungen, optionale Diagnose); <strong>Karten- und Datenanbieter</strong> (Kartenkacheln und öffentliche Daten-Feeds); und <strong>Infrastrukturanbieter</strong> wie Cloudflare (Inhaltsbereitstellung und Benachrichtigungen).",
-  "h7": "7. Datenschutz für Kinder",
-  "p7": "Unsere Apps richten sich nicht an Kinder unter 13 Jahren (oder dem Mindestalter in Ihrem Rechtsgebiet), und wir erfassen wissentlich keine personenbezogenen Daten von ihnen. Wenn Sie glauben, dass ein Kind uns Daten übermittelt hat, kontaktieren Sie uns, und wir werden sie löschen.",
-  "h8": "8. Ihre Rechte",
-  "p8": "Je nach Wohnort haben Sie möglicherweise Rechte nach Gesetzen wie der EU-/UK-DSGVO und dem kalifornischen CCPA/CPRA – einschließlich Auskunft, Berichtigung, Löschung, Übertragbarkeit und Widerspruch. Da die meisten Daten auf Ihrem Gerät verbleiben, können Sie viele dieser Rechte direkt ausüben, indem Sie Daten in der App bearbeiten oder löschen oder die App deinstallieren. Für alles Übrige kontaktieren Sie uns; wir antworten wie gesetzlich vorgeschrieben. Wir benachteiligen Sie nicht für die Ausübung Ihrer Rechte.",
-  "h9": "9. Internationale Nutzer",
-  "p9": "Die The Nero Labs LLC hat ihren Sitz in Wyoming, USA. Wenn Sie von außerhalb der Vereinigten Staaten auf unsere Apps oder Website zugreifen, können übertragene Daten in den USA verarbeitet werden, wo die Datenschutzgesetze von denen Ihres Landes abweichen können.",
-  "h10": "10. Kontakt",
-  "p10": "<strong>The Nero Labs LLC</strong><br>Wyoming, USA<br>E-Mail: <a href=\"mailto:support@thenerolabs.com\">support@thenerolabs.com</a>",
-  "note": "Diese Datenschutzerklärung wird der Einfachheit halber in mehreren Sprachen bereitgestellt. Bei Abweichungen ist die englische Fassung maßgeblich."
- },
- "fr": {
-  "lang_name": "Français",
-  "nav_home": "Accueil",
-  "nav_privacy": "Confidentialité",
-  "nav_terms": "Conditions",
-  "nav_support": "Support",
-  "doc_title": "Politique de confidentialité",
-  "updated": "Dernière mise à jour : 4 juin 2026",
-  "intro": "The Nero Labs LLC (« The Nero Labs », « nous ») développe des applications mobiles professionnelles pour des environnements exigeants — notamment <strong>MapNero</strong>, <strong>BallisticEdge</strong>, <strong>CarCheckUp</strong> et <strong>StreamEar</strong> (les « Applications »). Cette politique de confidentialité explique quelles données nos Applications et notre site web collectent, comment nous les utilisons et les choix dont vous disposez. Nous limitons la collecte de données au strict nécessaire au fonctionnement de nos produits.",
-  "short": "<strong>En bref.</strong> La plupart de nos Applications fonctionnent sur votre appareil et ne nécessitent pas de compte. Nous ne vendons pas vos données personnelles et ne les utilisons pas à des fins publicitaires. Lorsqu'une Application a besoin d'une autorisation (comme la localisation ou la caméra), celle-ci sert uniquement à fournir la fonctionnalité que vous avez demandée.",
-  "h1": "1. Informations que nous collectons",
-  "p1": "Ce que nous collectons dépend de l'Application ou du service que vous utilisez.<br><br><strong>Informations que vous fournissez :</strong> si vous écrivez à support@thenerolabs.com, nous recevons votre adresse e-mail et votre message. Les données que vous saisissez pour utiliser une fonctionnalité — repères cartographiques dans MapNero, paramètres balistiques dans BallisticEdge, listes de contrôle de véhicules dans CarCheckUp, préférences d'alertes dans StreamEar — sont généralement stockées localement sur votre appareil, sauf si une fonctionnalité les synchronise explicitement.<br><br><strong>Informations collectées automatiquement :</strong> si vous y consentez, Apple peut partager des données anonymisées de plantage et de performance ; lorsque cela est activé, nous pouvons collecter des mesures d'utilisation agrégées et non identifiantes pour améliorer nos produits.",
-  "h2": "2. Autorisations que certaines Applications peuvent demander",
-  "p2": "<ul><li><strong>Localisation</strong> — pour afficher votre position et fournir des fonctionnalités liées à la localisation (MapNero, StreamEar). Utilisée uniquement pendant l'usage de la fonctionnalité.</li><li><strong>Caméra / Photos</strong> — pour capturer ou importer des images pour des superpositions, listes de contrôle ou rapports.</li><li><strong>Notifications</strong> — pour fournir les alertes et rappels que vous avez choisi de recevoir.</li><li><strong>Stockage local</strong> — pour enregistrer votre travail et vos réglages sur votre appareil.</li></ul>Vous pouvez consulter et modifier ces autorisations à tout moment dans les Réglages de votre appareil.",
-  "h3": "3. Comment nous utilisons les informations",
-  "p3": "Nous utilisons les informations uniquement pour fournir, exploiter et maintenir nos Applications et notre site web ; diagnostiquer et corriger les plantages et bogues ; comprendre de manière agrégée l'utilisation des fonctionnalités ; répondre à vos demandes d'assistance ; et respecter nos obligations légales.",
-  "h4": "4. Ce que nous ne faisons pas",
-  "p4": "<ul><li>Nous ne vendons, ne louons ni n'échangeons <strong>pas</strong> vos données personnelles.</li><li>Nous n'utilisons <strong>pas</strong> vos données pour la publicité tierce ni ne créons de profils publicitaires.</li><li>Nous n'exigeons <strong>pas</strong> de compte et ne collectons pas plus de données qu'une fonctionnalité n'en a besoin.</li></ul>",
-  "h5": "5. Stockage et sécurité des données",
-  "p5": "La plupart des données créées dans nos Applications sont stockées localement sur votre appareil. Lorsqu'une fonctionnalité transmet des données (par exemple les flux d'alertes dans StreamEar), elles sont envoyées via des connexions chiffrées (HTTPS/TLS). Nous appliquons des mesures techniques et organisationnelles raisonnables, mais aucune méthode de transmission ou de stockage n'est totalement sûre.",
-  "h6": "6. Services tiers",
-  "p6": "Nos Applications peuvent s'appuyer sur des services tiers régis par leurs propres politiques de confidentialité : <strong>Apple</strong> (distribution App Store, notifications push, diagnostics facultatifs) ; <strong>fournisseurs de cartes et de données</strong> (tuiles cartographiques et flux de données publics) ; et <strong>fournisseurs d'infrastructure</strong> tels que Cloudflare (diffusion de contenu et notifications).",
-  "h7": "7. Confidentialité des enfants",
-  "p7": "Nos Applications ne s'adressent pas aux enfants de moins de 13 ans (ou de l'âge minimum dans votre juridiction), et nous ne collectons pas sciemment leurs données personnelles. Si vous pensez qu'un enfant nous a fourni des données, contactez-nous et nous les supprimerons.",
-  "h8": "8. Vos droits",
-  "p8": "Selon votre lieu de résidence, vous pouvez disposer de droits au titre de lois telles que le RGPD de l'UE/du Royaume-Uni et le CCPA/CPRA de Californie — y compris l'accès, la rectification, la suppression, la portabilité et l'opposition. La plupart des données restant sur votre appareil, vous pouvez exercer nombre de ces droits directement en modifiant ou supprimant les données dans l'Application ou en la désinstallant. Pour le reste, contactez-nous et nous répondrons conformément à la loi applicable. Nous ne vous traiterons pas de manière discriminatoire pour avoir exercé vos droits.",
-  "h9": "9. Utilisateurs internationaux",
-  "p9": "The Nero Labs LLC est établie dans le Wyoming, aux États-Unis. Si vous accédez à nos Applications ou à notre site web depuis l'extérieur des États-Unis, les informations transmises peuvent être traitées aux États-Unis, où les lois sur la protection des données peuvent différer de celles de votre pays.",
-  "h10": "10. Nous contacter",
-  "p10": "<strong>The Nero Labs LLC</strong><br>Wyoming, États-Unis<br>E-mail : <a href=\"mailto:support@thenerolabs.com\">support@thenerolabs.com</a>",
-  "note": "Cette politique de confidentialité est fournie en plusieurs langues à titre de commodité. En cas de divergence, la version anglaise prévaut."
- },
- "es": {
-  "lang_name": "Español",
-  "nav_home": "Inicio",
-  "nav_privacy": "Privacidad",
-  "nav_terms": "Términos",
-  "nav_support": "Soporte",
-  "doc_title": "Política de Privacidad",
-  "updated": "Última actualización: 4 de junio de 2026",
-  "intro": "The Nero Labs LLC («The Nero Labs», «nosotros») desarrolla aplicaciones móviles profesionales para entornos exigentes, entre ellas <strong>MapNero</strong>, <strong>BallisticEdge</strong>, <strong>CarCheckUp</strong> y <strong>StreamEar</strong> (las «Apps»). Esta Política de Privacidad explica qué información recopilan nuestras Apps y nuestro sitio web, cómo la usamos y las opciones que usted tiene. Limitamos la recopilación de datos al mínimo necesario para que nuestros productos funcionen.",
-  "short": "<strong>En resumen.</strong> La mayoría de nuestras Apps funcionan en su dispositivo y no requieren cuenta. No vendemos su información personal ni la usamos para publicidad. Cuando una App necesita un permiso (como ubicación o cámara), se usa únicamente para ofrecer la función que usted solicitó.",
-  "h1": "1. Información que recopilamos",
-  "p1": "Lo que recopilamos depende de la App o servicio que utilice.<br><br><strong>Información que usted proporciona:</strong> si escribe a support@thenerolabs.com, recibimos su dirección de correo y su mensaje. Los datos que introduce para usar una función —marcadores de mapa en MapNero, parámetros balísticos en BallisticEdge, listas de verificación de vehículos en CarCheckUp, preferencias de alertas en StreamEar— se almacenan generalmente de forma local en su dispositivo, salvo que una función los sincronice explícitamente.<br><br><strong>Información recopilada automáticamente:</strong> si lo autoriza, Apple puede compartir datos anonimizados de fallos y rendimiento; cuando está habilitado, podemos recopilar métricas de uso agregadas y no identificativas para mejorar nuestros productos.",
-  "h2": "2. Permisos que algunas Apps pueden solicitar",
-  "p2": "<ul><li><strong>Ubicación</strong>: para mostrar su posición y ofrecer funciones relacionadas con la ubicación (MapNero, StreamEar). Se usa solo mientras utiliza la función.</li><li><strong>Cámara / Fotos</strong>: para capturar o importar imágenes para superposiciones, listas de verificación o informes.</li><li><strong>Notificaciones</strong>: para enviar las alertas y recordatorios que eligió recibir.</li><li><strong>Almacenamiento local</strong>: para guardar su trabajo y ajustes en su dispositivo.</li></ul>Puede revisar y cambiar estos permisos en cualquier momento en los Ajustes de su dispositivo.",
-  "h3": "3. Cómo usamos la información",
-  "p3": "Usamos la información únicamente para proporcionar, operar y mantener nuestras Apps y sitio web; diagnosticar y corregir fallos y errores; comprender de forma agregada cómo se usan las funciones; responder a sus solicitudes de soporte; y cumplir con obligaciones legales.",
-  "h4": "4. Lo que no hacemos",
-  "p4": "<ul><li><strong>No</strong> vendemos, alquilamos ni intercambiamos su información personal.</li><li><strong>No</strong> usamos sus datos para publicidad de terceros ni creamos perfiles publicitarios.</li><li><strong>No</strong> exigimos una cuenta ni recopilamos más datos de los que una función necesita.</li></ul>",
-  "h5": "5. Almacenamiento y seguridad de los datos",
-  "p5": "La mayoría de los datos creados en nuestras Apps se almacenan localmente en su dispositivo. Cuando una función transmite datos (por ejemplo, las fuentes de alertas en StreamEar), se envían mediante conexiones cifradas (HTTPS/TLS). Aplicamos medidas técnicas y organizativas razonables, pero ningún método de transmisión o almacenamiento es completamente seguro.",
-  "h6": "6. Servicios de terceros",
-  "p6": "Nuestras Apps pueden depender de servicios de terceros regidos por sus propias políticas de privacidad: <strong>Apple</strong> (distribución en App Store, notificaciones push, diagnósticos opcionales); <strong>proveedores de mapas y datos</strong> (mosaicos de mapas y fuentes de datos públicas); y <strong>proveedores de infraestructura</strong> como Cloudflare (entrega de contenido y notificaciones).",
-  "h7": "7. Privacidad de los menores",
-  "p7": "Nuestras Apps no están dirigidas a menores de 13 años (o la edad mínima en su jurisdicción), y no recopilamos conscientemente su información personal. Si cree que un menor nos ha proporcionado datos, contáctenos y los eliminaremos.",
-  "h8": "8. Sus derechos",
-  "p8": "Según dónde resida, puede tener derechos en virtud de leyes como el RGPD de la UE/Reino Unido y la CCPA/CPRA de California, incluidos el acceso, la rectificación, la supresión, la portabilidad y la oposición. Como la mayoría de los datos permanecen en su dispositivo, puede ejercer muchos de estos derechos directamente editando o eliminando datos en la App o desinstalándola. Para lo demás, contáctenos y responderemos según exija la ley aplicable. No le discriminaremos por ejercer sus derechos.",
-  "h9": "9. Usuarios internacionales",
-  "p9": "The Nero Labs LLC tiene su sede en Wyoming, EE. UU. Si accede a nuestras Apps o sitio web desde fuera de los Estados Unidos, la información transmitida puede procesarse en los Estados Unidos, donde las leyes de protección de datos pueden diferir de las de su país.",
-  "h10": "10. Contáctenos",
-  "p10": "<strong>The Nero Labs LLC</strong><br>Wyoming, EE. UU.<br>Correo: <a href=\"mailto:support@thenerolabs.com\">support@thenerolabs.com</a>",
-  "note": "Esta Política de Privacidad se ofrece en varios idiomas por comodidad. En caso de discrepancia, prevalecerá la versión en inglés."
- },
- "pt": {
-  "lang_name": "Português",
-  "nav_home": "Início",
-  "nav_privacy": "Privacidade",
-  "nav_terms": "Termos",
-  "nav_support": "Suporte",
-  "doc_title": "Política de Privacidade",
-  "updated": "Última atualização: 4 de junho de 2026",
-  "intro": "A The Nero Labs LLC (\"The Nero Labs\", \"nós\") desenvolve aplicativos móveis profissionais para ambientes exigentes — incluindo <strong>MapNero</strong>, <strong>BallisticEdge</strong>, <strong>CarCheckUp</strong> e <strong>StreamEar</strong> (os \"Apps\"). Esta Política de Privacidade explica quais informações nossos Apps e site coletam, como as usamos e as escolhas que você tem. Mantemos a coleta de dados no mínimo necessário para o funcionamento dos nossos produtos.",
-  "short": "<strong>Em resumo.</strong> A maioria dos nossos Apps funciona no seu dispositivo e não exige conta. Não vendemos suas informações pessoais nem as usamos para publicidade. Quando um App precisa de uma permissão (como localização ou câmera), ela é usada apenas para fornecer o recurso que você solicitou.",
-  "h1": "1. Informações que coletamos",
-  "p1": "O que coletamos depende do App ou serviço que você usa.<br><br><strong>Informações que você fornece:</strong> se você escrever para support@thenerolabs.com, recebemos seu endereço de e-mail e sua mensagem. Os dados que você insere para usar um recurso — marcadores de mapa no MapNero, parâmetros balísticos no BallisticEdge, listas de verificação de veículos no CarCheckUp, preferências de alertas no StreamEar — geralmente são armazenados localmente no seu dispositivo, a menos que um recurso os sincronize explicitamente.<br><br><strong>Informações coletadas automaticamente:</strong> se você optar por isso, a Apple pode compartilhar dados anonimizados de falhas e desempenho; quando ativado, podemos coletar métricas de uso agregadas e não identificáveis para melhorar nossos produtos.",
-  "h2": "2. Permissões que alguns Apps podem solicitar",
-  "p2": "<ul><li><strong>Localização</strong> — para mostrar sua posição e fornecer recursos relacionados à localização (MapNero, StreamEar). Usada apenas enquanto você usa o recurso.</li><li><strong>Câmera / Fotos</strong> — para capturar ou importar imagens para sobreposições, listas de verificação ou relatórios.</li><li><strong>Notificações</strong> — para enviar os alertas e lembretes que você optou por receber.</li><li><strong>Armazenamento local</strong> — para salvar seu trabalho e configurações no seu dispositivo.</li></ul>Você pode revisar e alterar essas permissões a qualquer momento nas Configurações do seu dispositivo.",
-  "h3": "3. Como usamos as informações",
-  "p3": "Usamos as informações apenas para fornecer, operar e manter nossos Apps e site; diagnosticar e corrigir falhas e erros; entender de forma agregada como os recursos são usados; responder às suas solicitações de suporte; e cumprir obrigações legais.",
-  "h4": "4. O que não fazemos",
-  "p4": "<ul><li><strong>Não</strong> vendemos, alugamos ou negociamos suas informações pessoais.</li><li><strong>Não</strong> usamos seus dados para publicidade de terceiros nem criamos perfis publicitários.</li><li><strong>Não</strong> exigimos conta nem coletamos mais dados do que um recurso precisa.</li></ul>",
-  "h5": "5. Armazenamento e segurança dos dados",
-  "p5": "A maioria dos dados criados em nossos Apps é armazenada localmente no seu dispositivo. Quando um recurso transmite dados (por exemplo, os feeds de alertas no StreamEar), eles são enviados por conexões criptografadas (HTTPS/TLS). Aplicamos salvaguardas técnicas e organizacionais razoáveis, mas nenhum método de transmissão ou armazenamento é totalmente seguro.",
-  "h6": "6. Serviços de terceiros",
-  "p6": "Nossos Apps podem depender de serviços de terceiros regidos por suas próprias políticas de privacidade: <strong>Apple</strong> (distribuição na App Store, notificações push, diagnósticos opcionais); <strong>provedores de mapas e dados</strong> (blocos de mapa e feeds de dados públicos); e <strong>provedores de infraestrutura</strong> como a Cloudflare (entrega de conteúdo e notificações).",
-  "h7": "7. Privacidade das crianças",
-  "p7": "Nossos Apps não se destinam a crianças menores de 13 anos (ou a idade mínima na sua jurisdição), e não coletamos intencionalmente suas informações pessoais. Se você acredita que uma criança nos forneceu dados, entre em contato e nós os excluiremos.",
-  "h8": "8. Seus direitos",
-  "p8": "Dependendo de onde você mora, você pode ter direitos sob leis como o RGPD da UE/Reino Unido e a CCPA/CPRA da Califórnia — incluindo acesso, correção, exclusão, portabilidade e oposição. Como a maioria dos dados permanece no seu dispositivo, você pode exercer muitos desses direitos diretamente, editando ou excluindo dados no App ou desinstalando-o. Para o restante, entre em contato e responderemos conforme exigido pela lei aplicável. Não discriminaremos você por exercer seus direitos.",
-  "h9": "9. Usuários internacionais",
-  "p9": "A The Nero Labs LLC está sediada em Wyoming, EUA. Se você acessar nossos Apps ou site de fora dos Estados Unidos, as informações transmitidas poderão ser processadas nos Estados Unidos, onde as leis de proteção de dados podem diferir das do seu país.",
-  "h10": "10. Fale conosco",
-  "p10": "<strong>The Nero Labs LLC</strong><br>Wyoming, EUA<br>E-mail: <a href=\"mailto:support@thenerolabs.com\">support@thenerolabs.com</a>",
-  "note": "Esta Política de Privacidade é fornecida em vários idiomas por conveniência. Em caso de divergência, prevalece a versão em inglês."
- },
- "ru": {
-  "lang_name": "Русский",
-  "nav_home": "Главная",
-  "nav_privacy": "Конфиденциальность",
-  "nav_terms": "Условия",
-  "nav_support": "Поддержка",
-  "doc_title": "Политика конфиденциальности",
-  "updated": "Последнее обновление: 4 июня 2026 г.",
-  "intro": "The Nero Labs LLC («The Nero Labs», «мы») разрабатывает профессиональные мобильные приложения для сложных условий эксплуатации — включая <strong>MapNero</strong>, <strong>BallisticEdge</strong>, <strong>CarCheckUp</strong> и <strong>StreamEar</strong> («Приложения»). Настоящая Политика конфиденциальности объясняет, какие данные собирают наши Приложения и веб-сайт, как мы их используем и какие у вас есть возможности выбора. Мы сводим сбор данных к минимуму, необходимому для работы наших продуктов.",
-  "short": "<strong>Кратко.</strong> Большинство наших Приложений работают на вашем устройстве и не требуют учётной записи. Мы не продаём ваши персональные данные и не используем их для рекламы. Если Приложению нужно разрешение (например, к геолокации или камере), оно используется только для предоставления запрошенной вами функции.",
-  "h1": "1. Какие данные мы собираем",
-  "p1": "То, что мы собираем, зависит от того, каким Приложением или сервисом вы пользуетесь.<br><br><strong>Данные, которые вы предоставляете:</strong> если вы напишете на support@thenerolabs.com, мы получим ваш адрес электронной почты и сообщение. Данные, которые вы вводите для использования функции — метки на карте в MapNero, баллистические параметры в BallisticEdge, контрольные списки автомобилей в CarCheckUp, настройки оповещений в StreamEar — обычно хранятся локально на вашем устройстве, если функция явно не выполняет синхронизацию.<br><br><strong>Автоматически собираемые данные:</strong> при вашем согласии Apple может передавать обезличенные данные о сбоях и производительности; при включённой опции мы можем собирать агрегированные, не идентифицирующие метрики использования для улучшения наших продуктов.",
-  "h2": "2. Разрешения, которые могут запрашивать некоторые Приложения",
-  "p2": "<ul><li><strong>Геолокация</strong> — для отображения вашего местоположения и предоставления связанных с ним функций (MapNero, StreamEar). Используется только во время работы функции.</li><li><strong>Камера / Фото</strong> — для съёмки или импорта изображений для наложений, контрольных списков или отчётов.</li><li><strong>Уведомления</strong> — для доставки оповещений и напоминаний, которые вы выбрали.</li><li><strong>Локальное хранилище</strong> — для сохранения вашей работы и настроек на устройстве.</li></ul>Вы можете в любое время просмотреть и изменить эти разрешения в Настройках вашего устройства.",
-  "h3": "3. Как мы используем данные",
-  "p3": "Мы используем данные только для того, чтобы предоставлять, поддерживать и обслуживать наши Приложения и веб-сайт; диагностировать и устранять сбои и ошибки; в обобщённом виде понимать, как используются функции; отвечать на ваши обращения в поддержку; и соблюдать юридические обязательства.",
-  "h4": "4. Чего мы не делаем",
-  "p4": "<ul><li>Мы <strong>не</strong> продаём, не сдаём в аренду и не обмениваем ваши персональные данные.</li><li>Мы <strong>не</strong> используем ваши данные для сторонней рекламы и не создаём рекламные профили.</li><li>Мы <strong>не</strong> требуем учётной записи и не собираем больше данных, чем нужно функции.</li></ul>",
-  "h5": "5. Хранение и безопасность данных",
-  "p5": "Большая часть данных, создаваемых в наших Приложениях, хранится локально на вашем устройстве. Когда функция передаёт данные (например, ленты оповещений в StreamEar), они отправляются по зашифрованным соединениям (HTTPS/TLS). Мы применяем разумные технические и организационные меры защиты, однако ни один способ передачи или хранения не является полностью безопасным.",
-  "h6": "6. Сторонние сервисы",
-  "p6": "Наши Приложения могут использовать сторонние сервисы, регулируемые их собственными политиками конфиденциальности: <strong>Apple</strong> (распространение в App Store, push-уведомления, дополнительная диагностика); <strong>поставщики карт и данных</strong> (картографические тайлы и публичные ленты данных); и <strong>поставщики инфраструктуры</strong>, такие как Cloudflare (доставка контента и уведомлений).",
-  "h7": "7. Конфиденциальность детей",
-  "p7": "Наши Приложения не предназначены для детей младше 13 лет (или минимального возраста в вашей юрисдикции), и мы сознательно не собираем их персональные данные. Если вы считаете, что ребёнок предоставил нам данные, свяжитесь с нами, и мы их удалим.",
-  "h8": "8. Ваши права",
-  "p8": "В зависимости от места проживания у вас могут быть права в соответствии с такими законами, как GDPR ЕС/Великобритании и CCPA/CPRA Калифорнии, включая доступ, исправление, удаление, переносимость и возражение. Поскольку большая часть данных остаётся на вашем устройстве, многие из этих прав вы можете реализовать напрямую, редактируя или удаляя данные в Приложении либо удалив его. По остальным вопросам свяжитесь с нами, и мы ответим в соответствии с применимым законодательством. Мы не будем дискриминировать вас за реализацию ваших прав.",
-  "h9": "9. Международные пользователи",
-  "p9": "The Nero Labs LLC находится в штате Вайоминг, США. Если вы используете наши Приложения или веб-сайт за пределами США, передаваемые данные могут обрабатываться в США, где законы о защите данных могут отличаться от законов вашей страны.",
-  "h10": "10. Свяжитесь с нами",
-  "p10": "<strong>The Nero Labs LLC</strong><br>Вайоминг, США<br>Эл. почта: <a href=\"mailto:support@thenerolabs.com\">support@thenerolabs.com</a>",
-  "note": "Настоящая Политика конфиденциальности предоставляется на нескольких языках для удобства. В случае расхождений преимущественную силу имеет английская версия."
- },
- "uk": {
-  "lang_name": "Українська",
-  "nav_home": "Головна",
-  "nav_privacy": "Конфіденційність",
-  "nav_terms": "Умови",
-  "nav_support": "Підтримка",
-  "doc_title": "Політика конфіденційності",
-  "updated": "Останнє оновлення: 4 червня 2026 р.",
-  "intro": "The Nero Labs LLC («The Nero Labs», «ми») розробляє професійні мобільні застосунки для складних умов — зокрема <strong>MapNero</strong>, <strong>BallisticEdge</strong>, <strong>CarCheckUp</strong> та <strong>StreamEar</strong> («Застосунки»). Ця Політика конфіденційності пояснює, які дані збирають наші Застосунки й вебсайт, як ми їх використовуємо та які у вас є можливості вибору. Ми зводимо збір даних до мінімуму, необхідного для роботи наших продуктів.",
-  "short": "<strong>Стисло.</strong> Більшість наших Застосунків працюють на вашому пристрої та не потребують облікового запису. Ми не продаємо ваші персональні дані й не використовуємо їх для реклами. Коли Застосунку потрібен дозвіл (наприклад, до геолокації чи камери), він використовується лише для надання запитаної вами функції.",
-  "h1": "1. Які дані ми збираємо",
-  "p1": "Те, що ми збираємо, залежить від того, яким Застосунком чи сервісом ви користуєтеся.<br><br><strong>Дані, які ви надаєте:</strong> якщо ви напишете на support@thenerolabs.com, ми отримаємо вашу адресу електронної пошти та повідомлення. Дані, які ви вводите для використання функції — позначки на карті в MapNero, балістичні параметри в BallisticEdge, контрольні списки автомобілів у CarCheckUp, налаштування сповіщень у StreamEar — зазвичай зберігаються локально на вашому пристрої, якщо функція явно не виконує синхронізацію.<br><br><strong>Дані, що збираються автоматично:</strong> за вашої згоди Apple може передавати знеособлені дані про збої та продуктивність; якщо ввімкнено, ми можемо збирати агреговані, неідентифікаційні метрики використання для покращення наших продуктів.",
-  "h2": "2. Дозволи, які можуть запитувати деякі Застосунки",
-  "p2": "<ul><li><strong>Геолокація</strong> — щоб показувати ваше місцезнаходження та надавати пов'язані з ним функції (MapNero, StreamEar). Використовується лише під час роботи функції.</li><li><strong>Камера / Фото</strong> — щоб знімати або імпортувати зображення для накладань, контрольних списків чи звітів.</li><li><strong>Сповіщення</strong> — щоб надсилати сповіщення та нагадування, які ви обрали отримувати.</li><li><strong>Локальне сховище</strong> — щоб зберігати вашу роботу й налаштування на пристрої.</li></ul>Ви можете будь-коли переглянути та змінити ці дозволи в Налаштуваннях вашого пристрою.",
-  "h3": "3. Як ми використовуємо дані",
-  "p3": "Ми використовуємо дані лише для того, щоб надавати, забезпечувати роботу й підтримувати наші Застосунки та вебсайт; діагностувати та усувати збої й помилки; в узагальненому вигляді розуміти, як використовуються функції; відповідати на ваші звернення до підтримки; і виконувати юридичні зобов'язання.",
-  "h4": "4. Чого ми не робимо",
-  "p4": "<ul><li>Ми <strong>не</strong> продаємо, не здаємо в оренду й не обмінюємо ваші персональні дані.</li><li>Ми <strong>не</strong> використовуємо ваші дані для сторонньої реклами й не створюємо рекламні профілі.</li><li>Ми <strong>не</strong> вимагаємо облікового запису й не збираємо більше даних, ніж потрібно функції.</li></ul>",
-  "h5": "5. Зберігання та безпека даних",
-  "p5": "Більшість даних, створених у наших Застосунках, зберігаються локально на вашому пристрої. Коли функція передає дані (наприклад, стрічки сповіщень у StreamEar), вони надсилаються через зашифровані з'єднання (HTTPS/TLS). Ми застосовуємо розумні технічні й організаційні заходи захисту, проте жоден спосіб передавання чи зберігання не є цілком безпечним.",
-  "h6": "6. Сторонні сервіси",
-  "p6": "Наші Застосунки можуть використовувати сторонні сервіси, що регулюються їхніми власними політиками конфіденційності: <strong>Apple</strong> (розповсюдження в App Store, push-сповіщення, додаткова діагностика); <strong>постачальники карт і даних</strong> (картографічні тайли та публічні стрічки даних); і <strong>постачальники інфраструктури</strong>, як-от Cloudflare (доставка контенту та сповіщення).",
-  "h7": "7. Конфіденційність дітей",
-  "p7": "Наші Застосунки не призначені для дітей віком до 13 років (або мінімального віку у вашій юрисдикції), і ми свідомо не збираємо їхні персональні дані. Якщо ви вважаєте, що дитина надала нам дані, зв'яжіться з нами, і ми їх видалимо.",
-  "h8": "8. Ваші права",
-  "p8": "Залежно від місця проживання ви можете мати права згідно із законами, такими як GDPR ЄС/Великої Британії та CCPA/CPRA Каліфорнії, зокрема доступ, виправлення, видалення, перенесення та заперечення. Оскільки більшість даних залишаються на вашому пристрої, багато з цих прав ви можете реалізувати безпосередньо, редагуючи чи видаляючи дані в Застосунку або видаливши його. З решти питань зв'яжіться з нами, і ми відповімо відповідно до чинного законодавства. Ми не дискримінуватимемо вас за реалізацію ваших прав.",
-  "h9": "9. Міжнародні користувачі",
-  "p9": "The Nero Labs LLC розташована у штаті Вайомінг, США. Якщо ви користуєтеся нашими Застосунками чи вебсайтом за межами США, передані дані можуть оброблятися у США, де закони про захист даних можуть відрізнятися від законів вашої країни.",
-  "h10": "10. Зв'яжіться з нами",
-  "p10": "<strong>The Nero Labs LLC</strong><br>Вайомінг, США<br>Ел. пошта: <a href=\"mailto:support@thenerolabs.com\">support@thenerolabs.com</a>",
-  "note": "Ця Політика конфіденційності надається кількома мовами для зручності. У разі розбіжностей переважну силу має англійська версія."
- },
- "ar": {
-  "lang_name": "العربية",
-  "nav_home": "الرئيسية",
-  "nav_privacy": "الخصوصية",
-  "nav_terms": "الشروط",
-  "nav_support": "الدعم",
-  "doc_title": "سياسة الخصوصية",
-  "updated": "آخر تحديث: 4 يونيو 2026",
-  "intro": "تطوّر شركة The Nero Labs LLC («The Nero Labs» أو «نحن») تطبيقات احترافية للأجهزة المحمولة مخصصة للبيئات الصعبة — بما في ذلك <strong>MapNero</strong> و<strong>BallisticEdge</strong> و<strong>CarCheckUp</strong> و<strong>StreamEar</strong> («التطبيقات»). توضّح سياسة الخصوصية هذه البيانات التي تجمعها تطبيقاتنا وموقعنا الإلكتروني، وكيفية استخدامنا لها، والخيارات المتاحة لك. نحرص على جمع الحد الأدنى من البيانات اللازمة لعمل منتجاتنا.",
-  "short": "<strong>باختصار.</strong> تعمل معظم تطبيقاتنا على جهازك ولا تتطلّب حسابًا. نحن لا نبيع معلوماتك الشخصية ولا نستخدم بياناتك لأغراض الإعلانات. وعندما يحتاج تطبيق إلى إذن (مثل الموقع أو الكاميرا)، يُستخدم فقط لتقديم الميزة التي طلبتها.",
-  "h1": "1. المعلومات التي نجمعها",
-  "p1": "يعتمد ما نجمعه على التطبيق أو الخدمة التي تستخدمها.<br><br><strong>المعلومات التي تقدّمها:</strong> إذا راسلتنا على support@thenerolabs.com، نتلقّى عنوان بريدك الإلكتروني ورسالتك. أما البيانات التي تدخلها لاستخدام ميزة — مثل علامات الخريطة في MapNero، والمعطيات الباليستية في BallisticEdge، وقوائم فحص المركبات في CarCheckUp، وتفضيلات التنبيهات في StreamEar — فتُخزَّن عادةً محليًا على جهازك ما لم تقم ميزة بمزامنتها صراحةً.<br><br><strong>المعلومات التي تُجمع تلقائيًا:</strong> إذا وافقت، قد تشارك Apple بيانات أعطال وأداء مجهولة الهوية؛ وعند التفعيل، قد نجمع مقاييس استخدام مجمّعة وغير معرِّفة لتحسين منتجاتنا.",
-  "h2": "2. الأذونات التي قد تطلبها بعض التطبيقات",
-  "p2": "<ul><li><strong>الموقع</strong> — لعرض موضعك وتقديم ميزات متعلقة بالموقع (MapNero وStreamEar). يُستخدم فقط أثناء استخدامك للميزة.</li><li><strong>الكاميرا / الصور</strong> — لالتقاط الصور أو استيرادها للطبقات أو القوائم أو التقارير.</li><li><strong>الإشعارات</strong> — لإرسال التنبيهات والتذكيرات التي اخترت تلقّيها.</li><li><strong>التخزين المحلي</strong> — لحفظ عملك وإعداداتك على جهازك.</li></ul>يمكنك مراجعة هذه الأذونات وتغييرها في أي وقت من إعدادات جهازك.",
-  "h3": "3. كيف نستخدم المعلومات",
-  "p3": "نستخدم المعلومات فقط لتوفير تطبيقاتنا وموقعنا وتشغيلها وصيانتها؛ وتشخيص الأعطال والأخطاء وإصلاحها؛ وفهم كيفية استخدام الميزات بشكل مجمّع؛ والرد على طلبات الدعم؛ والامتثال للالتزامات القانونية.",
-  "h4": "4. ما لا نفعله",
-  "p4": "<ul><li><strong>لا</strong> نبيع معلوماتك الشخصية أو نؤجّرها أو نتاجر بها.</li><li><strong>لا</strong> نستخدم بياناتك لإعلانات الأطراف الثالثة ولا نُنشئ ملفات إعلانية.</li><li><strong>لا</strong> نطلب حسابًا ولا نجمع بيانات أكثر مما تحتاجه الميزة.</li></ul>",
-  "h5": "5. تخزين البيانات وأمنها",
-  "p5": "تُخزَّن معظم البيانات المُنشأة في تطبيقاتنا محليًا على جهازك. وعندما تنقل ميزة بيانات (مثل موجزات التنبيهات في StreamEar)، تُرسَل عبر اتصالات مشفّرة (HTTPS/TLS). نطبّق ضمانات تقنية وتنظيمية معقولة، لكن لا توجد طريقة نقل أو تخزين آمنة تمامًا.",
-  "h6": "6. خدمات الأطراف الثالثة",
-  "p6": "قد تعتمد تطبيقاتنا على خدمات أطراف ثالثة تخضع لسياسات الخصوصية الخاصة بها: <strong>Apple</strong> (التوزيع عبر App Store، والإشعارات الفورية، والتشخيص الاختياري)؛ و<strong>مزوّدو الخرائط والبيانات</strong> (بلاطات الخرائط وموجزات البيانات العامة)؛ و<strong>مزوّدو البنية التحتية</strong> مثل Cloudflare (تسليم المحتوى والإشعارات).",
-  "h7": "7. خصوصية الأطفال",
-  "p7": "تطبيقاتنا ليست موجَّهة للأطفال دون سن 13 عامًا (أو الحد الأدنى للسن في ولايتك القضائية)، ولا نجمع معلوماتهم الشخصية عن قصد. إذا كنت تعتقد أن طفلًا قد زوّدنا ببيانات، فاتصل بنا وسنحذفها.",
-  "h8": "8. حقوقك",
-  "p8": "بحسب مكان إقامتك، قد تتمتع بحقوق بموجب قوانين مثل اللائحة العامة لحماية البيانات في الاتحاد الأوروبي/المملكة المتحدة وقانون CCPA/CPRA في كاليفورنيا — بما في ذلك الوصول والتصحيح والحذف وقابلية النقل والاعتراض. ولأن معظم البيانات تبقى على جهازك، يمكنك ممارسة كثير من هذه الحقوق مباشرةً بتعديل البيانات أو حذفها في التطبيق أو بإزالة تثبيته. ولأي أمر آخر، اتصل بنا وسنرد وفق ما يقتضيه القانون المعمول به. ولن نميّز ضدّك بسبب ممارستك لحقوقك.",
-  "h9": "9. المستخدمون الدوليون",
-  "p9": "يقع مقر The Nero Labs LLC في ولاية وايومنغ بالولايات المتحدة. إذا وصلت إلى تطبيقاتنا أو موقعنا من خارج الولايات المتحدة، فقد تُعالَج المعلومات المنقولة في الولايات المتحدة، حيث قد تختلف قوانين حماية البيانات عن قوانين بلدك.",
-  "h10": "10. اتصل بنا",
-  "p10": "<strong>The Nero Labs LLC</strong><br>وايومنغ، الولايات المتحدة<br>البريد الإلكتروني: <a href=\"mailto:support@thenerolabs.com\">support@thenerolabs.com</a>",
-  "note": "تُقدَّم سياسة الخصوصية هذه بعدة لغات لأغراض التيسير. وفي حال وجود أي تعارض، تكون النسخة الإنجليزية هي المعتمدة."
- },
- "zh": {
-  "lang_name": "中文",
-  "nav_home": "首页",
-  "nav_privacy": "隐私",
-  "nav_terms": "条款",
-  "nav_support": "支持",
-  "doc_title": "隐私政策",
-  "updated": "最后更新：2026年6月4日",
-  "intro": "The Nero Labs LLC（“The Nero Labs”、“我们”）为高要求环境开发专业移动应用程序，包括 <strong>MapNero</strong>、<strong>BallisticEdge</strong>、<strong>CarCheckUp</strong> 和 <strong>StreamEar</strong>（“应用”）。本隐私政策说明我们的应用和网站收集哪些信息、我们如何使用这些信息以及您拥有的选择。我们将数据收集控制在使产品正常运行所需的最低限度。",
-  "short": "<strong>简而言之。</strong>我们的大多数应用在您的设备上运行，无需账户。我们不会出售您的个人信息，也不会将您的数据用于广告。当应用需要权限（如位置或相机）时，仅用于提供您所请求的功能。",
-  "h1": "1. 我们收集的信息",
-  "p1": "我们收集的内容取决于您使用的应用或服务。<br><br><strong>您提供的信息：</strong>如果您发送邮件至 support@thenerolabs.com，我们会收到您的电子邮件地址和消息内容。您为使用某项功能而输入的数据——MapNero 中的地图标记、BallisticEdge 中的弹道参数、CarCheckUp 中的车辆检查清单、StreamEar 中的提醒偏好——通常存储在您的设备本地，除非某项功能明确进行同步。<br><br><strong>自动收集的信息：</strong>如经您同意，Apple 可能共享匿名的崩溃和性能数据；在启用时，我们可能收集汇总的、不可识别身份的使用指标以改进产品。",
-  "h2": "2. 部分应用可能请求的权限",
-  "p2": "<ul><li><strong>位置</strong>——显示您的位置并提供与位置相关的功能（MapNero、StreamEar）。仅在您使用该功能时使用。</li><li><strong>相机 / 照片</strong>——为叠加层、检查清单或报告拍摄或导入图像。</li><li><strong>通知</strong>——发送您选择接收的提醒和提示。</li><li><strong>本地存储</strong>——在您的设备上保存您的工作和设置。</li></ul>您可以随时在设备的“设置”中查看和更改这些权限。",
-  "h3": "3. 我们如何使用信息",
-  "p3": "我们仅将信息用于：提供、运营和维护我们的应用和网站；诊断和修复崩溃及错误；以汇总方式了解功能的使用情况；回应您的支持请求；以及遵守法律义务。",
-  "h4": "4. 我们不做的事情",
-  "p4": "<ul><li>我们<strong>不会</strong>出售、出租或交易您的个人信息。</li><li>我们<strong>不会</strong>将您的数据用于第三方广告或建立广告画像。</li><li>我们<strong>不</strong>要求账户，也不会收集超出功能所需的数据。</li></ul>",
-  "h5": "5. 数据存储与安全",
-  "p5": "我们应用中创建的大部分数据存储在您的设备本地。当某项功能传输数据时（例如 StreamEar 中的提醒源），通过加密连接（HTTPS/TLS）发送。我们采取合理的技术和组织保护措施，但任何传输或存储方法都无法做到绝对安全。",
-  "h6": "6. 第三方服务",
-  "p6": "我们的应用可能依赖受其自身隐私政策约束的第三方服务：<strong>Apple</strong>（App Store 分发、推送通知、可选诊断）；<strong>地图和数据提供商</strong>（地图瓦片和公共数据源）；以及 Cloudflare 等<strong>基础设施提供商</strong>（内容分发和通知）。",
-  "h7": "7. 儿童隐私",
-  "p7": "我们的应用并非面向 13 岁以下（或您所在司法辖区的最低年龄）的儿童，我们也不会有意收集其个人信息。如果您认为某名儿童向我们提供了数据，请与我们联系，我们将予以删除。",
-  "h8": "8. 您的权利",
-  "p8": "根据您的居住地，您可能依据欧盟/英国 GDPR 和加利福尼亚州 CCPA/CPRA 等法律享有权利，包括访问、更正、删除、可携带及反对等权利。由于大部分数据保留在您的设备上，您可以通过在应用中编辑或删除数据或卸载应用来直接行使其中许多权利。其他事项请与我们联系，我们将按照适用法律的要求作出回应。我们不会因您行使权利而对您加以歧视。",
-  "h9": "9. 国际用户",
-  "p9": "The Nero Labs LLC 位于美国怀俄明州。如果您从美国境外访问我们的应用或网站，所传输的信息可能在美国处理，而美国的数据保护法律可能与您所在国家/地区不同。",
-  "h10": "10. 联系我们",
-  "p10": "<strong>The Nero Labs LLC</strong><br>美国怀俄明州<br>电子邮件：<a href=\"mailto:support@thenerolabs.com\">support@thenerolabs.com</a>",
-  "note": "为方便起见，本隐私政策以多种语言提供。如有任何不一致，以英文版本为准。"
- },
- "ja": {
-  "lang_name": "日本語",
-  "nav_home": "ホーム",
-  "nav_privacy": "プライバシー",
-  "nav_terms": "利用規約",
-  "nav_support": "サポート",
-  "doc_title": "プライバシーポリシー",
-  "updated": "最終更新日：2026年6月4日",
-  "intro": "The Nero Labs LLC（「The Nero Labs」「当社」）は、過酷な環境向けのプロフェッショナルなモバイルアプリケーションを開発しています。これには <strong>MapNero</strong>、<strong>BallisticEdge</strong>、<strong>CarCheckUp</strong>、<strong>StreamEar</strong>（「本アプリ」）が含まれます。本プライバシーポリシーは、当社のアプリおよびウェブサイトが収集する情報、その利用方法、ならびにお客様が選択できる事項について説明します。当社は、製品の動作に必要な最小限にデータ収集をとどめています。",
-  "short": "<strong>要点。</strong>当社のアプリの多くはお客様のデバイス上で動作し、アカウントを必要としません。当社はお客様の個人情報を販売せず、広告にも利用しません。アプリが権限（位置情報やカメラなど）を必要とする場合、それはお客様が要求した機能を提供するためにのみ使用されます。",
-  "h1": "1. 当社が収集する情報",
-  "p1": "収集する内容は、お客様が使用するアプリまたはサービスによって異なります。<br><br><strong>お客様が提供する情報：</strong>support@thenerolabs.com にメールを送信された場合、当社はお客様のメールアドレスとメッセージを受け取ります。機能を使用するために入力されたデータ（MapNero の地図マーカー、BallisticEdge の弾道パラメータ、CarCheckUp の車両点検リスト、StreamEar の通知設定など）は、機能が明示的に同期しない限り、通常はお客様のデバイスにローカルで保存されます。<br><br><strong>自動的に収集される情報：</strong>お客様が同意した場合、Apple は匿名化されたクラッシュおよびパフォーマンスデータを共有することがあります。また有効な場合、当社は製品改善のために集約された識別不能な利用統計を収集することがあります。",
-  "h2": "2. 一部のアプリが要求する場合がある権限",
-  "p2": "<ul><li><strong>位置情報</strong> — お客様の位置を表示し、位置に関連する機能を提供するため（MapNero、StreamEar）。機能の使用中のみ使用されます。</li><li><strong>カメラ／写真</strong> — オーバーレイ、チェックリスト、レポート用に画像を撮影または取り込むため。</li><li><strong>通知</strong> — お客様が受け取ることを選択したアラートやリマインダーを配信するため。</li><li><strong>ローカルストレージ</strong> — お客様の作業や設定をデバイスに保存するため。</li></ul>これらの権限は、デバイスの「設定」からいつでも確認・変更できます。",
-  "h3": "3. 情報の利用方法",
-  "p3": "当社は情報を、アプリおよびウェブサイトの提供・運営・保守、クラッシュや不具合の診断と修正、機能の利用状況の集約的な把握、サポート依頼への対応、ならびに法的義務の遵守のためにのみ利用します。",
-  "h4": "4. 当社が行わないこと",
-  "p4": "<ul><li>当社はお客様の個人情報を販売・賃貸・取引<strong>しません</strong>。</li><li>当社はお客様のデータを第三者広告に利用したり、広告プロファイルを作成したり<strong>しません</strong>。</li><li>当社はアカウントを要求<strong>せず</strong>、機能に必要な以上のデータを収集しません。</li></ul>",
-  "h5": "5. データの保存とセキュリティ",
-  "p5": "当社のアプリで作成されるデータの大半は、お客様のデバイスにローカルで保存されます。機能がデータを送信する場合（例：StreamEar のアラートフィード）、暗号化された接続（HTTPS/TLS）で送信されます。当社は合理的な技術的・組織的保護措置を講じていますが、いかなる送信・保存方法も完全に安全ではありません。",
-  "h6": "6. 第三者サービス",
-  "p6": "当社のアプリは、それぞれのプライバシーポリシーに従う第三者サービスを利用する場合があります：<strong>Apple</strong>（App Store での配信、プッシュ通知、任意の診断）、<strong>地図・データ提供者</strong>（地図タイルおよび公開データフィード）、ならびに Cloudflare などの<strong>インフラ提供者</strong>（コンテンツ配信および通知）。",
-  "h7": "7. 子どものプライバシー",
-  "p7": "当社のアプリは13歳未満（またはお客様の管轄区域における最低年齢未満）の子どもを対象としておらず、当社は故意にその個人情報を収集しません。子どもが当社にデータを提供したと思われる場合は、当社までご連絡ください。削除いたします。",
-  "h8": "8. お客様の権利",
-  "p8": "お住まいの地域によっては、EU/英国のGDPRやカリフォルニア州のCCPA/CPRAなどの法律に基づき、アクセス、訂正、削除、ポータビリティ、異議申立てなどの権利を有する場合があります。大半のデータはお客様のデバイスに保持されるため、アプリ内でデータを編集・削除するか、アプリをアンインストールすることで、これらの権利の多くを直接行使できます。その他の事項については当社までご連絡ください。適用法に従って対応いたします。当社は、権利を行使したことを理由にお客様を差別することはありません。",
-  "h9": "9. 海外のユーザー",
-  "p9": "The Nero Labs LLC は米国ワイオミング州に所在します。米国外から当社のアプリまたはウェブサイトにアクセスされる場合、送信される情報は米国で処理されることがあり、米国のデータ保護法はお客様の国の法律と異なる場合があります。",
-  "h10": "10. お問い合わせ",
-  "p10": "<strong>The Nero Labs LLC</strong><br>米国ワイオミング州<br>メール：<a href=\"mailto:support@thenerolabs.com\">support@thenerolabs.com</a>",
-  "note": "本プライバシーポリシーは利便性のため複数の言語で提供されています。相違がある場合は、英語版が優先されます。"
- },
- "hi": {
-  "lang_name": "हिन्दी",
-  "nav_home": "होम",
-  "nav_privacy": "गोपनीयता",
-  "nav_terms": "शर्तें",
-  "nav_support": "सहायता",
-  "doc_title": "गोपनीयता नीति",
-  "updated": "अंतिम अद्यतन: 4 जून 2026",
-  "intro": "The Nero Labs LLC (\"The Nero Labs\", \"हम\") कठिन परिस्थितियों के लिए पेशेवर मोबाइल एप्लिकेशन बनाती है — जिनमें <strong>MapNero</strong>, <strong>BallisticEdge</strong>, <strong>CarCheckUp</strong> और <strong>StreamEar</strong> (\"ऐप्स\") शामिल हैं। यह गोपनीयता नीति बताती है कि हमारे ऐप्स और वेबसाइट कौन-सी जानकारी एकत्र करते हैं, हम उसका उपयोग कैसे करते हैं और आपके पास क्या विकल्प हैं। हम डेटा संग्रह को अपने उत्पादों के संचालन के लिए आवश्यक न्यूनतम तक सीमित रखते हैं।",
-  "short": "<strong>संक्षेप में।</strong> हमारे अधिकांश ऐप्स आपके डिवाइस पर काम करते हैं और इन्हें किसी खाते की आवश्यकता नहीं होती। हम आपकी व्यक्तिगत जानकारी नहीं बेचते और न ही आपके डेटा का उपयोग विज्ञापन के लिए करते हैं। जब किसी ऐप को अनुमति (जैसे स्थान या कैमरा) की आवश्यकता होती है, तो उसका उपयोग केवल आपके द्वारा अनुरोधित सुविधा प्रदान करने के लिए किया जाता है।",
-  "h1": "1. हम कौन-सी जानकारी एकत्र करते हैं",
-  "p1": "हम क्या एकत्र करते हैं यह इस पर निर्भर करता है कि आप कौन-सा ऐप या सेवा उपयोग करते हैं।<br><br><strong>आपके द्वारा दी गई जानकारी:</strong> यदि आप support@thenerolabs.com पर ईमेल करते हैं, तो हमें आपका ईमेल पता और संदेश प्राप्त होता है। किसी सुविधा का उपयोग करने के लिए आपके द्वारा दर्ज किया गया डेटा — MapNero में मानचित्र मार्कर, BallisticEdge में बैलिस्टिक पैरामीटर, CarCheckUp में वाहन जाँच-सूची, StreamEar में अलर्ट प्राथमिकताएँ — आम तौर पर आपके डिवाइस पर स्थानीय रूप से संग्रहीत होता है, जब तक कि कोई सुविधा इसे स्पष्ट रूप से सिंक न करे।<br><br><strong>स्वतः एकत्र की जाने वाली जानकारी:</strong> यदि आप सहमति देते हैं, तो Apple अनाम क्रैश और प्रदर्शन डेटा साझा कर सकता है; सक्षम होने पर, हम अपने उत्पादों को बेहतर बनाने के लिए समेकित, गैर-पहचान योग्य उपयोग मीट्रिक एकत्र कर सकते हैं।",
-  "h2": "2. कुछ ऐप्स द्वारा माँगी जा सकने वाली अनुमतियाँ",
-  "p2": "<ul><li><strong>स्थान</strong> — आपकी स्थिति दिखाने और स्थान-संबंधी सुविधाएँ प्रदान करने के लिए (MapNero, StreamEar)। केवल सुविधा के उपयोग के दौरान ही प्रयुक्त।</li><li><strong>कैमरा / फ़ोटो</strong> — ओवरले, जाँच-सूची या रिपोर्ट के लिए छवियाँ लेने या आयात करने हेतु।</li><li><strong>सूचनाएँ</strong> — आपके द्वारा चुने गए अलर्ट और अनुस्मारक भेजने के लिए।</li><li><strong>स्थानीय संग्रहण</strong> — आपके कार्य और सेटिंग्स को आपके डिवाइस पर सहेजने के लिए।</li></ul>आप इन अनुमतियों को कभी भी अपने डिवाइस की सेटिंग्स में देख और बदल सकते हैं।",
-  "h3": "3. हम जानकारी का उपयोग कैसे करते हैं",
-  "p3": "हम जानकारी का उपयोग केवल अपने ऐप्स और वेबसाइट को प्रदान करने, संचालित करने और बनाए रखने; क्रैश और बग का निदान और सुधार करने; समेकित रूप से यह समझने कि सुविधाओं का उपयोग कैसे होता है; आपके सहायता अनुरोधों का उत्तर देने; और कानूनी दायित्वों का पालन करने के लिए करते हैं।",
-  "h4": "4. हम क्या नहीं करते",
-  "p4": "<ul><li>हम आपकी व्यक्तिगत जानकारी को <strong>न</strong> बेचते हैं, न किराए पर देते हैं, न उसका व्यापार करते हैं।</li><li>हम आपके डेटा का उपयोग तृतीय-पक्ष विज्ञापन के लिए <strong>नहीं</strong> करते और न ही विज्ञापन प्रोफ़ाइल बनाते हैं।</li><li>हम खाते की <strong>आवश्यकता नहीं</strong> रखते और किसी सुविधा के लिए आवश्यक से अधिक डेटा एकत्र नहीं करते।</li></ul>",
-  "h5": "5. डेटा संग्रहण और सुरक्षा",
-  "p5": "हमारे ऐप्स में बनाया गया अधिकांश डेटा आपके डिवाइस पर स्थानीय रूप से संग्रहीत होता है। जहाँ कोई सुविधा डेटा प्रेषित करती है (उदाहरण के लिए, StreamEar में अलर्ट फ़ीड), वह एन्क्रिप्टेड कनेक्शन (HTTPS/TLS) के माध्यम से भेजा जाता है। हम उचित तकनीकी और संगठनात्मक सुरक्षा उपाय लागू करते हैं, परंतु प्रेषण या संग्रहण की कोई भी विधि पूर्णतः सुरक्षित नहीं होती।",
-  "h6": "6. तृतीय-पक्ष सेवाएँ",
-  "p6": "हमारे ऐप्स ऐसी तृतीय-पक्ष सेवाओं पर निर्भर हो सकते हैं जो उनकी अपनी गोपनीयता नीतियों द्वारा शासित हैं: <strong>Apple</strong> (App Store वितरण, पुश सूचनाएँ, वैकल्पिक डायग्नोस्टिक्स); <strong>मानचित्र और डेटा प्रदाता</strong> (मानचित्र टाइलें और सार्वजनिक डेटा फ़ीड); और Cloudflare जैसे <strong>इंफ्रास्ट्रक्चर प्रदाता</strong> (सामग्री वितरण और सूचनाएँ)।",
-  "h7": "7. बच्चों की गोपनीयता",
-  "p7": "हमारे ऐप्स 13 वर्ष से कम आयु के बच्चों (या आपके क्षेत्राधिकार में न्यूनतम आयु) के लिए नहीं हैं, और हम जानबूझकर उनकी व्यक्तिगत जानकारी एकत्र नहीं करते। यदि आपको लगता है कि किसी बच्चे ने हमें डेटा प्रदान किया है, तो हमसे संपर्क करें और हम उसे हटा देंगे।",
-  "h8": "8. आपके अधिकार",
-  "p8": "आप जहाँ रहते हैं उसके आधार पर, आपके पास EU/UK GDPR और कैलिफ़ोर्निया CCPA/CPRA जैसे कानूनों के तहत अधिकार हो सकते हैं — जिनमें पहुँच, सुधार, विलोपन, सुवाह्यता और आपत्ति शामिल हैं। चूँकि अधिकांश डेटा आपके डिवाइस पर रहता है, आप इनमें से कई अधिकारों का प्रयोग सीधे ऐप में डेटा संपादित या हटाकर अथवा ऐप अनइंस्टॉल करके कर सकते हैं। किसी अन्य बात के लिए हमसे संपर्क करें और हम लागू कानून के अनुसार उत्तर देंगे। अधिकारों का प्रयोग करने पर हम आपके साथ भेदभाव नहीं करेंगे।",
-  "h9": "9. अंतर्राष्ट्रीय उपयोगकर्ता",
-  "p9": "The Nero Labs LLC का मुख्यालय वायोमिंग, अमेरिका में है। यदि आप संयुक्त राज्य अमेरिका के बाहर से हमारे ऐप्स या वेबसाइट तक पहुँचते हैं, तो प्रेषित जानकारी संयुक्त राज्य अमेरिका में संसाधित की जा सकती है, जहाँ डेटा-संरक्षण कानून आपके देश से भिन्न हो सकते हैं।",
-  "h10": "10. हमसे संपर्क करें",
-  "p10": "<strong>The Nero Labs LLC</strong><br>वायोमिंग, अमेरिका<br>ईमेल: <a href=\"mailto:support@thenerolabs.com\">support@thenerolabs.com</a>",
-  "note": "यह गोपनीयता नीति सुविधा के लिए कई भाषाओं में प्रदान की गई है। किसी भी विसंगति की स्थिति में, अंग्रेज़ी संस्करण मान्य होगा।"
- }
-};
-let currentLang = 'en';
-function applyLang(lang){
-  const t = i18n[lang] || i18n.en;
-  document.querySelectorAll('[data-i18n]').forEach(el=>{
-    const k = el.getAttribute('data-i18n');
-    if(t[k]!==undefined) el.innerHTML = t[k];
-  });
-  document.title = (t.doc_title||'') + ' — The Nero Labs';
-  document.getElementById('langBtn').textContent = '🌐 ' + (t.lang_name||lang) + ' ▾';
-  document.documentElement.lang = lang;
-  document.documentElement.dir = (lang==='ar') ? 'rtl' : 'ltr';
-  document.querySelectorAll('.lang-option').forEach(o=>{
-    o.classList.toggle('active', o.getAttribute('onclick').includes("'"+lang+"'"));
-  });
-}
-function setLang(lang){
-  currentLang = lang;
-  try{ localStorage.setItem('nl_lang', lang); }catch(e){}
-  applyLang(lang);
-  document.getElementById('langDropdown').classList.remove('open');
-}
-function toggleLang(e){
-  e.stopPropagation();
-  document.getElementById('langDropdown').classList.toggle('open');
-}
-document.addEventListener('click', ()=>document.getElementById('langDropdown').classList.remove('open'));
-(function(){
-  let saved='en';
-  try{ saved = localStorage.getItem('nl_lang') || (navigator.language||'en').slice(0,2); }catch(e){}
-  if(!i18n[saved]) saved='en';
-  setLang(saved);
-})();
-</script>
 </body>
 </html>
